@@ -228,6 +228,34 @@ export default function HealthcareSpanishPage() {
           </div>
         </div>
       </section>
+
+      {/* Download strip */}
+      <section className="py-10 px-4 bg-msc-cream">
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-white rounded-2xl border border-gray-100 p-7 flex flex-col sm:flex-row items-center gap-6">
+            <div className="flex-1">
+              <p className="text-sm font-semibold uppercase tracking-widest text-msc-teal mb-1">Free Download</p>
+              <h3 className="text-base font-bold text-msc-charcoal mb-1">Healthcare Spanish Initiative Guide (PDF)</h3>
+              <p className="text-sm text-gray-600">Print-ready program overview with the full curriculum, learning outcomes, and enrollment information. Share with faculty, administrators, or colleagues.</p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <a
+                href="/downloads/healthcare-spanish-initiative.pdf"
+                download="healthcare-spanish-initiative.pdf"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-msc-amber text-msc-charcoal hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download PDF
+              </a>
+              <Link href="/downloads" className="inline-flex items-center px-5 py-2.5 rounded-xl font-semibold text-sm border-2 border-msc-teal text-msc-teal hover:bg-msc-teal hover:text-white transition-all duration-200">
+                All Downloads
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

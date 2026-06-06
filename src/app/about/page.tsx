@@ -13,7 +13,7 @@ const team = [
     email: 'jake@makespanishcasual.org',
     bio: `Jake Li is a high school student (Class of 2027, Plano East Senior High School / T.H. Williams High School) whose work sits at the intersection of language science, health equity, and AI. He is the founder of Make Spanish Casual and the AI patient safety startup Hindsight, which has been accepted into MIT Sandbox, Microsoft for Startups (Azure), and AWS programs.
 
-Jake has conducted over 500 hours of language acquisition research at the University of Wisconsin-Madison's Language Acquisition and Bilingualism (LAB) Laboratory under Dr. Kaushanskaya, investigating how colloquialisms affect cognitive development in children with developmental disabilities. He has also conducted clinical research at UT Southwestern Medical Center, completed Rice University's Spanish for Successful Communication in Healthcare Settings course with an A+, and served as a student researcher at Syracuse University improving language transcript analysis software.
+Jake has conducted language acquisition research at the University of Wisconsin-Madison.
 
 He serves on the Advocacy Committee for NNELL, has advocated for language legislation on Capitol Hill alongside U.S. Representatives Lloyd Doggett and Jasmine Crockett and Senator Ted Cruz, and has presented at the ACTFL Annual Convention in Chicago (2023), Philadelphia (2024), and New Orleans (2025). His intended major is Cognitive Science / Computational Linguistics at the intersection of language, AI, and medicine (Pre-Medicine track).`,
   },
