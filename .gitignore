@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# environment variables
+.env
+.env.local
+.env.*.local
+
+# build artifacts
+*.tsbuildinfo
+
+# local Claude Code settings
+.claude/
+
+# nested template directory
+spanish-curriculum/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*

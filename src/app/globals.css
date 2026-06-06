@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-msc-teal: #1A6B72;
+  --color-msc-teal-dark: #135459;
+  --color-msc-teal-light: #E8F4F5;
+  --color-msc-amber: #E8A020;
+  --color-msc-amber-light: #FEF3D0;
+  --color-msc-coral: #E05C4B;
+  --color-msc-coral-light: #FDECEA;
+  --color-msc-cream: #F8F6F1;
+  --color-msc-charcoal: #1C1C1E;
+  --color-primary: #1A6B72;
+  --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #1C1C1E;
+  background: #F8F6F1;
+  font-size: 16px;
+  line-height: 1.6;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* Accessible focus rings using brand teal */
+:focus-visible {
+  outline: 2px solid #1A6B72;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Amber is the primary action color; teal is brand/secondary */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: #1C1C1E;
+  background-color: #E8A020;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #d4901a;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: #1A6B72;
+  border: 2px solid #1A6B72;
+  background-color: transparent;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: #1A6B72;
+  color: white;
+  transform: translateY(-1px);
+}
