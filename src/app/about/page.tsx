@@ -1,204 +1,198 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import PageHero from '@/components/shared/PageHero'
+import SectionHeading from '@/components/shared/SectionHeading'
+import CtaBand from '@/components/shared/CtaBand'
+import Icon from '@/components/shared/Icons'
+import { site } from '@/data/site'
+import { team, advisors } from '@/data/team'
 
 export const metadata: Metadata = {
-  title: 'About MSC | Make Spanish Casual',
-  description: 'Learn about Make Spanish Casual, a student-led 501(c)3 nonprofit founded by Jake Li, whose research and advocacy work connects authentic language education to health equity.',
+  title: 'About Us',
+  description:
+    'MSC is a youth-led nonprofit working at the intersection of language, healthcare access, education, and inclusive learning. Meet the team and the story behind the mission.',
 }
 
-const team = [
+const values = [
   {
-    name: 'Jake Li',
-    role: 'CEO & Founder',
-    email: 'jake@makespanishcasual.org',
-    bio: `Jake Li is a high school student (Class of 2027, Plano East Senior High School / T.H. Williams High School) whose work sits at the intersection of language science, health equity, and AI. He is the founder of Make Spanish Casual and the AI patient safety startup Hindsight, which has been accepted into MIT Sandbox, Microsoft for Startups (Azure), and AWS programs.
-
-Jake has conducted language acquisition research at the University of Wisconsin-Madison.
-
-He serves on the Advocacy Committee for NNELL, has advocated for language legislation on Capitol Hill alongside U.S. Representatives Lloyd Doggett and Jasmine Crockett and Senator Ted Cruz, and has presented at the ACTFL Annual Convention in Chicago (2023), Philadelphia (2024), and New Orleans (2025). His intended major is Cognitive Science / Computational Linguistics at the intersection of language, AI, and medicine (Pre-Medicine track).`,
+    icon: 'globe',
+    title: 'Accessibility',
+    text: 'Everything we make is free, plain-language, and designed for real people — not experts.',
   },
   {
-    name: 'Jada Li',
-    role: 'Head of Development',
-    email: '',
-    bio: 'Jada graduated from the Massachusetts Institute of Technology with a minor in Spanish. She leads MSC\'s development and fundraising strategy, bringing institutional experience and a commitment to making language education accessible at scale.',
+    icon: 'heart',
+    title: 'Cultural humility',
+    text: 'We learn from the communities we serve. Language is identity, and we treat it that way.',
   },
   {
-    name: 'Devin Carroll',
-    role: 'Social Media Manager & Content Creator',
-    email: '',
-    bio: 'Devin is a student at Plano East Senior High School and one of MSC\'s earliest community members. He creates content that makes authentic Spanish learning visible and shareable — and is living proof that MSC\'s approach works. "I used to be nervous speaking Spanish. Now I drop slang and everyone thinks I\'m fluent."',
+    icon: 'beaker',
+    title: 'Research',
+    text: 'Our programs are informed by evidence — including research our own students conduct.',
   },
   {
-    name: 'Jordan Stafford',
-    role: 'Social Media Manager & Content Creator',
-    email: '',
-    bio: 'Jordan is a student at Plano East Senior High School. She develops content across MSC\'s social platforms, with a focus on making Spanish feel approachable and culturally rich for new learners.',
+    icon: 'hand-raised',
+    title: 'Service',
+    text: 'Youth-led means youth doing the work: tutoring, translating, designing, and showing up.',
   },
   {
-    name: 'Braeden Quach',
-    role: 'Event Volunteer',
-    email: '',
-    bio: 'Braeden is a student at Plano East Senior High School. He supports MSC\'s in-person events and community building in the DFW area. "I joined to improve my Spanish. I stayed because it felt like I belonged."',
-  },
-  {
-    name: 'Rishan Patel',
-    role: 'Event Volunteer',
-    email: '',
-    bio: 'Rishan is a student at Plano East Senior High School. He helps organize and run MSC\'s community events across the DFW metroplex.',
-  },
-  {
-    name: 'Jacob Habtemariam',
-    role: 'Event Volunteer',
-    email: '',
-    bio: 'Jacob is a student at Plano East Senior High School. He volunteers at MSC events, helping build the in-person community that complements the online learning platform.',
+    icon: 'puzzle',
+    title: 'Inclusion',
+    text: 'Language access includes neurodiverse learners and every kind of communicator.',
   },
 ]
 
-const affiliations = [
-  'National Network for Early Language Learning (NNELL)',
-  'ACTFL — American Council on the Teaching of Foreign Languages',
-  'University of Wisconsin-Madison',
-]
+function PersonCard({ name, role, bio }: { name: string; role: string; bio: string }) {
+  return (
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+      {/* Photo placeholder — add images via src/data/team.ts */}
+      <div className="w-16 h-16 rounded-2xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-4">
+        <Icon name="users" className="w-8 h-8" />
+      </div>
+      <h3 className="text-base font-bold text-msc-charcoal">{name}</h3>
+      <p className="text-sm font-semibold text-msc-teal mb-2.5">{role}</p>
+      <p className="text-sm text-gray-600 leading-relaxed">{bio}</p>
+    </div>
+  )
+}
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section style={{ backgroundColor: '#1A6B72' }} className="pt-20 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-white/70">
-            About Us
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5">
-            Why we exist
-          </h1>
-          <p className="text-lg text-white/85 max-w-2xl leading-relaxed">
-            Language shapes every interaction — including whether a patient trusts their provider, whether a student feels seen in the classroom, whether a family can navigate the systems meant to serve them.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About MSC"
+        title="A youth-led collective for communication access"
+        description="We're students, tutors, translators, designers, and researchers working to make sure language is never the reason someone misses out on care, education, or community."
+      />
 
-      {/* Mission */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1A6B72' }}>
-              Our Mission
-            </p>
-            <p className="text-xl leading-relaxed text-gray-700">
-              Make Spanish Casual exists because authentic, culturally grounded language education can change those interactions. We believe language access is a matter of equity. Our job is to make it free.
-            </p>
-            <blockquote className="mt-8 pl-5 border-l-4 text-lg italic text-gray-700" style={{ borderColor: '#E8A020' }}>
-              Make Spanish Casual advances equitable language access by providing free, culturally authentic Spanish education — with a particular focus on healthcare settings where language barriers directly affect the quality and safety of care.
-            </blockquote>
+      {/* Origin story */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <SectionHeading
+                align="left"
+                eyebrow="Our story"
+                title="From a Spanish project to a language access mission"
+              />
+              <div className="space-y-4 text-gray-600 leading-relaxed">
+                <p>
+                  MSC began as <em>Make Spanish Casual</em> — a student project built on a simple
+                  observation: the language people actually speak is very different from the
+                  language textbooks teach. We created free resources around real-world,
+                  practical Spanish and started researching how that kind of language input
+                  shapes learning.
+                </p>
+                <p>
+                  Then our community started asking bigger questions. Families wanted help
+                  preparing for medical appointments in English. Parents needed school forms
+                  explained. Local organizations asked for translated flyers. Educators wanted
+                  materials that worked for neurodiverse learners. The real need wasn’t casual
+                  Spanish — it was communication access, everywhere.
+                </p>
+                <p>
+                  So we grew into the <strong>Multilingual Support Collective</strong>: a
+                  youth-led nonprofit at the intersection of language, healthcare access,
+                  education, and inclusive learning. Our original research on real-world,
+                  context-dependent language continues — it’s now one thread of a much larger
+                  mission.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-msc-teal-light/60 rounded-2xl p-8">
+                <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-3">Mission</p>
+                <p className="text-lg font-semibold text-msc-charcoal leading-relaxed">{site.mission}</p>
+              </div>
+              <div className="bg-msc-amber-light/60 rounded-2xl p-8">
+                <p className="text-xs font-bold uppercase tracking-widest text-msc-amber mb-3">Vision</p>
+                <p className="text-lg font-semibold text-msc-charcoal leading-relaxed">{site.vision}</p>
+              </div>
+              <div className="bg-msc-cream rounded-2xl p-8">
+                <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-3">What makes MSC different</p>
+                <ul className="space-y-3">
+                  {[
+                    'Youth-led programs, guided by adult advisors — students do the real work',
+                    'Research-backed: our own student studies inform what we build',
+                    'Focused on practical communication people actually need, not curriculum for its own sake',
+                    'Free, always — no paywalls between families and resources',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700 leading-relaxed">
+                      <span className="text-msc-teal mt-0.5 flex-shrink-0">
+                        <Icon name="check" className="w-4 h-4" />
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-16 px-4" style={{ backgroundColor: '#F8F6F1' }}>
-        <div className="container mx-auto max-w-6xl">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1A6B72' }}>
-              Our Story
-            </p>
-            <h2 className="text-3xl font-bold mb-6" style={{ color: '#1C1C1E' }}>
-              From a slang platform to a language access org
-            </h2>
-            <p className="text-base text-gray-600 leading-relaxed mb-5">
-              MSC began as a Spanish slang education platform in Plano, TX — a free resource for learners who felt left behind by textbook Spanish that didn't match the language they heard in their communities or wanted to speak in real life.
-            </p>
-            <p className="text-base text-gray-600 leading-relaxed mb-5">
-              Over time, the work evolved. As MSC's founder deepened his research in language acquisition, pursued pre-medicine studies, and saw firsthand how language barriers affect clinical outcomes, the organization's mission came into focus: language access isn't just an educational issue. It's a health equity issue.
-            </p>
-            <p className="text-base text-gray-600 leading-relaxed">
-              Today, MSC combines free community education with a healthcare-focused training initiative and policy advocacy — connecting authentic language learning to real-world impact.
-            </p>
+      {/* Values */}
+      <section className="py-20 bg-msc-cream">
+        <div className="container">
+          <SectionHeading
+            eyebrow="What we believe"
+            title="Our values"
+            description="Five commitments that shape every program, resource, and decision."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+            {values.map((v) => (
+              <div key={v.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
+                <span className="w-11 h-11 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mx-auto mb-4">
+                  <Icon name={v.icon} className="w-6 h-6" />
+                </span>
+                <h3 className="text-base font-bold text-msc-charcoal mb-2">{v.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{v.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Team */}
-      <section className="py-16 px-4 bg-white" id="team">
-        <div className="container mx-auto max-w-6xl">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1A6B72' }}>
-            The Team
-          </p>
-          <h2 className="text-3xl font-bold mb-12" style={{ color: '#1C1C1E' }}>
-            The people behind MSC
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map((member) => (
-              <div key={member.name} className="rounded-2xl border border-gray-100 p-7 hover:border-[#1A6B72]/30 transition-colors">
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <div>
-                    <h3 className="text-lg font-bold" style={{ color: '#1C1C1E' }}>{member.name}</h3>
-                    <p className="text-sm font-medium" style={{ color: '#1A6B72' }}>{member.role}</p>
-                  </div>
-                  {member.email && (
-                    <a
-                      href={`mailto:${member.email}`}
-                      className="text-xs text-gray-400 hover:text-[#1A6B72] transition-colors shrink-0"
-                    >
-                      {member.email}
-                    </a>
-                  )}
-                </div>
-                <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{member.bio}</p>
-              </div>
+      <section className="py-20 bg-white">
+        <div className="container">
+          <SectionHeading
+            eyebrow="The people"
+            title="Leadership team"
+            description="Students who run MSC's day-to-day programs. Placeholder profiles below — update them in src/data/team.ts."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {team.map((member, i) => (
+              <PersonCard key={`${member.name}-${i}`} {...member} />
             ))}
           </div>
+
+          <SectionHeading
+            eyebrow="Guidance"
+            title="Advisors & mentors"
+            description="Adult professionals who review our materials, mentor our research, and keep us rigorous."
+          />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advisors.map((advisor, i) => (
+              <PersonCard key={`${advisor.name}-${i}`} {...advisor} />
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-12">
+            Want to join the team or become an advisor?{' '}
+            <Link href="/contact" className="text-msc-teal font-semibold hover:underline">
+              Get in touch
+            </Link>
+          </p>
         </div>
       </section>
 
-      {/* Affiliations */}
-      <section className="py-16 px-4" style={{ backgroundColor: '#E8F4F5' }}>
-        <div className="container mx-auto max-w-6xl">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#1A6B72' }}>
-            Affiliations & Partners
-          </p>
-          <h2 className="text-3xl font-bold mb-10" style={{ color: '#1C1C1E' }}>
-            Organizations we work with
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {affiliations.map((org) => (
-              <div key={org} className="bg-white rounded-xl px-5 py-4 shadow-sm border border-white flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: '#1A6B72' }} />
-                <p className="text-sm font-medium text-gray-700">{org}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h2 className="text-2xl font-bold mb-4" style={{ color: '#1C1C1E' }}>
-            Join the community
-          </h2>
-          <p className="text-base text-gray-600 mb-8 max-w-lg mx-auto">
-            Everything MSC offers is free. Create an account to access courses, resources, and community spaces.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/register"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-base text-white transition-all duration-200 hover:-translate-y-0.5"
-              style={{ backgroundColor: '#1A6B72' }}
-            >
-              Create Free Account
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-base border-2 transition-all duration-200 hover:-translate-y-0.5"
-              style={{ borderColor: '#1A6B72', color: '#1A6B72' }}
-            >
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaBand
+        title="Our story is still being written"
+        description="Every volunteer, partner, and supporter adds a chapter. Come write one with us."
+        primary={{ label: 'Volunteer With Us', href: '/volunteer' }}
+        secondary={{ label: 'Explore Programs', href: '/programs' }}
+      />
     </>
   )
 }

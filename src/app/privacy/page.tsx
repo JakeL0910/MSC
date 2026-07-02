@@ -1,66 +1,63 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import PageHero from '@/components/shared/PageHero'
+import { site } from '@/data/site'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Make Spanish Casual',
-  description: 'Privacy Policy for Make Spanish Casual. We respect your privacy and will never sell your data.',
+  title: 'Privacy Policy',
+  description: 'How MSC handles information on this website.',
 }
 
+// TODO: have this reviewed before launch — it's a reasonable starting template,
+// not legal advice.
 export default function PrivacyPage() {
   return (
     <>
-      <section className="bg-msc-teal pt-20 pb-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-white/70">Legal</p>
-          <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
-          <p className="text-white/80 text-sm">Last updated: June 2026</p>
-        </div>
-      </section>
-
-      <section className="py-14 px-4 bg-msc-cream">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 sm:p-10 prose prose-gray max-w-none">
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Make Spanish Casual is committed to your privacy. We collect minimal data, we never sell it, and we use it only to provide and improve our free educational programs.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">Information We Collect</h2>
-            <p className="text-gray-600 leading-relaxed">
-              If you create an account: your name, email address, and the role you selected (e.g., "pre-health student"). We also collect usage data (which resources you access, progress on courses) to personalize your experience.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">How We Use It</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We use your information to provide access to MSC programs, track your learning progress, and send occasional updates about new resources (if you opt in). We do not use your data for advertising.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">We Will Never Sell Your Data</h2>
-            <p className="text-gray-600 leading-relaxed">
-              MSC is a nonprofit. Our mission is language access, not monetizing your information. We do not sell, trade, or share your personal data with third parties for commercial purposes.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">Cookies</h2>
-            <p className="text-gray-600 leading-relaxed">
-              We use essential cookies to keep you signed in and to understand aggregate site usage (e.g., Google Analytics in anonymized form). No tracking cookies for advertising.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">Your Rights</h2>
-            <p className="text-gray-600 leading-relaxed">
-              You may request access to, correction of, or deletion of your data at any time by contacting us at{' '}
-              <a href="mailto:jake@makespanishcasual.org" className="text-msc-teal hover:underline">
-                jake@makespanishcasual.org
-              </a>.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">Children</h2>
-            <p className="text-gray-600 leading-relaxed">
-              MSC's programs are available to users of all ages. We take particular care with accounts belonging to minors and do not knowingly collect sensitive personal information from children under 13 without parental consent.
-            </p>
-          </div>
-
-          <div className="mt-6 flex gap-4 text-sm">
-            <Link href="/terms" className="text-msc-teal hover:underline font-medium">Terms of Service</Link>
-            <Link href="/contact" className="text-msc-teal hover:underline font-medium">Contact Us</Link>
+      <PageHero eyebrow="Legal" title="Privacy Policy" description="Last updated: July 2026" />
+      <section className="py-14 bg-white">
+        <div className="container">
+          <div className="max-w-3xl mx-auto space-y-8 text-gray-700 leading-relaxed">
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">What we collect</h2>
+              <p>
+                This website does not require accounts and does not collect personal information
+                unless you choose to send it to us — for example, by submitting a contact,
+                volunteer, or partnership form (which opens an email from your own email client)
+                or emailing us directly.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">How we use it</h2>
+              <p>
+                Information you send us is used only to respond to you, coordinate volunteering or
+                partnerships, and send the newsletter if you asked for it. We do not sell or rent
+                personal information to anyone.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Young volunteers</h2>
+              <p>
+                Volunteers under 18 require a parent or guardian permission form before
+                participating in MSC programs. We collect only the information needed to
+                coordinate volunteering.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Third-party links</h2>
+              <p>
+                Our site links to external services (such as social media platforms). Their
+                privacy practices are governed by their own policies.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Contact</h2>
+              <p>
+                Questions about this policy? Email{' '}
+                <a href={`mailto:${site.email}`} className="text-msc-teal font-semibold hover:underline">
+                  {site.email}
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </section>

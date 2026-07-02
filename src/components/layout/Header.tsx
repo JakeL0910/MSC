@@ -3,22 +3,28 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { site } from '@/data/site'
 
-const programs = [
-  { label: 'Healthcare Spanish Initiative', href: '/programs/healthcare-spanish' },
-  { label: 'Community Learning Platform', href: '/programs/community' },
-  { label: 'Language Access Advocacy', href: '/programs/advocacy' },
+// ---------------------------------------------------------------------------
+// NAVIGATION STRUCTURE — edit these arrays to change the menus.
+// ---------------------------------------------------------------------------
+const aboutMenu = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Impact', href: '/impact' },
+  { label: 'Research & Innovation', href: '/research' },
+  { label: 'Blog & Updates', href: '/blog' },
 ]
 
-const learn = [
-  { label: 'Courses', href: '/courses' },
-  { label: 'Resource Center', href: '/resources' },
-  { label: 'Free Registration', href: '/register' },
+const resourcesMenu = [
+  { label: 'Resource Hub', href: '/resources' },
+  { label: 'Healthcare Phrase Library', href: '/phrase-library' },
+  { label: 'MSC Learn (Flashcards)', href: '/learn' },
+  { label: 'Communication Scorecard', href: '/scorecard' },
 ]
 
-const about = [
-  { label: 'About MSC', href: '/about' },
-  { label: 'Blog', href: '/blog' },
+const involvedMenu = [
+  { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Partner With Us', href: '/partners' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -64,7 +70,7 @@ function NavDropdown({
       {open && (
         <div
           role="menu"
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50"
+          className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-60 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50"
         >
           {items.map((item) => (
             <Link
@@ -113,7 +119,7 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', onClick)
   }, [])
 
-  // Close dropdown on route change
+  // Close menus on route change
   useEffect(() => {
     setOpenDropdown(null)
     setMobileOpen(false)
@@ -122,96 +128,87 @@ export default function Header() {
   const toggle = (name: string) =>
     setOpenDropdown((prev) => (prev === name ? null : name))
 
-  const isSection = (prefix: string) =>
-    prefix === '/' ? pathname === '/' : pathname.startsWith(prefix)
+  const isSection = (prefixes: string[]) =>
+    prefixes.some((p) => (p === '/' ? pathname === '/' : pathname.startsWith(p)))
+
+  const plainLink = (href: string, label: string) => (
+    <Link
+      href={href}
+      aria-current={isSection([href]) ? 'page' : undefined}
+      className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
+        isSection([href])
+          ? 'text-msc-teal bg-msc-teal-light'
+          : 'text-gray-700 hover:text-msc-teal hover:bg-msc-teal-light'
+      }`}
+    >
+      {label}
+    </Link>
+  )
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50 shadow-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-tight group">
-            <span className="text-xl font-bold text-msc-teal group-hover:text-msc-teal-dark transition-colors">
-              Make Spanish Casual
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <span className="w-9 h-9 rounded-xl bg-msc-teal text-white flex items-center justify-center font-bold text-sm tracking-tight group-hover:bg-msc-teal-dark transition-colors">
+              {site.acronym}
             </span>
-            <span className="text-xs text-gray-500 font-medium">Language Access | 501(c)3 Nonprofit</span>
+            <span className="flex flex-col leading-tight">
+              <span className="text-base font-bold text-msc-charcoal group-hover:text-msc-teal transition-colors">
+                Multilingual Support Collective
+              </span>
+              <span className="text-[11px] text-gray-500 font-medium">
+                Youth-led · {site.legalLine}
+              </span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav ref={navRef} className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
-            <Link
-              href="/"
-              aria-current={pathname === '/' ? 'page' : undefined}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
-                pathname === '/'
-                  ? 'text-msc-teal bg-msc-teal-light'
-                  : 'text-gray-700 hover:text-msc-teal hover:bg-msc-teal-light'
-              }`}
-            >
-              Home
-            </Link>
-
-            <NavDropdown
-              label="Programs"
-              items={programs}
-              open={openDropdown === 'Programs'}
-              onToggle={() => toggle('Programs')}
-              onClose={() => setOpenDropdown(null)}
-              isActive={isSection('/programs')}
-            />
-
-            <NavDropdown
-              label="Learn"
-              items={learn}
-              open={openDropdown === 'Learn'}
-              onToggle={() => toggle('Learn')}
-              onClose={() => setOpenDropdown(null)}
-              isActive={isSection('/courses') || isSection('/resources')}
-            />
-
+          <nav ref={navRef} className="hidden lg:flex items-center gap-0.5" aria-label="Primary navigation">
             <NavDropdown
               label="About"
-              items={about}
+              items={aboutMenu}
               open={openDropdown === 'About'}
               onToggle={() => toggle('About')}
               onClose={() => setOpenDropdown(null)}
-              isActive={isSection('/about') || isSection('/blog') || isSection('/contact')}
+              isActive={isSection(['/about', '/impact', '/research', '/blog'])}
             />
 
-            <Link
-              href="/partner"
-              aria-current={isSection('/partner') ? 'page' : undefined}
-              className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
-                isSection('/partner')
-                  ? 'text-msc-teal bg-msc-teal-light'
-                  : 'text-gray-700 hover:text-msc-teal hover:bg-msc-teal-light'
-              }`}
-            >
-              Partner
-            </Link>
+            {plainLink('/programs', 'Programs')}
 
-            {/* Donate — amber button to stand out */}
-            <Link
-              href="/donate"
-              className="ml-1 px-4 py-2 rounded-xl text-sm font-semibold bg-msc-amber text-msc-charcoal hover:bg-amber-400 hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Donate
-            </Link>
+            <NavDropdown
+              label="Resources"
+              items={resourcesMenu}
+              open={openDropdown === 'Resources'}
+              onToggle={() => toggle('Resources')}
+              onClose={() => setOpenDropdown(null)}
+              isActive={isSection(['/resources', '/phrase-library', '/learn', '/scorecard'])}
+            />
+
+            <NavDropdown
+              label="Get Involved"
+              items={involvedMenu}
+              open={openDropdown === 'Get Involved'}
+              onToggle={() => toggle('Get Involved')}
+              onClose={() => setOpenDropdown(null)}
+              isActive={isSection(['/volunteer', '/partners', '/contact'])}
+            />
           </nav>
 
           {/* Right actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5">
             <Link
-              href="/login"
-              className="text-sm font-medium text-gray-600 hover:text-msc-teal transition-colors"
+              href="/volunteer"
+              className="px-4 py-2 rounded-xl text-sm font-semibold border-2 border-msc-teal text-msc-teal hover:bg-msc-teal hover:text-white transition-all duration-200"
             >
-              Sign In
+              Volunteer
             </Link>
             <Link
-              href="/register"
+              href="/donate"
               className="px-4 py-2 rounded-xl text-sm font-semibold bg-msc-amber text-msc-charcoal hover:bg-amber-400 hover:-translate-y-0.5 transition-all duration-200"
             >
-              Start Free
+              Donate
             </Link>
           </div>
 
@@ -237,19 +234,19 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 py-3 px-4">
+        <div className="lg:hidden bg-white border-t border-gray-100 py-3 px-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
           <Link
-            href="/"
+            href="/programs"
             className="block py-2.5 text-sm font-medium text-gray-700 border-b border-gray-50"
             onClick={() => setMobileOpen(false)}
           >
-            Home
+            Programs
           </Link>
 
           {[
-            { label: 'Programs', items: programs },
-            { label: 'Learn', items: learn },
-            { label: 'About', items: about },
+            { label: 'About', items: aboutMenu },
+            { label: 'Resources', items: resourcesMenu },
+            { label: 'Get Involved', items: involvedMenu },
           ].map(({ label, items }) => (
             <div key={label} className="border-b border-gray-50">
               <button
@@ -285,35 +282,20 @@ export default function Header() {
             </div>
           ))}
 
-          <Link
-            href="/partner"
-            className="block py-2.5 text-sm font-medium text-gray-700 border-b border-gray-50"
-            onClick={() => setMobileOpen(false)}
-          >
-            Partner
-          </Link>
-          <Link
-            href="/donate"
-            className="block py-2.5 text-sm font-semibold text-msc-amber border-b border-gray-50"
-            onClick={() => setMobileOpen(false)}
-          >
-            Donate
-          </Link>
-
           <div className="flex gap-3 pt-3">
             <Link
-              href="/login"
-              className="flex-1 text-center py-2.5 text-sm font-medium border border-gray-200 rounded-xl text-gray-700 hover:border-msc-teal hover:text-msc-teal transition-colors"
+              href="/volunteer"
+              className="flex-1 text-center py-2.5 text-sm font-semibold border-2 border-msc-teal rounded-xl text-msc-teal"
               onClick={() => setMobileOpen(false)}
             >
-              Sign In
+              Volunteer
             </Link>
             <Link
-              href="/register"
+              href="/donate"
               className="flex-1 text-center py-2.5 text-sm font-semibold rounded-xl bg-msc-amber text-msc-charcoal"
               onClick={() => setMobileOpen(false)}
             >
-              Start Free
+              Donate
             </Link>
           </div>
         </div>

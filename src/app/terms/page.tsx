@@ -1,66 +1,65 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import PageHero from '@/components/shared/PageHero'
+import { site } from '@/data/site'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Make Spanish Casual',
-  description: 'Terms of Service for Make Spanish Casual — a free, open-access nonprofit language education platform.',
+  title: 'Terms of Service',
+  description: 'Terms for using the MSC website and resources.',
 }
 
+// TODO: have this reviewed before launch — it's a reasonable starting template,
+// not legal advice.
 export default function TermsPage() {
   return (
     <>
-      <section className="bg-msc-teal pt-20 pb-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-4 text-white/70">Legal</p>
-          <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
-          <p className="text-white/80 text-sm">Last updated: June 2026</p>
-        </div>
-      </section>
-
-      <section className="py-14 px-4 bg-msc-cream">
-        <div className="container mx-auto max-w-4xl">
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 sm:p-10 prose prose-gray max-w-none">
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Make Spanish Casual ("MSC", "we", "our") is a 501(c)3 nonprofit organization. By using makespanishcasual.org or any MSC platform, you agree to these terms. Our programs are free and always will be.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">1. Free Access</h2>
-            <p className="text-gray-600 leading-relaxed">
-              All MSC resources, courses, and programs are provided free of charge. We will never charge for access to educational content. Donations are voluntary and tax-deductible.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">2. User Accounts</h2>
-            <p className="text-gray-600 leading-relaxed">
-              You may create a free account to track progress and access community features. You are responsible for maintaining the security of your account credentials. We do not sell user data.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">3. Content Use</h2>
-            <p className="text-gray-600 leading-relaxed">
-              MSC's educational content is for personal, non-commercial use. You may share MSC resources for educational purposes with attribution. You may not reproduce or redistribute content commercially.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">4. Community Standards</h2>
-            <p className="text-gray-600 leading-relaxed">
-              MSC is a community grounded in equity and respect. Harassment, discrimination, or conduct that undermines the safety or dignity of community members is grounds for removal.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">5. Disclaimer</h2>
-            <p className="text-gray-600 leading-relaxed">
-              MSC's healthcare Spanish content is educational and does not constitute medical advice. Clinical decisions should always involve qualified healthcare providers.
-            </p>
-
-            <h2 className="text-lg font-bold text-msc-charcoal mt-8 mb-3">6. Contact</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Questions about these terms? Email{' '}
-              <a href="mailto:jake@makespanishcasual.org" className="text-msc-teal hover:underline">
-                jake@makespanishcasual.org
-              </a>.
-            </p>
-          </div>
-
-          <div className="mt-6 flex gap-4 text-sm">
-            <Link href="/privacy" className="text-msc-teal hover:underline font-medium">Privacy Policy</Link>
-            <Link href="/contact" className="text-msc-teal hover:underline font-medium">Contact Us</Link>
+      <PageHero eyebrow="Legal" title="Terms of Service" description="Last updated: July 2026" />
+      <section className="py-14 bg-white">
+        <div className="container">
+          <div className="max-w-3xl mx-auto space-y-8 text-gray-700 leading-relaxed">
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Use of resources</h2>
+              <p>
+                MSC resources are free for personal, educational, and community use. You may
+                print, share, and distribute them non-commercially with attribution to{' '}
+                {site.name}. Please don't sell them or present them as your own work.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Educational purpose only</h2>
+              <p>
+                MSC is not a medical provider, law firm, or licensed interpretation service. Our
+                materials — including healthcare vocabulary guides and phrase libraries — are
+                educational communication support. They are not medical, legal, or professional
+                advice, and they are not a substitute for professional interpretation, evaluation,
+                or care. Always consult qualified professionals for decisions about health,
+                education, or legal matters.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Accuracy</h2>
+              <p>
+                Our volunteer teams review materials for accuracy, but we cannot guarantee that
+                every translation or explanation is error-free or appropriate for every situation.
+                If you find an error, please tell us — we correct published resources promptly.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Volunteer contributions</h2>
+              <p>
+                By submitting a resource contribution, you confirm the work is yours to share and
+                grant MSC permission to review, edit, and publish it with credit to you.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-3">Contact</h2>
+              <p>
+                Questions about these terms? Email{' '}
+                <a href={`mailto:${site.email}`} className="text-msc-teal font-semibold hover:underline">
+                  {site.email}
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </section>

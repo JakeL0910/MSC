@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import NewsletterSignup from './NewsletterSignup'
+import { site } from '@/data/site'
 
 function TwitterIcon() {
   return (
@@ -33,31 +34,59 @@ function YouTubeIcon() {
   )
 }
 
+const programLinks = [
+  { label: 'Health Communication Resources', href: '/programs/health-communication-resources' },
+  { label: 'ESL & Language Tutoring', href: '/programs/esl-tutoring' },
+  { label: 'Inclusive Language Learning', href: '/programs/inclusive-language-learning' },
+  { label: 'Youth Research & Innovation', href: '/programs/youth-research' },
+  { label: 'All Programs', href: '/programs' },
+]
+
+const resourceLinks = [
+  { label: 'Resource Hub', href: '/resources' },
+  { label: 'Healthcare Phrase Library', href: '/phrase-library' },
+  { label: 'MSC Learn', href: '/learn' },
+  { label: 'Communication Scorecard', href: '/scorecard' },
+  { label: 'Blog & Updates', href: '/blog' },
+]
+
+const orgLinks = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Our Impact', href: '/impact' },
+  { label: 'Research & Innovation', href: '/research' },
+  { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Partner With Us', href: '/partners' },
+  { label: 'Contact', href: '/contact' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-msc-charcoal text-gray-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <div className="container py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="block mb-3">
-              <span className="text-2xl font-bold text-white">Make Spanish Casual</span>
+            <Link href="/" className="flex items-center gap-2.5 mb-3">
+              <span className="w-9 h-9 rounded-xl bg-msc-teal text-white flex items-center justify-center font-bold text-sm">
+                {site.acronym}
+              </span>
+              <span className="text-xl font-bold text-white">{site.name}</span>
             </Link>
-            <p className="text-sm text-gray-400 mb-1">Language Access | 501(c)3 Nonprofit</p>
+            <p className="text-sm text-gray-400 mb-1">Youth-led · {site.legalLine}</p>
             <p className="text-sm text-gray-400 leading-relaxed mt-3 max-w-sm">
-              Advancing equitable language access through free, culturally authentic Spanish education — for learners, providers, and communities.
+              {site.mission}
             </p>
             <p className="text-sm text-msc-amber font-semibold mt-4 italic">
               Language is access.
             </p>
 
-            {/* Social links */}
+            {/* Social links — update URLs in src/data/site.ts */}
             <div className="flex items-center gap-3 mt-5">
               {[
-                { href: 'https://twitter.com/makespanishcasual', label: 'Twitter / X', Icon: TwitterIcon },
-                { href: 'https://instagram.com/makespanishcasual', label: 'Instagram', Icon: InstagramIcon },
-                { href: 'https://linkedin.com/company/makespanishcasual', label: 'LinkedIn', Icon: LinkedInIcon },
-                { href: 'https://youtube.com/@makespanishcasual', label: 'YouTube', Icon: YouTubeIcon },
+                { href: site.social.twitter, label: 'Twitter / X', Icon: TwitterIcon },
+                { href: site.social.instagram, label: 'Instagram', Icon: InstagramIcon },
+                { href: site.social.linkedin, label: 'LinkedIn', Icon: LinkedInIcon },
+                { href: site.social.youtube, label: 'YouTube', Icon: YouTubeIcon },
               ].map(({ href, label, Icon }) => (
                 <a
                   key={href}
@@ -77,26 +106,27 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Programs</h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link href="/programs/healthcare-spanish" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Healthcare Spanish Initiative
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs/community" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Community Learning Platform
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs/advocacy" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Language Access Advocacy
-                </Link>
-              </li>
-              <li>
-                <Link href="/programs" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  All Programs
-                </Link>
-              </li>
+              {programLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Resources</h3>
+            <ul className="space-y-2.5">
+              {resourceLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -104,70 +134,49 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Organization</h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  About MSC
-                </Link>
-              </li>
-              <li>
-                <Link href="/courses" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Resource Center
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/partner" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Partner With Us
-                </Link>
-              </li>
+              {orgLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link href="/donate" className="text-sm text-msc-amber hover:text-amber-400 font-medium transition-colors">
                   Make a Donation
-                </Link>
-              </li>
-              <li>
-                <Link href="/downloads" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Downloads &amp; Guides
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Contact
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Newsletter stub */}
+        {/* Newsletter */}
         <div className="border border-gray-800 rounded-2xl px-6 py-5 mb-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="flex-1">
               <p className="text-sm font-semibold text-white">Stay updated</p>
-              <p className="text-xs text-gray-400 mt-0.5">Get new resources, research, and MSC news.</p>
+              <p className="text-xs text-gray-400 mt-0.5">New resources, research, and volunteer opportunities — about once a month.</p>
             </div>
             <NewsletterSignup />
           </div>
         </div>
 
+        {/* Educational disclaimer */}
+        <p className="text-xs text-gray-500 leading-relaxed mb-6 max-w-3xl">
+          MSC provides educational resources and communication support. We are not a medical
+          provider and our materials are not medical advice or a substitute for professional
+          interpretation, evaluation, or care.
+        </p>
+
         <div className="border-t border-gray-800 pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © 2026 Make Spanish Casual. All rights reserved. 501(c)3 Nonprofit Organization.
+            © {new Date().getFullYear()} {site.name}. All rights reserved. {site.legalLine}.
           </p>
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <Link href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
-            <a href="mailto:jake@makespanishcasual.org" className="hover:text-gray-300 transition-colors">
-              jake@makespanishcasual.org
+            <a href={`mailto:${site.email}`} className="hover:text-gray-300 transition-colors">
+              {site.email}
             </a>
           </div>
         </div>

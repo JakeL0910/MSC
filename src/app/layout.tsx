@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { site } from '@/data/site'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,13 +13,34 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Make Spanish Casual | Language Access Nonprofit',
-  description: 'Make Spanish Casual is a nonprofit advancing equitable language access through free, culturally authentic Spanish education — with a focus on healthcare settings where language barriers affect outcomes.',
-  keywords: ['Spanish education', 'language access', 'health equity', 'nonprofit', 'medical Spanish', 'healthcare Spanish'],
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} (${site.acronym}) | Language Access & Health Communication`,
+    template: `%s | ${site.acronym}`,
+  },
+  description: site.subtagline,
+  keywords: [
+    'language access',
+    'health communication',
+    'health literacy',
+    'ESL tutoring',
+    'multilingual resources',
+    'inclusive language learning',
+    'youth-led nonprofit',
+    'culturally responsive communication',
+  ],
   openGraph: {
-    title: 'Make Spanish Casual | Language Access Nonprofit',
-    description: 'Free, culturally authentic Spanish education for learners, providers, and communities.',
+    title: `${site.name} (${site.acronym})`,
+    description: site.tagline,
+    url: site.url,
+    siteName: site.name,
     type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${site.name} (${site.acronym})`,
+    description: site.tagline,
   },
 }
 
