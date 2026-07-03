@@ -83,7 +83,7 @@ export default function HomePage() {
                 <span className="text-msc-teal">healthcare</span>,{' '}
                 <span className="text-msc-teal">education</span>, and community life.
               </h1>
-              <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
+              <p className="serif-lead text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
                 {site.subtagline}
               </p>
               <div className="flex flex-wrap gap-3">
@@ -139,7 +139,7 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="container text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-4">Our mission</p>
-          <p className="text-2xl md:text-3xl font-semibold text-msc-charcoal leading-snug max-w-4xl mx-auto">
+          <p className="serif-lead text-2xl md:text-3xl font-semibold text-msc-charcoal leading-snug max-w-4xl mx-auto">
             “{site.mission}”
           </p>
         </div>

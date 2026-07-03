@@ -28,7 +28,7 @@ export default function PageHero({
           )}
           <h1 className="text-4xl md:text-5xl font-bold text-msc-charcoal mb-5">{title}</h1>
           {description && (
-            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">{description}</p>
+            <p className="serif-lead text-lg text-gray-600 leading-relaxed max-w-2xl">{description}</p>
           )}
           {actions && actions.length > 0 && (
             <div className="flex flex-wrap gap-3 mt-8">

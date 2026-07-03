@@ -13,6 +13,14 @@
   --color-primary: #1A6B72;
   --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+
+  /* Body & caption text: warm, slightly teal-tinted neutrals instead of the
+     default cool grays — reads more intentional and on-brand. These override
+     text-gray-400/500/600/700 site-wide. Borders (gray-50/100/200) unchanged. */
+  --color-gray-700: #2f4247;
+  --color-gray-600: #3e5257;
+  --color-gray-500: #5f7377;
+  --color-gray-400: #8fa1a4;
 }
 
 * {
@@ -39,13 +47,21 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
 }
 
-/* Warm editorial serif for display headings; body stays in the sans font.
-   Applied to the major heading levels so section titles and card titles
-   share one distinctive voice. UI labels/eyebrows use uppercase sans. */
-h1, h2, h3 {
+/* Warm editorial serif for all heading levels + editorial reading contexts.
+   Body copy, UI labels/eyebrows, forms, and nav stay in the sans font. */
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
   letter-spacing: -0.015em;
   font-optical-sizing: auto;
+}
+
+/* Serif for long-form reading (blog articles) and large page/section intros. */
+article p,
+.serif-lead {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+}
+article p {
+  line-height: 1.75;
 }
 
 /* Accessible focus rings using brand teal */

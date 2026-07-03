@@ -17,7 +17,7 @@ export default function SectionHeading({
         <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-3">{eyebrow}</p>
       )}
       <h2 className="text-3xl md:text-4xl font-bold text-msc-charcoal mb-4">{title}</h2>
-      {description && <p className="text-gray-600 leading-relaxed">{description}</p>}
+      {description && <p className="serif-lead text-gray-600 leading-relaxed">{description}</p>}
     </div>
   )
 }
