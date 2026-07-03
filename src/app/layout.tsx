@@ -14,6 +14,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  // NOINDEX: keeps the site out of Google while it's a private draft.
+  // When you're ready to go fully public, remove this `robots` block (and
+  // delete src/app/robots.ts) so search engines can index the site.
+  robots: { index: false, follow: false },
   title: {
     default: `${site.name} (${site.acronym}) | Language Access & Health Communication`,
     template: `%s | ${site.acronym}`,
