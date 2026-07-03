@@ -39,9 +39,21 @@ Almost all content lives in plain data files — you rarely need to touch page c
 Search the codebase for `TODO:` to find every placeholder that needs a real
 value (email, EIN, social handles, team names, partner logos, donation platform).
 
-## Adding a real resource PDF
+## Resource PDFs
 
-1. Drop the PDF in `public/downloads/`
+The downloadable resources (phrasebook, family toolkit, ESL pack, tutor toolkit,
+scorecard) are generated from `scripts/generate-resource-pdfs.mjs` — content and
+layout live there as HTML/CSS, rendered to PDF via Playwright.
+
+```bash
+node scripts/generate-resource-pdfs.mjs   # rewrites public/downloads/*.pdf
+```
+
+Edit a document's content object in that script and re-run to update its PDF.
+
+To add a **new** downloadable resource:
+
+1. Drop the PDF in `public/downloads/` (or add it to the generator script)
 2. In `src/data/resources.ts`, set `file: '/downloads/your-file.pdf'` on the resource
 3. Download buttons appear automatically; resources without a `file` show a
    polished "coming soon" state

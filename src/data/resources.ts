@@ -48,11 +48,6 @@ export const resourceCategories: ResourceCategory[] = [
     description: 'Training guides and templates for MSC volunteers.',
   },
   {
-    id: 'research-summaries',
-    label: 'Research Summaries',
-    description: 'Plain-language summaries of our student research.',
-  },
-  {
     id: 'community-guides',
     label: 'Community Guides',
     description: 'Language-access materials for local organizations.',
@@ -86,7 +81,7 @@ export const resources: Resource[] = [
       'This phrasebook covers a full clinic visit from the front desk to checkout: greetings, insurance questions, symptom descriptions, and the questions patients most often want to ask but don’t know how to phrase.',
       'Every phrase appears in Spanish and English with a short note on when to use it. Designed to be printed, folded, and brought to an appointment.',
     ],
-    file: '/downloads/healthcare-spanish-initiative.pdf',
+    file: '/downloads/clinic-visit-phrasebook.pdf',
   },
   {
     slug: 'pharmacy-vocabulary-guide',
@@ -157,7 +152,7 @@ export const resources: Resource[] = [
       'Parents are often the communication bridge for their whole family. This toolkit gives them practical support: how to prepare for a parent-teacher conference, what to expect at a well-child visit, how to ask for an interpreter, and how to read common school forms.',
       'Each guide is two pages or less, bilingual, and written for busy families — not professionals.',
     ],
-    file: '/downloads/msc-overview.pdf',
+    file: '/downloads/family-language-toolkit.pdf',
   },
   {
     slug: 'parent-teacher-conference-guide',
@@ -185,7 +180,7 @@ export const resources: Resource[] = [
       'A starter collection for new English learners built around everyday situations rather than grammar drills. Includes practice dialogues, vocabulary cards, and self-check activities.',
       'Used by our volunteer tutors as the foundation for beginner sessions.',
     ],
-    file: '/downloads/resource-catalog.pdf',
+    file: '/downloads/everyday-english-starter-pack.pdf',
   },
   {
     slug: 'conversation-practice-prompts',
@@ -223,7 +218,7 @@ export const resources: Resource[] = [
     description:
       'A plain-language guide for families raising bilingual children with developmental or language differences.',
     overview: [
-      'Families often hear conflicting advice about bilingualism and developmental differences. This guide summarizes what current research actually supports, in plain language, and offers practical strategies for supporting communication in both languages.',
+      'Families often hear conflicting advice about bilingualism and developmental differences. This guide summarizes what experts generally support, in plain language, and offers practical strategies for supporting communication in both languages.',
       'Reviewed with guidance from our advisory mentors. Educational only — not a substitute for evaluation by a speech-language professional.',
     ],
   },
@@ -240,7 +235,7 @@ export const resources: Resource[] = [
     overview: [
       'Our core volunteer training in one packet: how to run a first session, how to structure a lesson around a learner’s goals, and how to teach with cultural humility and patience.',
     ],
-    file: '/downloads/partnership-guide.pdf',
+    file: '/downloads/volunteer-tutor-training-toolkit.pdf',
   },
   {
     slug: 'translation-review-checklist',
@@ -252,32 +247,6 @@ export const resources: Resource[] = [
       'The two-reviewer quality checklist every MSC translation goes through before publication.',
     overview: [
       'A step-by-step checklist covering accuracy, reading level, tone, formatting, and the situations where volunteer translation is not appropriate and professional services should be recommended instead.',
-    ],
-  },
-
-  // --- Research Summaries ---------------------------------------------------
-  {
-    slug: 'practical-language-input-summary',
-    title: 'Research Brief: Practical Language Input',
-    category: 'research-summaries',
-    format: 'Summary',
-    languages: ['English'],
-    description:
-      'A plain-language summary of our student research on how real-world, context-dependent language shapes learning.',
-    overview: [
-      'Textbook language and real-world language differ more than most curricula acknowledge. This brief summarizes our student-led research on practical language input — including context-dependent expressions — and what it suggests for learners and educators.',
-    ],
-  },
-  {
-    slug: 'ai-language-analysis-summary',
-    title: 'Research Brief: AI-Assisted Language Sample Analysis',
-    category: 'research-summaries',
-    format: 'Summary',
-    languages: ['English'],
-    description:
-      'How our student researchers are exploring AI tools to analyze language samples — methods, promise, and limits.',
-    overview: [
-      'A short, accessible overview of our work exploring whether AI tools can help analyze language samples faster and more consistently — and the accuracy and privacy questions that come with it.',
     ],
   },
 
@@ -295,7 +264,7 @@ export const resources: Resource[] = [
       'Ten questions that reveal how accessible your organization’s communication really is — reading level, translation availability, visual clarity, and more. Use the interactive version online or download the printable checklist.',
       'Educational and self-assessment only; not a formal compliance audit.',
     ],
-    file: '/downloads/donation-impact.pdf',
+    file: '/downloads/communication-access-scorecard.pdf',
   },
   {
     slug: 'plain-language-writing-guide',

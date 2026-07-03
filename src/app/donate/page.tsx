@@ -8,7 +8,7 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support MSC: your donation funds free multilingual resources, volunteer tutoring, and student-led research on language access.',
+    'Support MSC: your donation funds free multilingual resources and volunteer tutoring for language access.',
 }
 
 // Giving levels — edit amounts and impact lines freely.

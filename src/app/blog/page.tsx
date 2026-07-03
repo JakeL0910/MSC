@@ -71,7 +71,7 @@ export default function BlogPage() {
 
       <CtaBand
         title="Get new posts and resources by email"
-        description="One email a month: new resources, research updates, and volunteer opportunities. No spam, ever."
+        description="One email a month: new resources and volunteer opportunities. No spam, ever."
         primary={{ label: 'Subscribe via Contact Page', href: '/contact' }}
         secondary={{ label: 'Browse Resources', href: '/resources' }}
       />

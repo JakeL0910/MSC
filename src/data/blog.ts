@@ -117,11 +117,11 @@ export const blogPosts: BlogPost[] = [
     category: 'Inclusive Learning',
     readMinutes: 6,
     excerpt:
-      'Bilingualism and neurodiversity are often treated as a complication. Research tells a more hopeful story — if support is designed inclusively.',
+      'Bilingualism and neurodiversity are often treated as a complication. With the right support, the picture is more hopeful.',
     body: [
       {
         paragraphs: [
-          'Families raising bilingual children with developmental or language differences often receive outdated advice: “Stick to one language, it’s less confusing.” Current research broadly does not support this. Children with developmental differences can and do grow up bilingual, and their home language is part of their identity and family connection — not an obstacle to remove.',
+          'Families raising bilingual children with developmental or language differences often receive outdated advice: “Stick to one language, it’s less confusing.” Experts broadly do not support this. Children with developmental differences can and do grow up bilingual, and their home language is part of their identity and family connection — not an obstacle to remove.',
         ],
       },
       {
@@ -132,9 +132,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        heading: 'Where our research fits',
+        heading: 'How MSC supports these families',
         paragraphs: [
-          'MSC’s student researchers study language input in bilingual and neurodiverse populations — including how everyday, context-dependent language (the practical way people actually speak) shows up in what children hear and learn. We turn what we find into visual vocabulary cards, family guides, and tutor training, so research doesn’t stay on a poster board.',
+          'MSC builds visual vocabulary cards, family guides, and tutor training around inclusive, practical communication — materials designed for real households, not abstract drills.',
           'As always: our materials support families and educators, and are never a substitute for evaluation by speech-language professionals.',
         ],
       },
@@ -166,6 +166,99 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [
           'Every MSC tutor completes our training toolkit: session structure, first-session checklists, and the basics of culturally responsive teaching — including what not to do, like correcting every error or treating a learner’s accent as a problem to fix.',
           'If that sounds like something you’d be good at, our volunteer application takes about five minutes. Learners are waiting.',
+        ],
+      },
+    ],
+  },
+
+  // --------------------------------------------------------------------------
+  // ORGANIZATION HISTORY — real events carried over from the original
+  // makespanishcasual.org site and rewritten for the MSC brand. Update photos
+  // by adding an image gallery to these posts later if desired.
+  // --------------------------------------------------------------------------
+  {
+    slug: 'actfl-2025-new-orleans',
+    title: 'MSC at ACTFL 2025 in New Orleans',
+    date: '2025-12-17',
+    category: 'Updates',
+    readMinutes: 3,
+    excerpt:
+      'Our founder returned to the ACTFL Convention for a third straight year — this time volunteering with the early language learning community and bringing MSC’s language-access mission to a global stage.',
+    body: [
+      {
+        paragraphs: [
+          'This December, MSC founder Jake Li attended the ACTFL Convention in New Orleans — his third consecutive year at the largest annual gathering of language educators in the country. The convention brings together more than 6,000 attendees and offers professional development spanning the entire language profession, for educators of every language and level.',
+        ],
+      },
+      {
+        heading: 'Volunteering with early language learning',
+        paragraphs: [
+          'This year Jake volunteered with NNELL, the National Network for Early Language Learning — an organization dedicated to language education for young learners. It was a fitting place for MSC to show up: our work has grown from Spanish learning into a broader mission around language access, health communication, and inclusive learning, and early language education sits right at that intersection.',
+          'Between sessions, the team connected with educators from across the country — swapping ideas about how to make language learning more practical, more cultural, and more accessible, and closing out one evening with beignets at Café du Monde.',
+        ],
+      },
+      {
+        heading: 'Why we keep coming back',
+        paragraphs: [
+          'Showing up at a professional convention as a youth-led organization matters. It’s where we learn from career educators, test our ideas against the field, and remind ourselves that the resources we build for families are part of a much larger conversation about language and access.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'dia-de-los-muertos-community-celebration',
+    title: 'Celebrating Día de los Muertos with Our Community',
+    date: '2024-11-02',
+    category: 'Community',
+    readMinutes: 3,
+    excerpt:
+      'MSC teamed up with the Williams High School Spanish Club to bring Día de los Muertos to Celebration Park in Allen, Texas — with games, coloring, candy, and a lot of cultural pride.',
+    body: [
+      {
+        paragraphs: [
+          'On November 2nd, MSC partnered with the Williams High School Spanish Club to celebrate Día de los Muertos at Celebration Park in Allen, Texas. Families stopped by our booth throughout the day for coloring sheets, Spanish games, and candy prizes — a warm, low-pressure way to share a meaningful cultural tradition.',
+        ],
+      },
+      {
+        heading: 'Language is culture',
+        paragraphs: [
+          'Día de los Muertos is a celebration of memory and family, and it’s inseparable from the language and culture behind it. Events like this are exactly why MSC exists: language access isn’t only about clinics and forms, it’s about belonging — making space for communities to see their culture reflected and celebrated in public.',
+          'For our student volunteers, it was also a reminder of how much community events can do. A coloring sheet and a friendly conversation open a door that no flyer ever could.',
+        ],
+      },
+      {
+        heading: 'Partner with us on the next one',
+        paragraphs: [
+          'Community celebrations like this happen because a school, a park, and a group of volunteers decide to make them happen. If your school or organization wants to co-host a cultural or language-access event, we’d love to hear from you.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'actfl-2024-philadelphia-presentation',
+    title: 'Presenting at ACTFL 2024: Teaching Language with AI',
+    date: '2024-11-24',
+    category: 'Updates',
+    readMinutes: 3,
+    excerpt:
+      'At ACTFL 2024 in Philadelphia, our founder presented to more than 100 language educators on using AI and technology to teach real-world Spanish — an early chapter in the research that shapes MSC today.',
+    body: [
+      {
+        paragraphs: [
+          'At ACTFL 2024 — the Annual Convention and World Languages Expo, held November 22–24 at the Pennsylvania Convention Center in Philadelphia — MSC founder Jake Li delivered a 45-minute presentation to more than 100 language educators from around the world. The session explored how AI and technology can help teach the practical, real-world Spanish that learners actually encounter, including the informal, context-dependent expressions textbooks leave out.',
+        ],
+      },
+      {
+        heading: 'From a talk to a mission',
+        paragraphs: [
+          'That presentation captures where MSC began: a curiosity about the gap between textbook language and the language people really speak. Studying that gap — and how tools like AI can help analyze it — grew into the student-led research program we run today, now spanning language input, bilingual and neurodiverse communication, and health literacy.',
+          'Slang and informal speech were the entry point, but the real subject was always bigger: how people communicate, and how we make that communication more accessible.',
+        ],
+      },
+      {
+        heading: 'Sharing what we learn',
+        paragraphs: [
+          'Presenting to a room of career educators pushed our work to be clearer and more rigorous. It’s a habit we’ve kept — our research still gets presented publicly, and what we learn flows straight back into the free resources we build for families and communities.',
         ],
       },
     ],

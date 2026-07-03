@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { site } from '@/data/site'
+import BrandMark from '@/components/shared/BrandMark'
 
 // ---------------------------------------------------------------------------
 // NAVIGATION STRUCTURE — edit these arrays to change the menus.
@@ -11,7 +12,6 @@ import { site } from '@/data/site'
 const aboutMenu = [
   { label: 'About Us', href: '/about' },
   { label: 'Our Impact', href: '/impact' },
-  { label: 'Research & Innovation', href: '/research' },
   { label: 'Blog & Updates', href: '/blog' },
 ]
 
@@ -151,9 +151,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <span className="w-9 h-9 rounded-xl bg-msc-teal text-white flex items-center justify-center font-bold text-sm tracking-tight group-hover:bg-msc-teal-dark transition-colors">
-              {site.acronym}
-            </span>
+            <BrandMark className="w-9 h-9 transition-transform group-hover:scale-105" />
             <span className="flex flex-col leading-tight">
               <span className="text-base font-bold text-msc-charcoal group-hover:text-msc-teal transition-colors">
                 Multilingual Support Collective
@@ -172,7 +170,7 @@ export default function Header() {
               open={openDropdown === 'About'}
               onToggle={() => toggle('About')}
               onClose={() => setOpenDropdown(null)}
-              isActive={isSection(['/about', '/impact', '/research', '/blog'])}
+              isActive={isSection(['/about', '/impact', '/blog'])}
             />
 
             {plainLink('/programs', 'Programs')}

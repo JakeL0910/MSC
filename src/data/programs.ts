@@ -102,13 +102,13 @@ export const programs: Program[] = [
       'Support for neurodiverse learners and children with developmental or language differences — because language access includes accessible learning.',
     description: [
       'Language learning materials are rarely designed with neurodiverse learners in mind. Children with developmental or language differences — especially in bilingual households — often need clearer structure, more visual support, and more patience than standard materials provide.',
-      'We adapt our tutoring approaches and resources for these learners: visual vocabulary supports, predictable session structures, and family guides that help parents support communication at home. We collaborate with educators and draw on current research in bilingual and neurodiverse language development.',
+      'We adapt our tutoring approaches and resources for these learners: visual vocabulary supports, predictable session structures, and family guides that help parents support communication at home. We collaborate with educators and speech-language professionals to keep our materials practical and inclusive.',
     ],
     whatWeDo: [
       'Adapt tutoring materials with visual supports and predictable structure',
       'Publish family guides on supporting bilingual, neurodiverse communicators',
       'Train volunteers on inclusive, strengths-based tutoring practices',
-      'Connect our student research on language development back into our materials',
+      'Incorporate feedback from families and educators into our materials',
     ],
     whoItsFor:
       'Neurodiverse learners, children with developmental or language differences, their families, and the educators who support them.',
@@ -137,29 +137,6 @@ export const programs: Program[] = [
       'Libraries, schools, community centers, and small nonprofits serving multilingual neighborhoods.',
     ctaLabel: 'Partner With Us',
     ctaHref: '/partners',
-  },
-  {
-    slug: 'youth-research',
-    name: 'Youth Research & Innovation',
-    tagline: 'Student-led research on how people really communicate.',
-    icon: 'beaker',
-    color: 'coral',
-    summary:
-      'Student research on language input, communication access, AI language tools, and applied linguistics — turning curiosity into better resources.',
-    description: [
-      'MSC started with a research question: how does real-world language — the practical, context-dependent way people actually speak — shape learning and communication access? That question grew into a student research program.',
-      'Our student researchers study practical language input, communication differences in bilingual and neurodiverse populations, health literacy, and how AI tools can help analyze language samples. Findings feed directly back into our programs and resources.',
-    ],
-    whatWeDo: [
-      'Support student-led studies in applied linguistics and language access',
-      'Explore AI-assisted analysis of language samples and learner input',
-      'Present findings at science fairs, conferences, and community events',
-      'Translate research into practical guides and program improvements',
-    ],
-    whoItsFor:
-      'High school and college students interested in linguistics, health communication, education, or AI — and the mentors who guide them.',
-    ctaLabel: 'Explore Our Research',
-    ctaHref: '/research',
   },
   {
     slug: 'creative-language-projects',

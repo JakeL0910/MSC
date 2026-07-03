@@ -26,7 +26,7 @@ export const volunteerRoles: VolunteerRole[] = [
     title: 'Healthcare Vocabulary Resource Creator',
     icon: 'document-text',
     description:
-      'Research and draft plain-language guides for clinic, pharmacy, and insurance vocabulary. Great for future health-career students.',
+      'Write and draft plain-language guides for clinic, pharmacy, and insurance vocabulary. Great for future health-career students.',
     skills: ['Clear writing', 'Attention to accuracy', 'Interest in health communication'],
     commitment: '2–3 hours/week, flexible',
   },
@@ -56,15 +56,6 @@ export const volunteerRoles: VolunteerRole[] = [
       'Run phrase-of-the-week series, awareness campaigns, and volunteer spotlights across our social channels.',
     skills: ['Short-form writing or video', 'Consistency', 'Good judgment on tone'],
     commitment: '1–2 hours/week',
-  },
-  {
-    id: 'research-assistant',
-    title: 'Research Assistant',
-    icon: 'beaker',
-    description:
-      'Support student-led studies: literature reviews, data organization, readability scoring, and presentation prep.',
-    skills: ['Curiosity & rigor', 'Spreadsheet basics', 'Interest in linguistics or health'],
-    commitment: '2–4 hours/week during active studies',
   },
   {
     id: 'outreach-coordinator',
@@ -119,7 +110,7 @@ export const volunteerFaq: FaqItem[] = [
   {
     question: 'Do I need to be bilingual to volunteer?',
     answer:
-      'No. Translation and review roles require bilingual proficiency, but ESL tutoring, design, content creation, research, and outreach only require fluent English. Many of our volunteers speak one language.',
+      'No. Translation and review roles require bilingual proficiency, but ESL tutoring, design, content creation, and outreach only require fluent English. Many of our volunteers speak one language.',
   },
   {
     question: 'Do I need teaching experience to tutor?',
@@ -129,7 +120,7 @@ export const volunteerFaq: FaqItem[] = [
   {
     question: 'Can I volunteer remotely?',
     answer:
-      'Yes. Resource creation, translation, design, social media, and research roles are fully remote. Tutoring can be remote or in person depending on learner needs in your area.',
+      'Yes. Resource creation, translation, design, and social media roles are fully remote. Tutoring can be remote or in person depending on learner needs in your area.',
   },
   {
     question: 'Does volunteering count for service hours?',

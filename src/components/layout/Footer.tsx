@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import NewsletterSignup from './NewsletterSignup'
 import { site } from '@/data/site'
+import BrandMark from '@/components/shared/BrandMark'
 
 function TwitterIcon() {
   return (
@@ -38,7 +39,6 @@ const programLinks = [
   { label: 'Health Communication Resources', href: '/programs/health-communication-resources' },
   { label: 'ESL & Language Tutoring', href: '/programs/esl-tutoring' },
   { label: 'Inclusive Language Learning', href: '/programs/inclusive-language-learning' },
-  { label: 'Youth Research & Innovation', href: '/programs/youth-research' },
   { label: 'All Programs', href: '/programs' },
 ]
 
@@ -53,7 +53,6 @@ const resourceLinks = [
 const orgLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Our Impact', href: '/impact' },
-  { label: 'Research & Innovation', href: '/research' },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Partner With Us', href: '/partners' },
   { label: 'Contact', href: '/contact' },
@@ -67,9 +66,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-3">
-              <span className="w-9 h-9 rounded-xl bg-msc-teal text-white flex items-center justify-center font-bold text-sm">
-                {site.acronym}
-              </span>
+              <BrandMark className="w-9 h-9" />
               <span className="text-xl font-bold text-white">{site.name}</span>
             </Link>
             <p className="text-sm text-gray-400 mb-1">Youth-led · {site.legalLine}</p>
@@ -87,9 +84,11 @@ export default function Footer() {
                 { href: site.social.instagram, label: 'Instagram', Icon: InstagramIcon },
                 { href: site.social.linkedin, label: 'LinkedIn', Icon: LinkedInIcon },
                 { href: site.social.youtube, label: 'YouTube', Icon: YouTubeIcon },
-              ].map(({ href, label, Icon }) => (
+              ]
+                .filter((item): item is typeof item & { href: string } => Boolean(item.href))
+                .map(({ href, label, Icon }) => (
                 <a
-                  key={href}
+                  key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -155,7 +154,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="flex-1">
               <p className="text-sm font-semibold text-white">Stay updated</p>
-              <p className="text-xs text-gray-400 mt-0.5">New resources, research, and volunteer opportunities — about once a month.</p>
+              <p className="text-xs text-gray-400 mt-0.5">New resources and volunteer opportunities — about once a month.</p>
             </div>
             <NewsletterSignup />
           </div>

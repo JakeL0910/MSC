@@ -10,7 +10,7 @@ import { volunteerRoles, timeCommitments, volunteerFaq } from '@/data/volunteer'
 export const metadata: Metadata = {
   title: 'Volunteer',
   description:
-    'Volunteer with MSC: tutor English learners, create healthcare vocabulary resources, translate materials, design, research, and lead workshops. Service hours verified.',
+    'Volunteer with MSC: tutor English learners, create healthcare vocabulary resources, translate materials, design, and lead workshops. Service hours verified.',
 }
 
 export default function VolunteerPage() {
@@ -19,7 +19,7 @@ export default function VolunteerPage() {
       <PageHero
         eyebrow="Volunteer"
         title="Do work that opens doors for someone else"
-        description="MSC volunteers tutor, translate, design, research, and organize. No experience required for most roles — we train you. Service hours verified for school requirements."
+        description="MSC volunteers tutor, translate, design, and organize. No experience required for most roles — we train you. Service hours verified for school requirements."
         actions={[
           { label: 'Apply Now', href: '#apply' },
           { label: 'See the Roles', href: '#roles', variant: 'secondary' },

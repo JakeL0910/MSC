@@ -25,9 +25,9 @@ const values = [
     text: 'We learn from the communities we serve. Language is identity, and we treat it that way.',
   },
   {
-    icon: 'beaker',
-    title: 'Research',
-    text: 'Our programs are informed by evidence — including research our own students conduct.',
+    icon: 'shield-check',
+    title: 'Quality',
+    text: 'Every resource is reviewed by bilingual volunteers and guided by adult advisors.',
   },
   {
     icon: 'hand-raised',
@@ -61,7 +61,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About MSC"
         title="A youth-led collective for communication access"
-        description="We're students, tutors, translators, designers, and researchers working to make sure language is never the reason someone misses out on care, education, or community."
+        description="We're students, tutors, translators, and designers working to make sure language is never the reason someone misses out on care, education, or community."
       />
 
       {/* Origin story */}
@@ -79,8 +79,8 @@ export default function AboutPage() {
                   MSC began as <em>Make Spanish Casual</em> — a student project built on a simple
                   observation: the language people actually speak is very different from the
                   language textbooks teach. We created free resources around real-world,
-                  practical Spanish and started researching how that kind of language input
-                  shapes learning.
+                  practical Spanish and built free resources around the phrases and situations
+                  people actually encounter.
                 </p>
                 <p>
                   Then our community started asking bigger questions. Families wanted help
@@ -92,9 +92,7 @@ export default function AboutPage() {
                 <p>
                   So we grew into the <strong>Multilingual Support Collective</strong>: a
                   youth-led nonprofit at the intersection of language, healthcare access,
-                  education, and inclusive learning. Our original research on real-world,
-                  context-dependent language continues — it’s now one thread of a much larger
-                  mission.
+                  education, and inclusive learning.
                 </p>
               </div>
             </div>
@@ -113,7 +111,6 @@ export default function AboutPage() {
                 <ul className="space-y-3">
                   {[
                     'Youth-led programs, guided by adult advisors — students do the real work',
-                    'Research-backed: our own student studies inform what we build',
                     'Focused on practical communication people actually need, not curriculum for its own sake',
                     'Free, always — no paywalls between families and resources',
                   ].map((item) => (
@@ -170,7 +167,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Guidance"
             title="Advisors & mentors"
-            description="Adult professionals who review our materials, mentor our research, and keep us rigorous."
+            description="Adult professionals who review our materials, mentor our team, and keep us rigorous."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {advisors.map((advisor, i) => (

@@ -54,7 +54,7 @@ export default function OgImage() {
           Bridging language gaps in healthcare, education, and community life.
         </div>
         <div style={{ fontSize: '26px', marginTop: '36px', color: '#E8F4F5' }}>
-          Youth-led · Free multilingual resources · Student research
+          Youth-led · Free multilingual resources · Community programs
         </div>
       </div>
     ),

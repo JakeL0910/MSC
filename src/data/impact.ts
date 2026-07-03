@@ -20,7 +20,7 @@ export const timeline: TimelineEvent[] = [
     year: '2024',
     title: 'First community programs',
     description:
-      'Volunteer tutoring begins, the first bilingual resource sets are published, and student research on real-world language input gets underway.',
+      'Volunteer tutoring begins and the first bilingual resource sets are published.',
   },
   {
     year: '2025',
@@ -32,7 +32,7 @@ export const timeline: TimelineEvent[] = [
     year: '2026',
     title: 'Multilingual Support Collective',
     description:
-      'MSC rebrands to reflect its full mission: language access, health communication, inclusive tutoring, and student-led research, with a growing volunteer and partner network.',
+      'MSC rebrands to reflect its full mission: language access, health communication, and inclusive tutoring, with a growing volunteer and partner network.',
   },
 ]
 
@@ -89,9 +89,9 @@ export const programOutcomes: ProgramOutcome[] = [
     metric: '25+ documents completed',
   },
   {
-    program: 'Youth Research & Innovation',
-    outcome: 'Student research projects designed, mentored, and presented',
-    metric: '4 active studies',
+    program: 'Creative Language Projects',
+    outcome: 'Awareness campaigns and visual resources shared with schools and clinics',
+    metric: '12+ projects completed',
   },
 ]
 

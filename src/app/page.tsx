@@ -267,16 +267,15 @@ export default function HomePage() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 Youth-led doesn’t mean unserious. Our materials are reviewed by bilingual
                 volunteers and guided by adult advisors in education, speech-language pathology,
-                and healthcare. Our research is mentored, presented publicly, and fed back into
-                everything we make.
+                and healthcare.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/about" className="btn-secondary">Meet the Team</Link>
                 <Link
-                  href="/research"
+                  href="/volunteer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-msc-teal hover:underline"
                 >
-                  See our research →
+                  Join as a volunteer →
                 </Link>
               </div>
             </div>
@@ -284,7 +283,7 @@ export default function HomePage() {
               {[
                 { icon: 'users', label: 'Student volunteers leading real programs' },
                 { icon: 'shield-check', label: 'Adult advisors reviewing every resource' },
-                { icon: 'beaker', label: 'Mentored, publicly presented research' },
+                { icon: 'globe', label: 'Resources shared with schools and clinics' },
                 { icon: 'heart', label: 'Free for every family, always' },
               ].map((item) => (
                 <div key={item.label} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">

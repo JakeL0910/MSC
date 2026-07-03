@@ -10,9 +10,9 @@ export const site = {
   shortName: 'MSC — Multilingual Support Collective',
   tagline: 'Bridging language gaps in healthcare, education, and community life.',
   subtagline:
-    'MSC is a youth-led initiative creating multilingual resources, tutoring programs, and research-backed tools that make communication more accessible for families, students, and underserved communities.',
+    'MSC is a youth-led initiative creating multilingual resources, tutoring programs, and tools that make communication more accessible for families, students, and underserved communities.',
   mission:
-    'MSC empowers communities through language access, health communication resources, inclusive tutoring, and student-led research at the intersection of language, culture, and care.',
+    'MSC empowers communities through language access.',
   vision:
     'A world where language is never a barrier to health, education, or belonging.',
 
@@ -25,12 +25,12 @@ export const site = {
   // TODO: update when the new domain is live (used for SEO/Open Graph URLs)
   url: 'https://makespanishcasual.org',
 
-  // TODO: replace with your real social handles
+  // TODO: replace with your real social handles (omit or leave empty to hide a link)
   social: {
-    instagram: 'https://instagram.com/makespanishcasual',
-    linkedin: 'https://linkedin.com/company/makespanishcasual',
+    instagram: 'https://instagram.com/makespanishcasual_',
     youtube: 'https://youtube.com/@makespanishcasual',
-    twitter: 'https://twitter.com/makespanishcasual',
+    twitter: '',
+    linkedin: '',
   },
 }
 
@@ -58,7 +58,7 @@ export const stats: Stat[] = [
   {
     value: '30+',
     label: 'Student volunteers',
-    detail: 'Tutors, translators, designers, and researchers',
+    detail: 'Tutors, translators, designers, and organizers',
   },
   {
     value: '8',

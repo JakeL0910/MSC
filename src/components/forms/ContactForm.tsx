@@ -17,7 +17,6 @@ const topics = [
   'Partner inquiry',
   'Volunteer question',
   'Press or media',
-  'Research collaboration',
   'Resource request',
   'Other',
 ]

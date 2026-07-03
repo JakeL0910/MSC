@@ -60,10 +60,24 @@ export default function ContactPage() {
                   {/* TODO: update social handles in src/data/site.ts */}
                 </p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1">
-                  <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-msc-teal hover:underline">Instagram</a>
-                  <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-msc-teal hover:underline">LinkedIn</a>
-                  <a href={site.social.youtube} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-msc-teal hover:underline">YouTube</a>
-                  <a href={site.social.twitter} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-msc-teal hover:underline">X</a>
+                  {[
+                    { href: site.social.instagram, label: 'Instagram' },
+                    { href: site.social.linkedin, label: 'LinkedIn' },
+                    { href: site.social.youtube, label: 'YouTube' },
+                    { href: site.social.twitter, label: 'X' },
+                  ]
+                    .filter((item): item is typeof item & { href: string } => Boolean(item.href))
+                    .map(({ href, label }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-msc-teal hover:underline"
+                      >
+                        {label}
+                      </a>
+                    ))}
                 </div>
               </div>
             </div>

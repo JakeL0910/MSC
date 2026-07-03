@@ -8,7 +8,7 @@ import { programs } from '@/data/programs'
 export const metadata: Metadata = {
   title: 'Programs',
   description:
-    'MSC programs: health communication resources, ESL tutoring, bilingual healthcare tools, inclusive language learning, community translation, youth research, and creative projects.',
+    'MSC programs: health communication resources, ESL tutoring, bilingual healthcare tools, inclusive language learning, community translation, and creative projects.',
 }
 
 const colorClasses = {
