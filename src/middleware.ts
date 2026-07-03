@@ -10,14 +10,14 @@ import { NextRequest, NextResponse } from 'next/server'
 // Credentials (override in Vercel → Project → Settings → Environment Variables,
 // or in a local .env.local file):
 //   SITE_USER      default: "msc"
-//   SITE_PASSWORD  default: "msc-preview-2026"
+//   SITE_PASSWORD  default: "msc2026"
 //
 // TO GO FULLY PUBLIC LATER: either delete this file, or set the environment
 // variable  GATE_DISABLED=true  in Vercel and redeploy.
 // ---------------------------------------------------------------------------
 
 const USER = process.env.SITE_USER || 'msc'
-const PASSWORD = process.env.SITE_PASSWORD || 'msc-preview-2026'
+const PASSWORD = process.env.SITE_PASSWORD || 'msc2026'
 const DISABLED = process.env.GATE_DISABLED === 'true'
 
 export function middleware(req: NextRequest) {

@@ -23,3 +23,5 @@ spanish-curriculum/
 .DS_Store
 *.pem
 npm-debug.log*
+.vercel
+.env*
