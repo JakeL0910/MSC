@@ -1,15 +1,26 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Fraunces } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { site } from '@/data/site'
 
+// Body font — clean, legible sans.
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
+})
+
+// Heading font — warm editorial serif for a distinctive, human brand voice.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fraunces',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  fallback: ['Georgia', 'Times New Roman', 'serif'],
 })
 
 export const metadata: Metadata = {
@@ -54,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
       <body className={`${inter.className} antialiased`}>
         <Header />
         <main className="min-h-screen pt-16">

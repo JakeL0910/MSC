@@ -12,6 +12,7 @@
   --color-msc-charcoal: #1C1C1E;
   --color-primary: #1A6B72;
   --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -36,6 +37,15 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   line-height: 1.15;
+}
+
+/* Warm editorial serif for display headings; body stays in the sans font.
+   Applied to the major heading levels so section titles and card titles
+   share one distinctive voice. UI labels/eyebrows use uppercase sans. */
+h1, h2, h3 {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.015em;
+  font-optical-sizing: auto;
 }
 
 /* Accessible focus rings using brand teal */
