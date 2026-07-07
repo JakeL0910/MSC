@@ -70,7 +70,7 @@ function NavDropdown({
       {open && (
         <div
           role="menu"
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-60 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50"
+          className="animate-dropdown absolute top-full left-1/2 -translate-x-1/2 mt-1 w-60 bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-gray-100 py-2 z-50"
         >
           {items.map((item) => (
             <Link
@@ -93,8 +93,17 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const navRef = useRef<HTMLElement>(null)
   const pathname = usePathname()
+
+  // Elevate the header (stronger shadow, more opaque glass) once the page scrolls
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   // Close on Escape key
   useEffect(() => {
@@ -146,7 +155,13 @@ export default function Header() {
   )
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50 shadow-sm">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/85 border-gray-200/80 shadow-[0_4px_24px_rgba(28,28,30,0.07)]'
+          : 'bg-white/70 border-gray-100/60 shadow-none'
+      }`}
+    >
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

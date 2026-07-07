@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
     "@types/react-dom": "latest",
+    "framer-motion": "^12.5.0",
     "next": "^15.5.20",
     "react": "latest",
     "react-dom": "latest"
@@ -19,7 +20,6 @@
     "@types/node": "22.13.10",
     "@types/react": "19.0.10",
     "autoprefixer": "^10.4.21",
-    "framer-motion": "^12.5.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.14",
     "typescript": "5.8.2"
