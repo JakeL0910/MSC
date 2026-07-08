@@ -3,6 +3,8 @@ import Link from 'next/link'
 import PageHero from '@/components/shared/PageHero'
 import SectionHeading from '@/components/shared/SectionHeading'
 import Icon from '@/components/shared/Icons'
+import Reveal from '@/components/ui/Reveal'
+import DonateWidget from '@/components/forms/DonateWidget'
 import { site } from '@/data/site'
 
 export const metadata: Metadata = {
@@ -12,6 +14,7 @@ export const metadata: Metadata = {
 }
 
 // Giving levels — edit amounts and impact lines freely.
+// (The amounts inside the Stripe widget live in src/components/forms/DonateWidget.tsx.)
 const givingLevels = [
   {
     amount: '$25',
@@ -28,6 +31,10 @@ const givingLevels = [
 ]
 
 export default function DonatePage() {
+  // Stripe goes live the moment STRIPE_SECRET_KEY is set (locally in .env.local,
+  // in production via Vercel env vars). Until then we show the email fallback.
+  const stripeConfigured = Boolean(process.env.STRIPE_SECRET_KEY)
+
   return (
     <>
       <PageHero
@@ -39,40 +46,43 @@ export default function DonatePage() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-14">
-            {givingLevels.map((level) => (
-              <div key={level.amount} className="bg-msc-cream rounded-2xl p-7 text-center">
-                <p className="text-3xl font-bold text-msc-teal mb-3">{level.amount}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{level.impact}</p>
-              </div>
+            {givingLevels.map((level, i) => (
+              <Reveal key={level.amount} delay={i * 0.08}>
+                <div className="h-full bg-msc-cream rounded-2xl p-7 text-center">
+                  <p className="text-3xl font-bold text-msc-teal mb-3">{level.amount}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{level.impact}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
 
-          {/*
-            TODO: connect a payment processor. Recommended options for a small
-            nonprofit: Zeffy (no fees), Donorbox, or GiveButter — each provides
-            an embeddable widget or a hosted donation page you can link the
-            button below to. Until then, the button opens an email.
-          */}
-          <div className="max-w-xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-md p-8 text-center">
-            <span className="w-12 h-12 rounded-xl bg-msc-amber-light text-msc-amber flex items-center justify-center mx-auto mb-4">
-              <Icon name="heart" className="w-6 h-6" />
-            </span>
-            <h2 className="text-xl font-bold text-msc-charcoal mb-2">Online giving is almost ready</h2>
-            <p className="text-sm text-gray-600 leading-relaxed mb-6">
-              Our donation platform is being set up. In the meantime, email us and we'll arrange
-              your gift directly — or ask about sponsoring a specific program.
-            </p>
-            <a
-              href={`mailto:${site.email}?subject=${encodeURIComponent('[Donation] I would like to support MSC')}`}
-              className="btn-primary w-full"
-            >
-              Email Us About Giving
-            </a>
-            <p className="text-xs text-gray-400 mt-4">
-              {site.legalLine}. Donations are tax-deductible to the extent allowed by law.
-              {site.ein && ` ${site.ein}.`}
-            </p>
-          </div>
+          {stripeConfigured ? (
+            <Reveal>
+              <DonateWidget />
+            </Reveal>
+          ) : (
+            /* Shown until STRIPE_SECRET_KEY is configured — see docs/STRIPE_SETUP.md */
+            <div className="max-w-xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-md p-8 text-center">
+              <span className="w-12 h-12 rounded-xl bg-msc-amber-light text-msc-amber flex items-center justify-center mx-auto mb-4">
+                <Icon name="heart" className="w-6 h-6" />
+              </span>
+              <h2 className="text-xl font-bold text-msc-charcoal mb-2">Online giving is almost ready</h2>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                Our donation platform is being set up. In the meantime, email us and we'll arrange
+                your gift directly — or ask about sponsoring a specific program.
+              </p>
+              <a
+                href={`mailto:${site.email}?subject=${encodeURIComponent('[Donation] I would like to support MSC')}`}
+                className="btn-primary w-full"
+              >
+                Email Us About Giving
+              </a>
+              <p className="text-xs text-gray-400 mt-4">
+                {site.legalLine}. Donations are tax-deductible to the extent allowed by law.
+                {site.ein && ` ${site.ein}.`}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

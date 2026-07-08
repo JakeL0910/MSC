@@ -55,6 +55,7 @@ const orgLinks = [
   { label: 'Our Impact', href: '/impact' },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Partner With Us', href: '/partners' },
+  { label: 'Brand Kit', href: '/brand' },
   { label: 'Contact', href: '/contact' },
 ]
 
