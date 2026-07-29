@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og'
 import { site } from '@/data/site'
 
 export const runtime = 'edge'
-export const alt = `${site.name} — ${site.tagline}`
+export const alt = `${site.name}: ${site.tagline}`
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -51,10 +51,10 @@ export default function OgImage() {
           <div style={{ fontSize: '36px', fontWeight: 700 }}>{site.name}</div>
         </div>
         <div style={{ fontSize: '58px', fontWeight: 700, lineHeight: 1.15, maxWidth: '950px' }}>
-          Bridging language gaps in healthcare, education, and community life.
+          Making language more accessible.
         </div>
         <div style={{ fontSize: '26px', marginTop: '36px', color: '#E8F4F5' }}>
-          Youth-led · Free multilingual resources · Community programs
+          Youth-led · Accessible language education
         </div>
       </div>
     ),

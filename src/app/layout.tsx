@@ -1,48 +1,45 @@
 import type { Metadata } from 'next'
-import { Inter, Fraunces } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { site } from '@/data/site'
 
-// Body font — clean, legible sans.
-const inter = Inter({
-  subsets: ['latin'],
+// Single site-wide typeface — Open Sauce One (self-hosted, OFL licensed). Used
+// for headings, body, and UI alike, matching the clean geometric-sans look.
+// Exposed as --font-sans; globals.css maps the legacy sans/serif slots to it.
+const openSauce = localFont({
+  src: [
+    { path: './fonts/open-sauce-one-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/open-sauce-one-600.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/open-sauce-one-700.woff2', weight: '700', style: 'normal' },
+  ],
   display: 'swap',
-  variable: '--font-inter',
-  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif'],
-})
-
-// Heading font — warm editorial serif for a distinctive, human brand voice.
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-fraunces',
-  weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  fallback: ['Georgia', 'Times New Roman', 'serif'],
+  variable: '--font-sans',
+  fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
 })
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  // NOINDEX: keeps the site out of Google while it's a private draft.
-  // When you're ready to go fully public, remove this `robots` block (and
-  // delete src/app/robots.ts) so search engines can index the site.
-  robots: { index: false, follow: false },
+  // Indexing is gated by SITE_PUBLIC (the single "we are live" switch). Until
+  // it's set to "true", the site stays out of search results.
+  robots:
+    process.env.SITE_PUBLIC === 'true'
+      ? { index: true, follow: true }
+      : { index: false, follow: false },
   title: {
-    default: `${site.name} (${site.acronym}) | Language Access & Health Communication`,
+    default: `${site.name} (${site.acronym}) | Language Access & Inclusive Learning`,
     template: `%s | ${site.acronym}`,
   },
   description: site.subtagline,
   keywords: [
     'language access',
-    'health communication',
+    'health language',
     'health literacy',
     'ESL tutoring',
     'multilingual resources',
     'inclusive language learning',
-    'youth-led nonprofit',
-    'culturally responsive communication',
+    'culturally responsive language',
   ],
   openGraph: {
     title: `${site.name} (${site.acronym})`,
@@ -65,8 +62,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${fraunces.variable}`}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning className={openSauce.variable}>
+      <body className={`${openSauce.className} antialiased`}>
         <Header />
         <main className="min-h-screen pt-16">
           {children}

@@ -54,7 +54,7 @@ export default function ContactForm() {
     return (
       <SuccessCard
         title="Your email client opened!"
-        message="Your message is pre-filled and ready — just hit send in your email app to reach us."
+        message="Your message is pre-filled and ready. Just hit send in your email app to reach us."
         onReset={() => setSubmitted(false)}
         resetLabel="Send another message"
       />

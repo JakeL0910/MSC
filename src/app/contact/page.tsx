@@ -8,16 +8,17 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact MSC — questions, partnership inquiries, volunteer questions, press, and newsletter signup.',
+    'Contact MSC: questions, partnership inquiries, volunteer questions, press, and newsletter signup.',
 }
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
+        illustration="contact"
         eyebrow="Contact"
         title="We'd love to hear from you"
-        description="Questions, ideas, partnership inquiries, or just a hello — every message gets read by a real person on the team."
+        description="Every message reaches a real person on the team."
       />
 
       <section className="py-16 bg-white">
@@ -42,7 +43,7 @@ export default function ContactPage() {
                 </span>
                 <h2 className="text-base font-bold text-msc-charcoal mb-1.5">Partner inquiries</h2>
                 <p className="text-sm text-gray-600 mb-3">
-                  Schools, clinics, libraries, and nonprofits — there's a dedicated form with
+                  Schools, libraries, and community organizations: there's a dedicated form with
                   partnership details.
                 </p>
                 <Link href="/partners#inquire" className="text-sm font-semibold text-msc-teal hover:underline">

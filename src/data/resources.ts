@@ -1,281 +1,364 @@
 // ----------------------------------------------------------------------------
-// RESOURCE HUB DATA
-// Each resource generates a card on /resources and a detail page at
-// /resources/[slug].
+// RESOURCES
+// Organized by audience: Students, Families, Educators. Each resource becomes a
+// card on /resources and a detail page at /resources/[slug].
 //
-// TO ADD A REAL FILE LATER:
-//   1. Drop the PDF into /public/downloads/
-//   2. Set `file: '/downloads/your-file.pdf'` on the resource below
-//   The download button appears automatically; without a file, the detail
-//   page shows a polished "coming soon" state with a notify CTA.
+// HONESTY RULES:
+//   • `status` is either 'Available' or 'Coming Soon'. Do NOT mark something
+//     'Available' unless it can actually be used or downloaded today.
+//   • Add `file: '/downloads/your-file.pdf'` ONLY when a real file exists in
+//     /public/downloads. Without a file, the detail page shows a clear
+//     "coming soon / request a copy" state.
+//   • Every resource is educational — never clinical, diagnostic, or a
+//     substitute for individualized professional guidance.
 // ----------------------------------------------------------------------------
 
+export type ResourceStatus = 'Available' | 'Coming Soon'
+
 export interface ResourceCategory {
-  id: string
+  id: 'students' | 'families' | 'educators'
   label: string
   description: string
 }
 
 export const resourceCategories: ResourceCategory[] = [
   {
-    id: 'healthcare-spanish',
-    label: 'Healthcare Spanish',
-    description: 'Spanish-language guides for clinics, pharmacies, and insurance.',
+    id: 'students',
+    label: 'For Students',
+    description:
+      'For neurodivergent and multilingual students: language access, self-advocacy, and conversational Spanish.',
   },
   {
-    id: 'english-for-healthcare',
-    label: 'English for Healthcare',
-    description: 'English phrases and vocabulary for navigating medical settings.',
+    id: 'families',
+    label: 'For Families',
+    description:
+      'Bilingual guides to support language and learning at home.',
   },
   {
-    id: 'family-communication',
-    label: 'Parent & Family Communication',
-    description: 'Tools for parents navigating school and health conversations.',
-  },
-  {
-    id: 'esl-learning',
-    label: 'ESL Learning',
-    description: 'Practice materials for English learners of all ages.',
-  },
-  {
-    id: 'neurodiverse-support',
-    label: 'Neurodiverse Language Support',
-    description: 'Inclusive materials for neurodiverse and developing communicators.',
-  },
-  {
-    id: 'volunteer-toolkits',
-    label: 'Volunteer Toolkits',
-    description: 'Training guides and templates for MSC volunteers.',
-  },
-  {
-    id: 'community-guides',
-    label: 'Community Guides',
-    description: 'Language-access materials for local organizations.',
+    id: 'educators',
+    label: 'For Educators',
+    description:
+      'Ideas for more inclusive, flexible language in the classroom.',
   },
 ]
+
+// A section of real resource content, shown on the detail page and printable.
+export interface ResourceSection {
+  heading?: string
+  paragraphs?: string[]
+  items?: string[] // bullet list
+  pairs?: { es: string; en: string; note?: string }[] // bilingual phrase rows
+}
 
 export interface Resource {
   slug: string
   title: string
-  category: string // must match a ResourceCategory id
+  category: ResourceCategory['id']
   format: 'Guide' | 'Toolkit' | 'Phrase Cards' | 'Checklist' | 'Worksheet' | 'Summary'
   languages: string[]
+  status: ResourceStatus
   description: string
-  overview: string[] // paragraphs shown on the detail page
-  file?: string // path under /public — enables the download button
+  overview: string[] // short intro paragraphs shown on the detail page
+  // Full, usable content. When present, the resource is readable on-page and
+  // printable ("Print / Save as PDF"), so it counts as genuinely Available.
+  content?: ResourceSection[]
+  file?: string // path under /public — enables a file download (only if real)
   featured?: boolean
 }
 
 export const resources: Resource[] = [
-  // --- Healthcare Spanish -----------------------------------------------
+  // ---------------------- FOR STUDENTS ----------------------------------
   {
-    slug: 'clinic-visit-phrasebook-spanish',
-    title: 'Clinic Visit Phrasebook',
-    category: 'healthcare-spanish',
+    slug: 'language-and-self-advocacy-guide',
+    title: 'Language & Self-Advocacy Guide',
+    category: 'students',
+    format: 'Guide',
+    languages: ['English', 'Spanish (planned)'],
+    status: 'Available',
+    featured: true,
+    description:
+      'A plain-language guide to understanding your own language preferences and asking for what helps you use language and learn.',
+    overview: [
+      'Self-advocacy means telling people what helps you understand and take part. It’s about access, not about changing how you naturally use language. Read it here or print it to keep.',
+    ],
+    content: [
+      {
+        heading: 'Notice what helps you',
+        paragraphs: [
+          'People take in and share language in different ways, and all of them are valid. Before you can ask for what helps, it helps to notice it. Think about the times you understood something easily, and what was different about them.',
+        ],
+        items: [
+          'Do you follow better when you can see it written, hear it, or both?',
+          'Do you need a moment to think before you answer?',
+          'Do examples, pictures, or step-by-step directions help?',
+          'Is it easier one-on-one, or in a small group?',
+        ],
+      },
+      {
+        heading: 'Phrases you can use',
+        paragraphs: ['You don’t need a long explanation. Short and clear works. Try:'],
+        items: [
+          '“Can you say that another way?”',
+          '“I need a minute to think.”',
+          '“Can you write that down for me?”',
+          '“Can we slow down a little?”',
+          '“Can you show me an example?”',
+          '“I understand better when I can read it.”',
+        ],
+      },
+      {
+        heading: 'It’s okay to ask',
+        paragraphs: [
+          'Asking for what helps is a skill, not a weakness. You’re not asking anyone to lower the bar. You’re asking for the version of the information that lets you meet it. Most people are glad to help when you tell them how.',
+        ],
+      },
+      {
+        heading: 'Try it this week',
+        items: [
+          'Pick one phrase above and use it once, anywhere.',
+          'Notice what happened. Did it help?',
+          'Keep the phrases that work. Drop the ones that don’t.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'everyday-conversational-spanish',
+    title: 'Everyday Conversational Spanish',
+    category: 'students',
     format: 'Phrase Cards',
     languages: ['Spanish', 'English'],
-    featured: true,
+    status: 'Available',
     description:
-      'Side-by-side Spanish–English phrases for checking in, describing symptoms, and asking questions at a medical appointment.',
+      'Approachable, real-world Spanish phrases for everyday conversation.',
     overview: [
-      'This phrasebook covers a full clinic visit from the front desk to checkout: greetings, insurance questions, symptom descriptions, and the questions patients most often want to ask but don’t know how to phrase.',
-      'Every phrase appears in Spanish and English with a short note on when to use it. Designed to be printed, folded, and brought to an appointment.',
+      'The everyday, practical Spanish people really speak. Read them here, or print the set to practice. Low-pressure and welcoming, for learning Spanish, keeping it in the family, or moving between languages.',
     ],
-    file: '/downloads/clinic-visit-phrasebook.pdf',
+    content: [
+      {
+        heading: 'Saludos · Greetings',
+        pairs: [
+          { es: '¿Qué tal?', en: 'How’s it going?' },
+          { es: '¿Cómo estás?', en: 'How are you?' },
+          { es: 'Buenos días', en: 'Good morning' },
+          { es: 'Buenas tardes', en: 'Good afternoon / evening' },
+          { es: '¿Qué onda?', en: 'What’s up?', note: 'Very casual' },
+        ],
+      },
+      {
+        heading: 'Presentarse · Introducing yourself',
+        pairs: [
+          { es: 'Me llamo…', en: 'My name is…' },
+          { es: 'Mucho gusto', en: 'Nice to meet you' },
+          { es: '¿De dónde eres?', en: 'Where are you from?' },
+          { es: 'Soy de…', en: 'I’m from…' },
+        ],
+      },
+      {
+        heading: 'Conversación · Small talk',
+        pairs: [
+          { es: '¿Y tú?', en: 'And you?' },
+          { es: 'Todo bien', en: 'All good' },
+          { es: 'Más o menos', en: 'So-so' },
+          { es: 'Nos vemos', en: 'See you' },
+          { es: 'Cuídate', en: 'Take care' },
+        ],
+      },
+      {
+        heading: 'Pedir ayuda · Asking for help or clarity',
+        pairs: [
+          { es: '¿Puedes repetir, por favor?', en: 'Can you repeat that, please?' },
+          { es: 'Más despacio, por favor', en: 'Slower, please' },
+          { es: 'No entendí', en: 'I didn’t understand' },
+          { es: '¿Cómo se dice…?', en: 'How do you say…?' },
+          { es: '¿Qué significa…?', en: 'What does … mean?' },
+        ],
+      },
+      {
+        heading: 'Cortesía · Being polite',
+        pairs: [
+          { es: 'Por favor', en: 'Please' },
+          { es: 'Gracias', en: 'Thank you' },
+          { es: 'De nada', en: 'You’re welcome' },
+          { es: 'Con permiso', en: 'Excuse me', note: 'To pass by' },
+          { es: 'Disculpa', en: 'Excuse me / Sorry', note: 'To get attention' },
+          { es: 'Lo siento', en: 'I’m sorry' },
+        ],
+      },
+    ],
   },
   {
-    slug: 'pharmacy-vocabulary-guide',
-    title: 'Pharmacy Vocabulary Guide',
-    category: 'healthcare-spanish',
-    format: 'Guide',
-    languages: ['Spanish', 'English'],
-    description:
-      'Common pharmacy terms — dosage, refills, side effects, generic vs. brand — explained in plain Spanish and English.',
-    overview: [
-      'Pharmacy labels and instructions are full of specialized vocabulary. This guide explains the most common terms in both languages, with examples of how they appear on real labels.',
-      'Includes a one-page quick reference for medication schedules and questions to ask the pharmacist.',
-    ],
-  },
-  {
-    slug: 'insurance-basics-bilingual',
-    title: 'Insurance Basics, Explained',
-    category: 'healthcare-spanish',
-    format: 'Guide',
-    languages: ['Spanish', 'English'],
-    description:
-      'Copay, deductible, premium, in-network — the vocabulary of U.S. health insurance in plain bilingual language.',
-    overview: [
-      'Health insurance has its own language, and it’s confusing even for native English speakers. This bilingual guide defines the core terms and walks through a sample insurance card and bill.',
-      'Educational only — it explains vocabulary, not specific plans or coverage decisions.',
-    ],
-  },
-
-  // --- English for Healthcare -------------------------------------------
-  {
-    slug: 'english-for-appointments',
-    title: 'English for Medical Appointments',
-    category: 'english-for-healthcare',
-    format: 'Guide',
-    languages: ['English', 'Spanish'],
-    description:
-      'Essential English phrases for scheduling, checking in, and talking with providers — with pronunciation support.',
-    overview: [
-      'Built for English learners who need to navigate care confidently: making an appointment by phone, filling out intake forms, and describing how you feel.',
-      'Each section includes practice dialogues and simple pronunciation notes.',
-    ],
-  },
-  {
-    slug: 'describing-symptoms-english',
-    title: 'Describing Symptoms in English',
-    category: 'english-for-healthcare',
+    slug: 'flexible-ways-to-practice-language',
+    title: 'Flexible Ways to Practice Language',
+    category: 'students',
     format: 'Worksheet',
     languages: ['English'],
+    status: 'Available',
     description:
-      'A visual vocabulary worksheet for describing pain, symptoms, and duration clearly to a provider.',
+      'Low-pressure activities for practicing language the way that works best for you: spoken, written, visual, or a mix.',
     overview: [
-      'Providers ask the same core questions in almost every visit: where, how much, how long, what makes it better or worse. This worksheet teaches the vocabulary to answer them clearly.',
-      'Uses a visual body map and a simple pain scale so learners can prepare answers before a visit.',
+      'There’s no single right way to practice a language. Pick what fits your style and energy today. Five minutes counts.',
+    ],
+    content: [
+      {
+        heading: 'If you like to listen',
+        items: [
+          'Play a song in the language and read the lyrics along with it.',
+          'Watch one short clip with subtitles on. Rewind one line you liked.',
+          'Listen to a phrase, then say it out loud once.',
+        ],
+      },
+      {
+        heading: 'If you like to read or write',
+        items: [
+          'Label five things around you in the language on sticky notes.',
+          'Write one sentence about your day.',
+          'Text a friend one line in the language.',
+        ],
+      },
+      {
+        heading: 'If you like to talk',
+        items: [
+          'Say out loud what you’re doing as you do it (“I’m making coffee”).',
+          'Practice one phrase from the phrase cards until it feels easy.',
+          'Teach one word to someone else.',
+        ],
+      },
+      {
+        heading: 'If you like visuals',
+        items: [
+          'Draw a small picture and label it.',
+          'Make a mini flashcard: word on one side, picture on the other.',
+          'Sort ten words into groups that make sense to you.',
+        ],
+      },
+      {
+        heading: 'Remember',
+        paragraphs: [
+          'Practice doesn’t have to be long or perfect. Choose one activity, set a five-minute timer, and stop when it’s done. Small and steady beats big and rare.',
+        ],
+      },
     ],
   },
 
-  // --- Parent & Family Communication --------------------------------------
+  // ---------------------- FOR FAMILIES ----------------------------------
   {
-    slug: 'family-language-toolkit',
-    title: 'Family Language Toolkit',
-    category: 'family-communication',
-    format: 'Toolkit',
+    slug: 'bilingual-family-language-guide',
+    title: 'Bilingual Family Language Guide',
+    category: 'families',
+    format: 'Guide',
     languages: ['English', 'Spanish'],
+    status: 'Coming Soon',
     featured: true,
     description:
-      'Simple guides for parents helping children navigate bilingual school and health settings — conferences, forms, IEP meetings, and checkups.',
+      'A bilingual guide to supporting language and learning at home, with practical, everyday strategies.',
     overview: [
-      'Parents are often the communication bridge for their whole family. This toolkit gives them practical support: how to prepare for a parent-teacher conference, what to expect at a well-child visit, how to ask for an interpreter, and how to read common school forms.',
-      'Each guide is two pages or less, bilingual, and written for busy families — not professionals.',
-    ],
-    file: '/downloads/family-language-toolkit.pdf',
-  },
-  {
-    slug: 'parent-teacher-conference-guide',
-    title: 'Parent–Teacher Conference Guide',
-    category: 'family-communication',
-    format: 'Guide',
-    languages: ['English', 'Spanish'],
-    description:
-      'Questions to ask, phrases to use, and what to expect — so every parent can advocate for their child at school.',
-    overview: [
-      'A short bilingual guide that demystifies parent-teacher conferences: common vocabulary (grades, benchmarks, behavior reports), useful questions to ask, and a note-taking template to bring along.',
+      'Practical, everyday ways for families to support language at home, in plain English and Spanish. Educational only, not an evaluation or professional advice.',
     ],
   },
-
-  // --- ESL Learning --------------------------------------------------------
   {
-    slug: 'everyday-english-starter-pack',
-    title: 'Everyday English Starter Pack',
-    category: 'esl-learning',
+    slug: 'supporting-multilingual-learners-at-home',
+    title: 'Supporting Multilingual Learners at Home',
+    category: 'families',
     format: 'Toolkit',
-    languages: ['English'],
-    description:
-      'Practice materials for beginning English learners: greetings, directions, shopping, and phone calls.',
-    overview: [
-      'A starter collection for new English learners built around everyday situations rather than grammar drills. Includes practice dialogues, vocabulary cards, and self-check activities.',
-      'Used by our volunteer tutors as the foundation for beginner sessions.',
-    ],
-    file: '/downloads/everyday-english-starter-pack.pdf',
-  },
-  {
-    slug: 'conversation-practice-prompts',
-    title: 'Conversation Practice Prompts',
-    category: 'esl-learning',
-    format: 'Worksheet',
-    languages: ['English'],
-    description:
-      '60 discussion prompts for ESL conversation practice, organized by level and topic.',
-    overview: [
-      'Designed for tutoring pairs and small groups: prompts progress from simple personal questions to opinions and storytelling, with vocabulary support for each set.',
-    ],
-  },
-
-  // --- Neurodiverse Language Support --------------------------------------
-  {
-    slug: 'visual-vocabulary-cards',
-    title: 'Visual Vocabulary Cards',
-    category: 'neurodiverse-support',
-    format: 'Phrase Cards',
     languages: ['English', 'Spanish'],
+    status: 'Coming Soon',
     description:
-      'Picture-supported vocabulary cards for learners who benefit from visual structure — home, school, and clinic sets.',
+      'Simple, affirming ideas for families raising bilingual and multilingual children. More than one language is a strength.',
     overview: [
-      'Visual supports help many neurodiverse learners connect words to meaning. These printable card sets pair simple images with bilingual labels across three environments: home, school, and clinic.',
-      'Includes a short guide for parents and tutors on using the cards in routines.',
+      'Bilingualism is an asset. Welcoming, practical ideas, conversation starters, and everyday routines for families supporting more than one language at home.',
     ],
   },
   {
-    slug: 'bilingual-neurodiverse-family-guide',
-    title: 'Supporting Bilingual, Neurodiverse Communicators',
-    category: 'neurodiverse-support',
+    slug: 'understanding-language-differences-family',
+    title: 'Understanding Language Differences',
+    category: 'families',
     format: 'Guide',
-    languages: ['English', 'Spanish'],
+    languages: ['English', 'Spanish (planned)'],
+    status: 'Coming Soon',
     description:
-      'A plain-language guide for families raising bilingual children with developmental or language differences.',
+      'A plain-language introduction, for families, to how people process and use language differently, with respect and without deficit framing.',
     overview: [
-      'Families often hear conflicting advice about bilingualism and developmental differences. This guide summarizes what experts generally support, in plain language, and offers practical strategies for supporting communication in both languages.',
-      'Reviewed with guidance from our advisory mentors. Educational only — not a substitute for evaluation by a speech-language professional.',
+      'A plain-language introduction, for families, to how people process and use language differently, with understanding and respect. Educational background, not a diagnostic tool.',
     ],
   },
 
-  // --- Volunteer Toolkits --------------------------------------------------
+  // ---------------------- FOR EDUCATORS ---------------------------------
   {
-    slug: 'tutor-training-toolkit',
-    title: 'Volunteer Tutor Training Toolkit',
-    category: 'volunteer-toolkits',
-    format: 'Toolkit',
+    slug: 'inclusive-language-in-the-classroom',
+    title: 'Inclusive Language in the Classroom',
+    category: 'educators',
+    format: 'Guide',
     languages: ['English'],
-    description:
-      'Everything a new MSC tutor needs: session structures, first-session checklist, and culturally responsive teaching basics.',
-    overview: [
-      'Our core volunteer training in one packet: how to run a first session, how to structure a lesson around a learner’s goals, and how to teach with cultural humility and patience.',
-    ],
-    file: '/downloads/volunteer-tutor-training-toolkit.pdf',
-  },
-  {
-    slug: 'translation-review-checklist',
-    title: 'Translation Review Checklist',
-    category: 'volunteer-toolkits',
-    format: 'Checklist',
-    languages: ['English', 'Spanish'],
-    description:
-      'The two-reviewer quality checklist every MSC translation goes through before publication.',
-    overview: [
-      'A step-by-step checklist covering accuracy, reading level, tone, formatting, and the situations where volunteer translation is not appropriate and professional services should be recommended instead.',
-    ],
-  },
-
-  // --- Community Guides -------------------------------------------------------
-  {
-    slug: 'communication-access-scorecard-guide',
-    title: 'Communication Access Scorecard',
-    category: 'community-guides',
-    format: 'Checklist',
-    languages: ['English'],
+    status: 'Coming Soon',
     featured: true,
     description:
-      'A simple educational checklist organizations can use to evaluate whether their materials are easy to understand and language-accessible.',
+      'Practical, flexible ideas educators can adapt to make classroom language more accessible for every kind of language user.',
     overview: [
-      'Ten questions that reveal how accessible your organization’s communication really is — reading level, translation availability, visual clarity, and more. Use the interactive version online or download the printable checklist.',
-      'Educational and self-assessment only; not a formal compliance audit.',
+      'Small changes that make classroom language far more accessible: more than one way to respond, more time, and plain language. Educational suggestions, not required accommodations.',
     ],
-    file: '/downloads/communication-access-scorecard.pdf',
   },
   {
-    slug: 'plain-language-writing-guide',
-    title: 'Plain-Language Writing Guide',
-    category: 'community-guides',
-    format: 'Guide',
-    languages: ['English'],
+    slug: 'plain-language-classroom-materials',
+    title: 'Plain-Language Classroom Materials',
+    category: 'educators',
+    format: 'Checklist',
+    languages: ['English', 'Spanish'],
+    status: 'Available',
     description:
-      'How to rewrite flyers, forms, and announcements so every family can understand them.',
+      'A simple checklist for making handouts, forms, and announcements easier for every family and student to understand.',
     overview: [
-      'Practical plain-language techniques for community organizations: shorter sentences, everyday words, clear next steps, and layouts that work for readers at every level — including those reading in a second language.',
+      'A quick checklist for handouts, forms, and announcements. Run through it before you send. Especially useful for reaching multilingual families and students still building English.',
+    ],
+    content: [
+      {
+        heading: 'Words and sentences',
+        items: [
+          'Use everyday words. Swap “utilize” for “use,” “commence” for “start.”',
+          'Keep most sentences short (aim for one idea per sentence).',
+          'Spell out or explain abbreviations the first time.',
+          'Write to the reader as “you.”',
+        ],
+      },
+      {
+        heading: 'Structure',
+        items: [
+          'Put the most important thing first.',
+          'Use headings and bullet points, not big blocks of text.',
+          'Make the next step obvious (what to do, by when).',
+          'Bold key dates, actions, and deadlines.',
+        ],
+      },
+      {
+        heading: 'Access',
+        items: [
+          'Offer a Spanish version, or a clear note on how to request one.',
+          'Use readable font sizes and good contrast.',
+          'Add alt text to any images that carry information.',
+          'Give more than one way to respond (form, email, call, in person).',
+        ],
+      },
+      {
+        heading: 'Before you send',
+        items: [
+          'Read it out loud. If you stumble, simplify.',
+          'Ask: could a busy parent understand this in 30 seconds?',
+          'Cut anything that isn’t needed.',
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'bilingual-family-engagement-templates',
+    title: 'Bilingual Family Engagement Templates',
+    category: 'educators',
+    format: 'Toolkit',
+    languages: ['English', 'Spanish'],
+    status: 'Coming Soon',
+    description:
+      'Reusable English–Spanish templates to help schools use language more clearly with multilingual families.',
+    overview: [
+      'Reusable bilingual templates that help schools use language common messages clearly in English and Spanish. Volunteer-produced, reviewed for clarity, and adaptable to your context.',
     ],
   },
 ]

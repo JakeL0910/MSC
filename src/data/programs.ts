@@ -1,15 +1,22 @@
 // ----------------------------------------------------------------------------
-// PROGRAMS DATA
-// Each entry generates a card on /programs and a full page at /programs/[slug].
-// To add a program, add an object here — no page code changes needed.
+// WHAT WE DO — MSC's central areas of work.
+// Each entry generates a card on /programs ("What We Do") and a full page at
+// /programs/[slug]. To add or change an area, edit an object here.
+//
+// `status` keeps the site honest about what is already happening vs. what is
+// still being built. Do NOT mark something "Active" unless it is verifiably
+// running.
 // ----------------------------------------------------------------------------
+
+export type ProgramStatus = 'Active' | 'In Development'
 
 export interface Program {
   slug: string
   name: string
   tagline: string
-  icon: string // icon name from components/shared/Icons.tsx
+  icon: string // icon name from components/shared/Icons.tsx (never 'puzzle')
   color: 'teal' | 'amber' | 'coral'
+  status: ProgramStatus
   summary: string
   description: string[]
   whatWeDo: string[]
@@ -21,144 +28,99 @@ export interface Program {
 
 export const programs: Program[] = [
   {
-    slug: 'health-communication-resources',
-    name: 'Health Communication Resources',
-    tagline: 'Plain-language guides for navigating care in more than one language.',
-    icon: 'heart',
+    slug: 'language-education',
+    name: 'Language Education',
+    tagline: 'Approachable, practical language learning for everyone.',
+    icon: 'book-open',
     color: 'teal',
+    status: 'Active',
     featured: true,
     summary:
-      'Multilingual guides that explain healthcare vocabulary, appointment phrases, insurance basics, and how to communicate clearly with providers.',
+      'Practical, approachable language education, including conversational Spanish and free community events and webinars.',
     description: [
-      'A doctor’s visit is stressful enough without a language barrier. Our health communication resources break down the vocabulary of clinics, pharmacies, and insurance into plain, practical language — in English and Spanish, with more languages planned.',
-      'Every guide is written for real situations: checking in for an appointment, describing symptoms, asking a pharmacist a question, or understanding a bill. We focus on the words and phrases people actually encounter, reviewed by bilingual volunteers for accuracy and tone.',
+      'Language education is at the heart of MSC. We keep learning approachable and practical, from everyday conversational Spanish (our roots) to plain-language education about how people use language differently. We share it through free resources and community events, virtual and in person across Dallas–Fort Worth and online.',
     ],
     whatWeDo: [
-      'Publish free bilingual guides to clinic, pharmacy, and insurance vocabulary',
-      'Maintain the searchable Healthcare Phrase Library for common care situations',
-      'Create appointment-preparation checklists families can bring to visits',
-      'Partner with community organizations to distribute printed guides',
+      'Free, practical conversational Spanish materials and everyday phrases',
+      'Plain-language guides to language-processing differences',
+      'Virtual and in-person events and webinars across DFW and online',
+      'Recordings you can watch any time',
     ],
     whoItsFor:
-      'Multilingual families, patients navigating care in a second language, caregivers, and the community organizations that support them.',
-    ctaLabel: 'Browse Health Resources',
-    ctaHref: '/resources?category=healthcare-spanish',
+      'Students, families, educators, and anyone learning language or wanting clearer language.',
+    ctaLabel: 'See Events & Webinars',
+    ctaHref: '/classes',
   },
   {
-    slug: 'esl-tutoring',
-    name: 'ESL & Language Tutoring',
-    tagline: 'Free, volunteer-led tutoring that meets learners where they are.',
-    icon: 'academic-cap',
+    slug: 'neurodivergent-and-student-resources',
+    name: 'Resources for Neurodivergent Individuals & Students',
+    tagline: 'Language support that respects how you already use language.',
+    icon: 'light-bulb',
     color: 'amber',
+    status: 'In Development',
     featured: true,
     summary:
-      'Volunteer tutoring for students, families, and community members building English skills — practical, patient, and free of charge.',
+      'Affirming, practical resources for neurodivergent students, focused on access and self-advocacy.',
     description: [
-      'Our trained student volunteers offer free ESL tutoring for learners of all ages — from school-age students working on classroom English to parents preparing for a job interview or a parent-teacher conference.',
-      'Sessions focus on practical communication: the English people need for school, work, appointments, and everyday life. Tutors follow a simple, structured curriculum but adapt to each learner’s goals and pace.',
+      'Neurodivergent people use language in many ways, with different strengths and needs. We build resources that make learning and language more accessible while respecting each person’s style. We don’t treat neurodivergence as something to fix; the focus is access and self-advocacy.',
     ],
     whatWeDo: [
-      'Match learners with trained volunteer tutors for free one-on-one sessions',
-      'Run small-group conversation practice focused on everyday situations',
-      'Provide take-home practice materials aligned to each learner’s goals',
-      'Train every tutor in patient, culturally responsive teaching',
+      'Develop resources on language access and self-advocacy',
+      'Offer flexible, low-pressure ways to practice and participate',
+      'Center neurodivergent perspectives and agency in the materials',
+      'Point to qualified professionals for individualized support',
     ],
     whoItsFor:
-      'English learners of all ages — students, parents, and community members — plus schools and libraries looking for tutoring support.',
-    ctaLabel: 'Request or Offer Tutoring',
-    ctaHref: '/volunteer',
+      'Neurodivergent students and young people, their families, and educators.',
+    ctaLabel: 'See Student Resources',
+    ctaHref: '/resources#students',
   },
   {
-    slug: 'bilingual-healthcare-project',
-    name: 'Bilingual Healthcare Communication Project',
-    tagline: 'Spanish–English tools for clearer conversations about care.',
-    icon: 'chat',
+    slug: 'family-and-educator-resources',
+    name: 'Bilingual Resources for Families & Educators',
+    tagline: 'Clearer, more inclusive materials for the people who support learners.',
+    icon: 'document-text',
     color: 'coral',
+    status: 'In Development',
     featured: true,
     summary:
-      'Focused resources for Spanish/English healthcare settings — phrase cards, visit-preparation tools, and vocabulary support for patients and volunteers.',
+      'English–Spanish materials to help families and educators support language and learning.',
     description: [
-      'Spanish is the second most spoken language in U.S. healthcare settings, yet patients and families are often left to interpret complex medical conversations on their own. This project builds practical Spanish–English tools for those moments.',
-      'We create phrase cards for common visits, bilingual symptom and medication vocabulary lists, and preparation sheets that help patients organize questions before an appointment. Our materials support communication — they never replace professional medical interpretation or advice.',
+      'Families and educators are often the bridge for a student’s language. We build bilingual (English–Spanish) resources that make that role easier, with plain language and practical steps. Educational only, not accommodations or professional advice.',
     ],
     whatWeDo: [
-      'Develop Spanish–English phrase cards for clinic, pharmacy, and insurance settings',
-      'Publish bilingual vocabulary lists for symptoms, medications, and instructions',
-      'Create visit-preparation worksheets families can fill out in either language',
-      'Recruit bilingual student volunteers to review and improve every resource',
+      'Create bilingual family guides in plain English and Spanish',
+      'Share inclusive-language ideas educators can adapt',
+      'Build reusable, practical templates rather than one-off handouts',
+      'Invite feedback from families and educators to improve materials',
     ],
     whoItsFor:
-      'Spanish-speaking patients and families, bilingual students who want to serve their communities, and clinics seeking supplementary plain-language materials.',
-    ctaLabel: 'Explore the Phrase Library',
-    ctaHref: '/phrase-library',
+      'Parents, teachers, and school communities supporting multilingual and neurodivergent learners.',
+    ctaLabel: 'Resources for Families & Educators',
+    ctaHref: '/resources#families',
   },
   {
-    slug: 'inclusive-language-learning',
-    name: 'Inclusive Language Learning',
-    tagline: 'Language support designed for every kind of learner.',
-    icon: 'puzzle',
+    slug: 'youth-advocacy-and-volunteering',
+    name: 'Advocacy & Volunteer Engagement',
+    tagline: 'Volunteers building more accessible language for everyone.',
+    icon: 'hand-raised',
     color: 'teal',
+    status: 'Active',
+    featured: true,
     summary:
-      'Support for neurodiverse learners and children with developmental or language differences — because language access includes accessible learning.',
+      'Volunteers creating resources, running events, building partnerships, and advocating for accessible language education.',
     description: [
-      'Language learning materials are rarely designed with neurodiverse learners in mind. Children with developmental or language differences — especially in bilingual households — often need clearer structure, more visual support, and more patience than standard materials provide.',
-      'We adapt our tutoring approaches and resources for these learners: visual vocabulary supports, predictable session structures, and family guides that help parents support communication at home. We collaborate with educators and speech-language professionals to keep our materials practical and inclusive.',
+      'Our volunteers develop resources, run events, build partnerships, and advocate for accessible language education, including before the Plano ISD Board of Trustees. It’s real, meaningful work, led by volunteers with mentor guidance.',
     ],
     whatWeDo: [
-      'Adapt tutoring materials with visual supports and predictable structure',
-      'Publish family guides on supporting bilingual, neurodiverse communicators',
-      'Train volunteers on inclusive, strengths-based tutoring practices',
-      'Incorporate feedback from families and educators into our materials',
+      'Recruit, train, and coordinate volunteers',
+      'Advocate for accessible language education in local schools',
+      'Build partnerships with schools, libraries, and community groups',
+      'Create volunteer-led language-access campaigns and materials',
     ],
     whoItsFor:
-      'Neurodiverse learners, children with developmental or language differences, their families, and the educators who support them.',
-    ctaLabel: 'See Support Resources',
-    ctaHref: '/resources?category=neurodiverse-support',
-  },
-  {
-    slug: 'community-translation',
-    name: 'Community Translation & Resource Guides',
-    tagline: 'Helping local organizations reach every family they serve.',
-    icon: 'globe',
-    color: 'amber',
-    summary:
-      'Simple language-access materials for local organizations — translated flyers, plain-language rewrites, and communication guides.',
-    description: [
-      'Libraries, food banks, schools, and community centers want to reach multilingual families — but professional translation is expensive and plain-language writing is a skill. MSC helps close that gap.',
-      'Our volunteer teams translate and simplify community materials: event flyers, program signups, and informational guides. Every translation is reviewed by a second bilingual volunteer, and we’re transparent with partners about what volunteer translation can and can’t be used for.',
-    ],
-    whatWeDo: [
-      'Translate community flyers, signup forms, and informational materials',
-      'Rewrite complex documents into plain, accessible language',
-      'Offer the Communication Access Scorecard so organizations can self-assess',
-      'Build reusable bilingual templates local organizations can adapt',
-    ],
-    whoItsFor:
-      'Libraries, schools, community centers, and small nonprofits serving multilingual neighborhoods.',
-    ctaLabel: 'Partner With Us',
-    ctaHref: '/partners',
-  },
-  {
-    slug: 'creative-language-projects',
-    name: 'Creative Language Projects',
-    tagline: 'Making language access visible, joyful, and shareable.',
-    icon: 'paint-brush',
-    color: 'teal',
-    summary:
-      'Design contests, story projects, vocabulary campaigns, posters, and social media awareness — creativity in service of communication.',
-    description: [
-      'Awareness matters. Many people have never thought about what it’s like to navigate a hospital, a classroom, or a government form in a language they’re still learning. Our creative projects make that experience visible.',
-      'We run student design contests, bilingual story projects, vocabulary poster campaigns for schools and clinics, and social media series that teach one useful phrase at a time. Everything is free to share and reuse.',
-    ],
-    whatWeDo: [
-      'Host design and storytelling contests for student creators',
-      'Produce vocabulary posters and visual guides for schools and clinics',
-      'Run social media campaigns on language access and health literacy',
-      'Publish community stories about navigating language barriers',
-    ],
-    whoItsFor:
-      'Student artists, writers, and content creators — and anyone who wants to make communication access more visible.',
-    ctaLabel: 'Join a Creative Project',
+      'People who want to volunteer or lead, and community partners.',
+    ctaLabel: 'Get Involved',
     ctaHref: '/volunteer',
   },
 ]

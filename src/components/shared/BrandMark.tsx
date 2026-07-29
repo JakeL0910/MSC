@@ -1,10 +1,11 @@
-// MSC logo mark — two overlapping speech bubbles (a conversation / a collective)
-// on a rounded app-tile, in brand teal + amber. Pure SVG: crisp at any size.
+// MSC logo mark — a friendly speech bubble with a tilde (~) inside. The tilde
+// nods to Spanish (the ñ) and to "casual"; the bubble to conversation and
+// communication access. Brand teal tile + amber tilde. Pure SVG: crisp at any
+// size.
 //
 // Usage:  <BrandMark className="w-9 h-9" />
-// The same artwork is mirrored in src/app/icon.svg (the browser-tab favicon)
-// and in the social preview at src/app/opengraph-image.tsx — if you change the
-// design here, update those too.
+// The same artwork is mirrored in src/app/icon.svg (the browser-tab favicon).
+// If you change the design here, update that file too.
 
 export default function BrandMark({ className = 'w-9 h-9' }: { className?: string }) {
   return (
@@ -14,23 +15,23 @@ export default function BrandMark({ className = 'w-9 h-9' }: { className?: strin
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="MSC logo"
+      aria-label="Make Spanish Casual logo"
     >
       {/* rounded teal tile */}
-      <rect width="64" height="64" rx="15" fill="#1A6B72" />
+      <rect width="64" height="64" rx="16" fill="#1A6B72" />
 
-      {/* amber speech bubble (behind) */}
+      {/* white speech bubble with a tail */}
       <path
-        d="M34 24 H44 A6 6 0 0 1 50 30 V36 A6 6 0 0 1 44 42 H42 L38 47 V42 H34 A6 6 0 0 1 28 36 V30 A6 6 0 0 1 34 24 Z"
-        fill="#E8A020"
+        d="M16 14 H48 A8 8 0 0 1 56 22 V36 A8 8 0 0 1 48 44 H28 L19 52 V44 H16 A8 8 0 0 1 8 36 V22 A8 8 0 0 1 16 14 Z"
+        fill="#FFFFFF"
       />
 
-      {/* white speech bubble (front), teal outline to separate from amber */}
+      {/* amber tilde inside the bubble */}
       <path
-        d="M18 14 H34 A6 6 0 0 1 40 20 V28 A6 6 0 0 1 34 34 H26 L21 39 V34 H18 A6 6 0 0 1 12 28 V20 A6 6 0 0 1 18 14 Z"
-        fill="#FFFFFF"
-        stroke="#1A6B72"
-        strokeWidth="2"
+        d="M19 31 C 23 24, 29 24, 32 29 C 35 34, 41 34, 45 27"
+        stroke="#E8A020"
+        strokeWidth="5"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>

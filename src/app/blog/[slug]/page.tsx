@@ -1,8 +1,16 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import CtaBand from '@/components/shared/CtaBand'
+import CoverArt from '@/components/shared/CoverArt'
 import { blogPosts, getPost, formatPostDate } from '@/data/blog'
+
+function categoryIcon(category: string): string {
+  if (/community|event/i.test(category)) return 'users'
+  if (/news|update/i.test(category)) return 'megaphone'
+  return 'book-open'
+}
 
 // Blog articles are generated from src/data/blog.ts — edit content there.
 
@@ -44,8 +52,17 @@ export default async function BlogPostPage({
   return (
     <>
       <article>
+        {/* Cover banner — real event photo when available */}
+        {post.images?.[0] ? (
+          <div className="relative h-56 md:h-80 w-full overflow-hidden">
+            <Image src={post.images[0].src} alt={post.images[0].alt} fill priority className="object-cover" sizes="100vw" />
+          </div>
+        ) : (
+          <CoverArt icon={categoryIcon(post.category)} seed={post.slug} className="h-48 md:h-60" />
+        )}
+
         {/* Article header */}
-        <header className="bg-msc-teal-light/60 py-16">
+        <header className="bg-white pt-10 pb-8 border-b border-gray-100">
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-msc-teal hover:underline mb-6">
@@ -99,6 +116,29 @@ export default async function BlogPostPage({
         </div>
       </article>
 
+      {/* Photo gallery — real event photos */}
+      {post.images && post.images.length > 1 && (
+        <section className="pb-16 bg-white">
+          <div className="container">
+            <h2 className="text-2xl font-bold text-msc-charcoal mb-6 text-center">Photos from the day</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
+              {post.images.slice(1).map((img) => (
+                <div key={img.src} className="relative aspect-[4/3] overflow-hidden rounded-xl bg-msc-cream">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    loading="lazy"
+                    className="object-cover transition-transform duration-300 hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* More posts */}
       <section className="py-16 bg-msc-cream">
         <div className="container">
@@ -125,7 +165,7 @@ export default async function BlogPostPage({
 
       <CtaBand
         title="Turn reading into doing"
-        description="The issues in this post have a to-do list — and volunteers work through it every week."
+        description="Behind every story is real work, and volunteers make it happen."
         primary={{ label: 'Volunteer With MSC', href: '/volunteer' }}
         secondary={{ label: 'Browse Free Resources', href: '/resources' }}
       />

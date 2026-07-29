@@ -25,7 +25,7 @@ const interests = [
   'Tutoring or workshops for our community',
   'Translated or plain-language materials',
   'Resource displays / printed guides',
-  'Communication access review',
+  'Language access review',
   'Sponsorship or funding',
   'Something else',
 ]
@@ -65,7 +65,7 @@ export default function PartnerForm() {
     return (
       <SuccessCard
         title="Inquiry ready to send!"
-        message="Your email client opened with the inquiry pre-filled — hit send and our outreach team will follow up within a few days."
+        message="Your email client opened with the inquiry pre-filled. Hit send and our outreach team will follow up within a few days."
         onReset={() => setSubmitted(false)}
         resetLabel="Send another inquiry"
       />

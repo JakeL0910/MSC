@@ -47,12 +47,12 @@ export default function ContributeForm() {
     if (!name.trim()) { setError('Please enter your name.'); return }
     if (!isValidEmail(email)) { setError('Please enter a valid email address.'); return }
     if (!type) { setError('Please choose what you’d like to contribute.'); return }
-    if (!idea.trim()) { setError('Please describe your idea — a few sentences is plenty.'); return }
+    if (!idea.trim()) { setError('Please describe your idea; a few sentences is plenty.'); return }
     setError('')
 
     // Opens the contributor's email client with the proposal pre-filled.
     // Attachments (drafts, designs) can be added directly in the email.
-    window.location.href = buildMailto(site.email, `[Resource Contribution] ${type} — ${name}`, [
+    window.location.href = buildMailto(site.email, `[Resource Contribution] ${type} (${name})`, [
       ['Name', name],
       ['Email', email],
       ['Contribution type', type],
@@ -67,7 +67,7 @@ export default function ContributeForm() {
     return (
       <SuccessCard
         title="Proposal ready to send!"
-        message="Your email client opened with your proposal pre-filled. Attach any drafts before sending — our resource team reviews every submission."
+        message="Your email client opened with your proposal pre-filled. Attach any drafts before sending. Our resource team reviews every submission."
         onReset={() => setSubmitted(false)}
         resetLabel="Propose another resource"
       />
@@ -113,7 +113,7 @@ export default function ContributeForm() {
       </button>
 
       <p className="text-xs text-center text-gray-400">
-        Every published contribution is credited to its creator — great for portfolios and applications.
+        Every published contribution is credited to its creator, great for portfolios and applications.
       </p>
     </form>
   )

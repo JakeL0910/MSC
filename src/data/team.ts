@@ -1,7 +1,8 @@
 // ----------------------------------------------------------------------------
-// TEAM & ADVISORS — placeholders for the About page.
-// TODO: replace names, roles, and bios with your real team. To add photos,
-// drop images in /public/team/ and set `photo: '/team/name.jpg'`.
+// TEAM & FOUNDER
+// Only include real people. Placeholder/invented team members have been
+// removed. Add real volunteers and mentors here (with their consent) as the
+// team is confirmed — see completion report for what's still needed.
 // ----------------------------------------------------------------------------
 
 export interface TeamMember {
@@ -9,45 +10,21 @@ export interface TeamMember {
   role: string
   bio: string
   photo?: string
+  // Longer narrative used only in the Founder Story section.
+  story?: string[]
 }
 
-export const team: TeamMember[] = [
-  {
-    name: 'Jake Li',
-    role: 'Founder & Executive Director',
-    bio: 'Jake founded MSC as a high school student after seeing how language barriers shape families’ access to healthcare and education. He leads MSC’s programs and community outreach.',
-  },
-  {
-    name: 'Jada Li', // TODO: replace placeholder
-    role: 'Director of Programs',
-    bio: 'Coordinates tutoring matches, volunteer training, and community workshops. Passionate about making language learning feel welcoming for every learner.',
-  },
-  {
-    name: 'Jordan Stafford', // TODO: replace placeholder
-    role: 'Director of Resources',
-    bio: 'Leads the creation and review of MSC’s multilingual guides and toolkits, keeping every resource accurate, plain-language, and free.',
-  },
-  {
-    name: 'Devin Carroll', // TODO: replace placeholder
-    role: 'Outreach & Partnerships Lead',
-    bio: 'Builds MSC’s relationships with schools, libraries, and clinics — and makes sure resources reach the families who need them.',
-  },
-]
+export const founder: TeamMember = {
+  name: 'Jake Li',
+  role: 'Founder',
+  bio: 'Jake started Make Spanish Casual as a student and helps lead its work in accessible language.',
+  story: [
+    'It started with a simple observation: the Spanish people speak is different from the Spanish textbooks teach. Jake shared free, practical materials to close that gap, and a community grew around it.',
+    'Later, work in language advocacy and language sample analysis (SALT annotation of Spanish–English caregiver–child speech) deepened his interest in how people use language across bilingual and neurodevelopmental contexts, motivating MSC’s expansion toward accessible language. This is personal background, not a service MSC provides.',
+  ],
+}
 
-export const advisors: TeamMember[] = [
-  {
-    name: 'Coming Soon!', // TODO: replace placeholder
-    role: 'Speech-Language Pathologist',
-    bio: 'Advises on inclusive language learning materials for bilingual and neurodiverse communicators.',
-  },
-  {
-    name: 'Coming Soon!', // TODO: replace placeholder
-    role: 'Educator / ESL Specialist',
-    bio: 'Guides tutor training and curriculum so volunteer sessions reflect best practices in language teaching.',
-  },
-  {
-    name: 'Coming Soon!', // TODO: replace placeholder
-    role: 'Physician',
-    bio: 'Reviews health communication resources for accuracy and helps MSC stay clearly within its educational, non-clinical role.',
-  },
-]
+// Mentors/advisors: intentionally empty until real advisors consent to be
+// listed. The About page shows a general "volunteer-driven, mentor-guided" note while
+// this is empty — do not add invented names or credentials.
+export const advisors: TeamMember[] = []

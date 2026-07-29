@@ -11,6 +11,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
     "@types/react-dom": "latest",
+    "@upstash/redis": "^1.38.0",
     "framer-motion": "^12.5.0",
     "next": "^15.5.20",
     "react": "latest",

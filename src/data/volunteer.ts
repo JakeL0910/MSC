@@ -13,21 +13,21 @@ export interface VolunteerRole {
 
 export const volunteerRoles: VolunteerRole[] = [
   {
-    id: 'esl-tutor',
-    title: 'ESL Tutor',
-    icon: 'academic-cap',
+    id: 'spanish-contributor',
+    title: 'Conversational Spanish Contributor',
+    icon: 'chat',
     description:
-      'Lead one-on-one or small-group English practice sessions for students, parents, and community members. Full training provided.',
-    skills: ['Fluent English', 'Patience & reliability', 'Comfortable explaining things simply'],
-    commitment: '1–2 hours/week',
+      'Help create approachable, everyday Spanish materials: the practical, casual Spanish people actually use. Great for bilingual students.',
+    skills: ['Comfortable with everyday Spanish', 'Clear language', 'Reliability'],
+    commitment: '1–2 hours/week, flexible',
   },
   {
     id: 'resource-creator',
-    title: 'Healthcare Vocabulary Resource Creator',
+    title: 'Resource Creator',
     icon: 'document-text',
     description:
-      'Write and draft plain-language guides for clinic, pharmacy, and insurance vocabulary. Great for future health-career students.',
-    skills: ['Clear writing', 'Attention to accuracy', 'Interest in health communication'],
+      'Write and draft plain-language resources on language access, self-advocacy, and inclusive learning. No clinical expertise needed; we keep materials educational.',
+    skills: ['Clear writing', 'Attention to accuracy', 'Respectful, plain-language style'],
     commitment: '2–3 hours/week, flexible',
   },
   {
@@ -62,17 +62,17 @@ export const volunteerRoles: VolunteerRole[] = [
     title: 'Outreach Coordinator',
     icon: 'users',
     description:
-      'Connect MSC with schools, libraries, and community organizations — scheduling events, managing contacts, and following up with partners.',
-    skills: ['Organized communication', 'Comfort emailing adults/organizations', 'Follow-through'],
+      'Connect MSC with schools, libraries, and community organizations: scheduling events, managing contacts, and following up with partners.',
+    skills: ['Organized language', 'Comfort emailing adults/organizations', 'Follow-through'],
     commitment: '1–3 hours/week',
   },
   {
-    id: 'workshop-leader',
-    title: 'Workshop Leader',
+    id: 'event-helper',
+    title: 'Event & Workshop Helper',
     icon: 'presentation',
     description:
-      'Lead community workshops: healthcare vocabulary nights, family toolkit walkthroughs, and school presentations.',
-    skills: ['Comfortable presenting', 'Warm, clear speaking style', 'Training provided'],
+      'Help run community events and webinars: conversational Spanish nights, family resource walkthroughs, and school presentations.',
+    skills: ['Comfortable presenting or helping out', 'Warm, clear language', 'Training provided'],
     commitment: 'Per-event, ~3 hours each',
   },
 ]
@@ -97,7 +97,7 @@ export const timeCommitments: TimeCommitment[] = [
   {
     label: 'Project-based',
     hours: 'Flexible',
-    description: 'Contribute per-project — a translation, a design, a workshop — on your own timeline.',
+    description: 'Contribute per-project (a translation, a design, a workshop) on your own timeline.',
   },
 ]
 
@@ -110,17 +110,17 @@ export const volunteerFaq: FaqItem[] = [
   {
     question: 'Do I need to be bilingual to volunteer?',
     answer:
-      'No. Translation and review roles require bilingual proficiency, but ESL tutoring, design, content creation, and outreach only require fluent English. Many of our volunteers speak one language.',
+      'No. Translation, review, and Spanish-content roles benefit from bilingual proficiency, but design, content creation, outreach, and event help only require fluent English. Many of our volunteers speak one language.',
   },
   {
-    question: 'Do I need teaching experience to tutor?',
+    question: 'Do I need special experience or credentials?',
     answer:
-      'No — every tutor completes our training toolkit before their first session, covering session structure, culturally responsive teaching, and what to do when you don’t know an answer. Patience and consistency matter more than credentials.',
+      'No. Every volunteer gets onboarding before they start, and our resources stay educational (not clinical), so no professional or medical credentials are needed. Patience, care, and reliability matter most.',
   },
   {
     question: 'Can I volunteer remotely?',
     answer:
-      'Yes. Resource creation, translation, design, and social media roles are fully remote. Tutoring can be remote or in person depending on learner needs in your area.',
+      'Yes. Resource creation, translation, design, and social media roles are fully remote. Event and outreach help can be remote or in person depending on what’s happening in your area.',
   },
   {
     question: 'Does volunteering count for service hours?',

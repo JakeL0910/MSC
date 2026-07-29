@@ -28,11 +28,10 @@ export default function TermsPage() {
               <h2 className="text-xl font-bold text-msc-charcoal mb-3">Educational purpose only</h2>
               <p>
                 MSC is not a medical provider, law firm, or licensed interpretation service. Our
-                materials — including healthcare vocabulary guides and phrase libraries — are
-                educational communication support. They are not medical, legal, or professional
-                advice, and they are not a substitute for professional interpretation, evaluation,
-                or care. Always consult qualified professionals for decisions about health,
-                education, or legal matters.
+                materials are educational language support. They are not medical, legal, or
+                professional advice, and they are not a substitute for professional interpretation,
+                evaluation, or care. Always consult qualified professionals for decisions about
+                health, education, or legal matters.
               </p>
             </div>
             <div>
@@ -40,7 +39,7 @@ export default function TermsPage() {
               <p>
                 Our volunteer teams review materials for accuracy, but we cannot guarantee that
                 every translation or explanation is error-free or appropriate for every situation.
-                If you find an error, please tell us — we correct published resources promptly.
+                If you find an error, please tell us; we correct published resources promptly.
               </p>
             </div>
             <div>

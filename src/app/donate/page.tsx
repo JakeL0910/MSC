@@ -40,7 +40,7 @@ export default function DonatePage() {
       <PageHero
         eyebrow="Support MSC"
         title="Fund the next conversation"
-        description="Everything MSC makes is free for families and communities — donations cover printing, program supplies, volunteer training, and the tools behind our resources."
+        description="Everything MSC makes is free for families and communities. Donations cover printing, program supplies, volunteer training, and the tools behind our resources."
       />
 
       <section className="py-16 bg-white">
@@ -69,7 +69,7 @@ export default function DonatePage() {
               <h2 className="text-xl font-bold text-msc-charcoal mb-2">Online giving is almost ready</h2>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
                 Our donation platform is being set up. In the meantime, email us and we'll arrange
-                your gift directly — or ask about sponsoring a specific program.
+                your gift directly, or ask about sponsoring a specific program.
               </p>
               <a
                 href={`mailto:${site.email}?subject=${encodeURIComponent('[Donation] I would like to support MSC')}`}

@@ -10,22 +10,30 @@ import BrandMark from '@/components/shared/BrandMark'
 // NAVIGATION STRUCTURE — edit these arrays to change the menus.
 // ---------------------------------------------------------------------------
 const aboutMenu = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Our Impact', href: '/impact' },
-  { label: 'Blog & Updates', href: '/blog' },
+  { label: 'Mission', href: '/about#mission' },
+  { label: 'Our Evolution', href: '/about#evolution' },
+  { label: 'Founder Story', href: '/about#founder' },
+  { label: 'News & Stories', href: '/blog' },
+]
+
+const whatWeDoMenu = [
+  { label: 'Language Education', href: '/programs/language-education' },
+  { label: 'Neurodivergent & Student Resources', href: '/programs/neurodivergent-and-student-resources' },
+  { label: 'Events & Webinars', href: '/classes' },
+  { label: 'All areas of work', href: '/programs' },
 ]
 
 const resourcesMenu = [
-  { label: 'Resource Hub', href: '/resources' },
-  { label: 'Healthcare Phrase Library', href: '/phrase-library' },
-  { label: 'MSC Learn (Flashcards)', href: '/learn' },
-  { label: 'Communication Scorecard', href: '/scorecard' },
+  { label: 'For Students', href: '/resources#students' },
+  { label: 'For Families', href: '/resources#families' },
+  { label: 'For Educators', href: '/resources#educators' },
+  { label: 'All resources', href: '/resources' },
 ]
 
 const involvedMenu = [
   { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Start a Chapter', href: '/chapters' },
   { label: 'Partner With Us', href: '/partners' },
-  { label: 'Contact', href: '/contact' },
 ]
 
 function NavDropdown({
@@ -169,7 +177,7 @@ export default function Header() {
             <BrandMark className="w-9 h-9 transition-transform group-hover:scale-105" />
             <span className="flex flex-col leading-tight">
               <span className="text-base font-bold text-msc-charcoal group-hover:text-msc-teal transition-colors">
-                Multilingual Support Collective
+                {site.name}
               </span>
               <span className="text-[11px] text-gray-500 font-medium">
                 Youth-led · {site.legalLine}
@@ -185,10 +193,17 @@ export default function Header() {
               open={openDropdown === 'About'}
               onToggle={() => toggle('About')}
               onClose={() => setOpenDropdown(null)}
-              isActive={isSection(['/about', '/impact', '/blog'])}
+              isActive={isSection(['/about', '/blog'])}
             />
 
-            {plainLink('/programs', 'Programs')}
+            <NavDropdown
+              label="What We Do"
+              items={whatWeDoMenu}
+              open={openDropdown === 'What We Do'}
+              onToggle={() => toggle('What We Do')}
+              onClose={() => setOpenDropdown(null)}
+              isActive={isSection(['/programs', '/classes'])}
+            />
 
             <NavDropdown
               label="Resources"
@@ -196,8 +211,10 @@ export default function Header() {
               open={openDropdown === 'Resources'}
               onToggle={() => toggle('Resources')}
               onClose={() => setOpenDropdown(null)}
-              isActive={isSection(['/resources', '/phrase-library', '/learn', '/scorecard'])}
+              isActive={isSection(['/resources'])}
             />
+
+            {plainLink('/impact', 'Impact')}
 
             <NavDropdown
               label="Get Involved"
@@ -205,8 +222,10 @@ export default function Header() {
               open={openDropdown === 'Get Involved'}
               onToggle={() => toggle('Get Involved')}
               onClose={() => setOpenDropdown(null)}
-              isActive={isSection(['/volunteer', '/partners', '/contact'])}
+              isActive={isSection(['/volunteer', '/chapters', '/partners'])}
             />
+
+            {plainLink('/contact', 'Contact')}
           </nav>
 
           {/* Right actions */}
@@ -248,16 +267,9 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 py-3 px-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
-          <Link
-            href="/programs"
-            className="block py-2.5 text-sm font-medium text-gray-700 border-b border-gray-50"
-            onClick={() => setMobileOpen(false)}
-          >
-            Programs
-          </Link>
-
           {[
             { label: 'About', items: aboutMenu },
+            { label: 'What We Do', items: whatWeDoMenu },
             { label: 'Resources', items: resourcesMenu },
             { label: 'Get Involved', items: involvedMenu },
           ].map(({ label, items }) => (
@@ -294,6 +306,21 @@ export default function Header() {
               )}
             </div>
           ))}
+
+          <Link
+            href="/impact"
+            className="block py-2.5 text-sm font-medium text-gray-700 border-b border-gray-50"
+            onClick={() => setMobileOpen(false)}
+          >
+            Impact
+          </Link>
+          <Link
+            href="/contact"
+            className="block py-2.5 text-sm font-medium text-gray-700 border-b border-gray-50"
+            onClick={() => setMobileOpen(false)}
+          >
+            Contact
+          </Link>
 
           <div className="flex gap-3 pt-3">
             <Link

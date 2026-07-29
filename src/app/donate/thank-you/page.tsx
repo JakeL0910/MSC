@@ -21,8 +21,8 @@ export default function ThankYouPage() {
           Thank you. Truly.
         </h1>
         <p className="animate-enter enter-delay-2 serif-lead text-lg text-gray-600 leading-relaxed mb-4">
-          Your gift funds free multilingual resources, volunteer tutoring, and communication tools
-          for families who need them — and it goes to work right away.
+          Your gift funds free multilingual resources, volunteer tutoring, and language tools
+          for families who need them, and it goes to work right away.
         </p>
         <p className="animate-enter enter-delay-2 text-sm text-gray-500 mb-9">
           A receipt from Stripe is on its way to your inbox. {site.legalLine}

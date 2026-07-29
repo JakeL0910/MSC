@@ -123,9 +123,9 @@ export default function DonateWidget() {
       {/* impact line for the selected preset */}
       <p className="text-sm text-gray-500 text-center min-h-10 mb-5" aria-live="polite">
         {selectedPreset
-          ? `$${selectedPreset.amount}${monthly ? '/month' : ''} — ${selectedPreset.impact.toLowerCase()}`
+          ? `$${selectedPreset.amount}${monthly ? '/month' : ''} · ${selectedPreset.impact.toLowerCase()}`
           : validAmount
-            ? `$${amount}${monthly ? '/month' : ''} — every dollar goes to free language-access programs`
+            ? `$${amount}${monthly ? '/month' : ''} · every dollar goes to free language-access programs`
             : 'Enter an amount between $1 and $25,000'}
       </p>
 

@@ -1,6 +1,10 @@
 // ----------------------------------------------------------------------------
-// PARTNERS DATA — partnership types, offerings, and example collaborations
-// for the /partners page.
+// PARTNERS DATA — partnership types and illustrative ways to collaborate for
+// the /partners page.
+//
+// The collaborations below are ILLUSTRATIONS of what MSC offers — not claims of
+// specific past partnerships. Add real, named collaborations here only once
+// they exist and the partner has agreed to be named.
 // ----------------------------------------------------------------------------
 
 export interface PartnerType {
@@ -14,45 +18,34 @@ export const partnerTypes: PartnerType[] = [
   {
     audience: 'Schools & Districts',
     icon: 'academic-cap',
-    headline: 'Support your multilingual students and families',
+    headline: 'Support your multilingual and neurodivergent students and families',
     weProvide: [
-      'Free ESL tutoring support for students',
-      'Bilingual family guides for conferences, forms, and IEP meetings',
-      'Student workshops on health literacy and language access',
-      'Translated versions of family-facing flyers and announcements',
-    ],
-  },
-  {
-    audience: 'Clinics & Health Organizations',
-    icon: 'heart',
-    headline: 'Help patients arrive prepared and leave informed',
-    weProvide: [
-      'Plain-language vocabulary guides for waiting rooms',
-      'Bilingual visit-preparation checklists for patients',
-      'A Communication Access Scorecard self-assessment of your materials',
-      'Supplementary phrase resources (never a replacement for interpretation)',
+      'Free, plain-language resources on language access and self-advocacy',
+      'Bilingual family guides and conversational Spanish materials',
+      'Student events and webinars on inclusive learning and language',
+      'Plain-language rewrites of family-facing flyers and announcements',
     ],
   },
   {
     audience: 'Libraries & Community Centers',
     icon: 'book-open',
-    headline: 'Bring language programs to your community space',
+    headline: 'Bring accessible language programs to your community space',
     weProvide: [
-      'Volunteer-led ESL conversation groups and tutoring hours',
-      'Family Language Toolkit workshops for parents',
-      'Free printed resource displays for your patrons',
+      'Conversational Spanish and language-access events',
+      'Family-friendly workshops on supporting learners at home',
+      'Free resource displays for your patrons',
       'Bilingual event flyers and program materials',
     ],
   },
   {
-    audience: 'Nonprofits & Local Organizations',
+    audience: 'Nonprofits & Community Organizations',
     icon: 'users',
     headline: 'Reach every family your mission serves',
     weProvide: [
       'Volunteer translation and plain-language rewrites of outreach materials',
-      'Communication access reviews with practical recommendations',
-      'Co-branded community guides for your programs',
-      'Cross-promotion of language-access events',
+      'Bilingual (English–Spanish) versions of key documents',
+      'Co-hosted community events and webinars',
+      'Cross-promotion of accessible-language programming',
     ],
   },
 ]
@@ -63,36 +56,24 @@ export interface ExampleCollaboration {
   description: string
 }
 
-// TODO: replace these with real collaborations as they launch —
-// keep the format: what happened, with whom, and the outcome.
+// Illustrative offerings only — NOT claims of specific past partnerships.
 export const exampleCollaborations: ExampleCollaboration[] = [
   {
     title: 'Bilingual Family Night',
-    partner: 'With a local elementary school',
+    partner: 'For example, with a local school',
     description:
-      'MSC volunteers ran a bilingual station at a school family night — walking parents through the Family Language Toolkit and helping them prepare questions for upcoming conferences.',
+      'MSC volunteers could run a bilingual station at a school family night, walking families through free resources in English and Spanish.',
   },
   {
-    title: 'Waiting Room Resource Rack',
-    partner: 'With a community health clinic',
+    title: 'Conversational Spanish Meetup',
+    partner: 'For example, with a public library',
     description:
-      'A clinic partner now stocks MSC’s bilingual clinic phrasebook and insurance vocabulary guide in its waiting area, restocked each month by our outreach team.',
+      'A relaxed, drop-in conversational Spanish session in a community space, open to learners at any level.',
   },
   {
-    title: 'Library Conversation Hours',
-    partner: 'With a public library branch',
+    title: 'Inclusive Language Workshop',
+    partner: 'For example, with a community organization',
     description:
-      'Weekly ESL conversation practice hosted in a library meeting room, led by trained MSC student tutors, with drop-in attendance open to the whole community.',
+      'A practical, hands-on session on making everyday language and materials more accessible and welcoming for everyone.',
   },
-]
-
-// TODO: replace with real partner names/logos — drop logo files in
-// /public/partners/ and reference them here.
-export const partnerLogoPlaceholders: string[] = [
-  'Your School District',
-  'Community Health Clinic',
-  'Public Library System',
-  'Local Family Nonprofit',
-  'Youth Service Organization',
-  'Community Foundation',
 ]

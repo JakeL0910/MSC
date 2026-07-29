@@ -18,7 +18,10 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const USER = process.env.SITE_USER || 'msc'
 const PASSWORD = process.env.SITE_PASSWORD || 'msc2026'
-const DISABLED = process.env.GATE_DISABLED === 'true'
+// The gate is off when the site is public, or when explicitly bypassed for a
+// local/preview session. SITE_PUBLIC=true is the single "we are live" switch
+// (it also opens the site to search engines — see robots.ts and layout.tsx).
+const DISABLED = process.env.SITE_PUBLIC === 'true' || process.env.GATE_DISABLED === 'true'
 
 export function middleware(req: NextRequest) {
   if (DISABLED) return NextResponse.next()

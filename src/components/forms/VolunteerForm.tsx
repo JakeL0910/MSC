@@ -34,7 +34,7 @@ export default function VolunteerForm() {
 
     // Opens the applicant's email client with the application pre-filled.
     // See fields.tsx for how to switch this to a real form backend.
-    window.location.href = buildMailto(site.email, `[Volunteer Application] ${name} — ${role}`, [
+    window.location.href = buildMailto(site.email, `[Volunteer Application] ${name} (${role})`, [
       ['Name', name],
       ['Email', email],
       ['Age / grade', age],
@@ -50,7 +50,7 @@ export default function VolunteerForm() {
     return (
       <SuccessCard
         title="Application ready to send!"
-        message="Your email client opened with your application pre-filled — hit send and we'll reply within about a week with next steps."
+        message="Your email client opened with your application pre-filled. Hit send and we'll reply within about a week with next steps."
         onReset={() => setSubmitted(false)}
         resetLabel="Start another application"
       />
@@ -104,7 +104,7 @@ export default function VolunteerForm() {
         onChange={setWhy}
         required
         rows={4}
-        placeholder="A few sentences is perfect — experience is not required."
+        placeholder="A few sentences is perfect; experience is not required."
       />
 
       <button

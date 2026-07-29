@@ -3,7 +3,14 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Icon from '@/components/shared/Icons'
 import CtaBand from '@/components/shared/CtaBand'
+import CoverArt, { type CoverPalette } from '@/components/shared/CoverArt'
 import { programs, getProgram } from '@/data/programs'
+
+const colorToPalette: Record<'teal' | 'amber' | 'coral', CoverPalette> = {
+  teal: 'teal',
+  amber: 'amber',
+  coral: 'coral',
+}
 
 // Program pages are generated from src/data/programs.ts — edit content there.
 
@@ -44,20 +51,44 @@ export default async function ProgramPage({
 
   return (
     <>
+      {/* Cover banner */}
+      <CoverArt icon={program.icon} palette={colorToPalette[program.color]} seed={program.slug} className="h-40 md:h-52" />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-msc-teal-light/60">
         <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-msc-teal/10 blur-3xl" aria-hidden="true" />
         <div className="container relative py-16 md:py-20">
           <Link href="/programs" className="inline-flex items-center gap-1.5 text-sm font-medium text-msc-teal hover:underline mb-6">
-            ← All programs
+            ← All areas of work
           </Link>
           <div className="flex items-start gap-5">
             <span className={`hidden sm:flex w-14 h-14 rounded-2xl items-center justify-center flex-shrink-0 ${colorClasses[program.color]}`}>
               <Icon name={program.icon} className="w-7 h-7" />
             </span>
             <div className="max-w-3xl">
+              <span
+                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide mb-4 ${
+                  program.status === 'Active' ? 'bg-msc-teal-light text-msc-teal' : 'bg-msc-amber-light text-msc-amber'
+                }`}
+              >
+                <span
+                  className={`h-1.5 w-1.5 rounded-full ${program.status === 'Active' ? 'bg-msc-teal' : 'bg-msc-amber'}`}
+                  aria-hidden="true"
+                />
+                {program.status}
+              </span>
               <h1 className="text-4xl md:text-5xl font-bold text-msc-charcoal mb-4">{program.name}</h1>
               <p className="text-lg text-msc-teal font-medium mb-4">{program.tagline}</p>
+              {program.status === 'In Development' && (
+                <p className="text-sm text-gray-600 bg-white/70 rounded-xl px-4 py-3 mb-5 max-w-xl">
+                  This area is in development. Some resources described here are still being built and
+                  aren’t available yet. Check back, or{' '}
+                  <Link href="/contact" className="text-msc-teal font-semibold hover:underline">
+                    tell us what would help
+                  </Link>
+                  .
+                </p>
+              )}
               <Link href={program.ctaHref} className="btn-primary">{program.ctaLabel}</Link>
             </div>
           </div>
@@ -98,7 +129,7 @@ export default async function ProgramPage({
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-msc-teal mb-3">Get involved</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-5">
-                  Every program is powered by student volunteers and community partners.
+                  Every area of work is powered by volunteers and community partners.
                 </p>
                 <div className="space-y-2.5">
                   <Link href="/volunteer" className="btn-primary w-full text-sm">Volunteer</Link>
@@ -113,7 +144,7 @@ export default async function ProgramPage({
       {/* Other programs */}
       <section className="py-16 bg-msc-cream">
         <div className="container">
-          <h2 className="text-2xl font-bold text-msc-charcoal mb-8 text-center">Explore other programs</h2>
+          <h2 className="text-2xl font-bold text-msc-charcoal mb-8 text-center">Explore other areas of work</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {otherPrograms.map((p) => (
               <Link
@@ -135,10 +166,10 @@ export default async function ProgramPage({
       </section>
 
       <CtaBand
-        title="Help this program grow"
-        description="Volunteers make every session, guide, and workshop possible — and it takes less time than you think."
+        title="Help this work grow"
+        description="Volunteers make every resource, session, and guide possible, and it takes less time than you think."
         primary={{ label: 'Become a Volunteer', href: '/volunteer' }}
-        secondary={{ label: 'Support MSC', href: '/donate' }}
+        secondary={{ label: 'Partner With Us', href: '/partners' }}
       />
     </>
   )

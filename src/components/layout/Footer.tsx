@@ -36,26 +36,28 @@ function YouTubeIcon() {
 }
 
 const programLinks = [
-  { label: 'Health Communication Resources', href: '/programs/health-communication-resources' },
-  { label: 'ESL & Language Tutoring', href: '/programs/esl-tutoring' },
-  { label: 'Inclusive Language Learning', href: '/programs/inclusive-language-learning' },
-  { label: 'All Programs', href: '/programs' },
+  { label: 'Language Education', href: '/programs/language-education' },
+  { label: 'Neurodivergent & Student Resources', href: '/programs/neurodivergent-and-student-resources' },
+  { label: 'Family & Educator Resources', href: '/programs/family-and-educator-resources' },
+  { label: 'Advocacy & Volunteering', href: '/programs/youth-advocacy-and-volunteering' },
+  { label: 'All areas of work', href: '/programs' },
 ]
 
 const resourceLinks = [
-  { label: 'Resource Hub', href: '/resources' },
-  { label: 'Healthcare Phrase Library', href: '/phrase-library' },
-  { label: 'MSC Learn', href: '/learn' },
-  { label: 'Communication Scorecard', href: '/scorecard' },
-  { label: 'Blog & Updates', href: '/blog' },
+  { label: 'For Students', href: '/resources#students' },
+  { label: 'For Families', href: '/resources#families' },
+  { label: 'For Educators', href: '/resources#educators' },
+  { label: 'Events & Webinars', href: '/classes' },
+  { label: 'All resources', href: '/resources' },
 ]
 
 const orgLinks = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Our Impact', href: '/impact' },
+  { label: 'About', href: '/about' },
+  { label: 'Impact', href: '/impact' },
+  { label: 'News & Stories', href: '/blog' },
   { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Start a Chapter', href: '/chapters' },
   { label: 'Partner With Us', href: '/partners' },
-  { label: 'Brand Kit', href: '/brand' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -104,7 +106,7 @@ export default function Footer() {
 
           {/* Programs */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Programs</h3>
+            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">What We Do</h3>
             <ul className="space-y-2.5">
               {programLinks.map((l) => (
                 <li key={l.href}>
@@ -155,7 +157,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="flex-1">
               <p className="text-sm font-semibold text-white">Stay updated</p>
-              <p className="text-xs text-gray-400 mt-0.5">New resources and volunteer opportunities — about once a month.</p>
+              <p className="text-xs text-gray-400 mt-0.5">New resources and volunteer opportunities, about once a month.</p>
             </div>
             <NewsletterSignup />
           </div>
@@ -163,9 +165,11 @@ export default function Footer() {
 
         {/* Educational disclaimer */}
         <p className="text-xs text-gray-500 leading-relaxed mb-6 max-w-3xl">
-          MSC provides educational resources and communication support. We are not a medical
-          provider and our materials are not medical advice or a substitute for professional
-          interpretation, evaluation, or care.
+          MSC provides free educational resources and community programs. Our materials are
+          educational and are not clinical, medical, psychological, or legal advice, individualized
+          professional guidance, or a substitute for evaluation, therapy, accommodations, or care
+          from a qualified professional. When individualized support is needed, we encourage
+          connecting with a licensed professional.
         </p>
 
         <div className="border-t border-gray-800 pt-7 flex flex-col sm:flex-row items-center justify-between gap-4">

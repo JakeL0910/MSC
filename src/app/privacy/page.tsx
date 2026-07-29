@@ -20,7 +20,7 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-bold text-msc-charcoal mb-3">What we collect</h2>
               <p>
                 This website does not require accounts and does not collect personal information
-                unless you choose to send it to us — for example, by submitting a contact,
+                unless you choose to send it to us, for example by submitting a contact,
                 volunteer, or partnership form (which opens an email from your own email client)
                 or emailing us directly.
               </p>

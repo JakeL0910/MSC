@@ -1,75 +1,72 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import PageHero from '@/components/shared/PageHero'
 import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import StatGrid from '@/components/shared/StatGrid'
 import Icon from '@/components/shared/Icons'
-import { stats } from '@/data/site'
-import { timeline, testimonials, programOutcomes, reachLocations } from '@/data/impact'
+import Voices from '@/components/features/Voices'
+import { highlights } from '@/data/site'
+import { milestones, accomplishments, reachTypes, impactStats } from '@/data/impact'
 
 export const metadata: Metadata = {
-  title: 'Our Impact',
+  title: 'Impact',
   description:
-    'How MSC measures its work: learners reached, resources published, volunteer hours, program outcomes, and the story of our growth.',
+    'The verified work of Make Spanish Casual: free educational resources, events across Dallas–Fort Worth, volunteering, partnerships, and advocacy for accessible language education.',
 }
 
 export default function ImpactPage() {
   return (
     <>
       <PageHero
+        illustration="community"
         eyebrow="Impact"
-        title="What communication access adds up to"
-        description="We measure our work in conversations made possible — and in the numbers behind them. Current figures are placeholders while our first formal reporting cycle completes."
+        title="Our work, honestly told"
+        description="Our verified work to date, described plainly. More figures coming as programs run."
       />
 
-      {/* Headline stats */}
-      <section className="py-16 bg-white">
+      {/* By the numbers — real, documented figures only */}
+      {impactStats.length > 0 && (
+        <section className="py-14 bg-white border-b border-gray-100">
+          <div className="container">
+            <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 text-center sm:grid-cols-3">
+              {impactStats.map((s) => (
+                <div key={s.label}>
+                  <p className="text-4xl md:text-5xl font-bold text-msc-teal">{s.value}</p>
+                  <p className="mt-1.5 text-sm font-semibold text-msc-charcoal">{s.label}</p>
+                  {s.note && <p className="mt-0.5 text-xs text-gray-500">{s.note}</p>}
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-center text-xs text-gray-400">
+              More numbers coming as programs run, including the August Access Sprint.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Verified highlights */}
+      <section className="py-16 bg-msc-cream">
         <div className="container">
-          <StatGrid items={stats} />
+          <StatGrid items={highlights} />
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* What we've done */}
       <section className="py-20 bg-msc-cream">
         <div className="container">
           <SectionHeading
-            eyebrow="Our journey"
-            title="From student project to collective"
-          />
-          <div className="max-w-2xl mx-auto">
-            <ol className="relative border-l-2 border-msc-teal/20 pl-8 space-y-10">
-              {timeline.map((event) => (
-                <li key={event.year} className="relative">
-                  <span className="absolute -left-[41px] w-5 h-5 rounded-full bg-msc-teal border-4 border-msc-cream" aria-hidden="true" />
-                  <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-1">{event.year}</p>
-                  <h3 className="text-lg font-bold text-msc-charcoal mb-1.5">{event.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{event.description}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Program outcomes */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Program outcomes"
-            title="Results by program"
-            description="Placeholder metrics — updated as each program's data comes in."
+            eyebrow="What we’ve done"
+            title="Verified areas of work"
           />
           <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-            {programOutcomes.map((o) => (
-              <div key={o.program} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex items-start gap-4">
+            {accomplishments.map((a) => (
+              <div key={a.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex items-start gap-4">
                 <span className="w-11 h-11 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center flex-shrink-0">
                   <Icon name="check" className="w-5 h-5" />
                 </span>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-msc-teal mb-1">{o.program}</p>
-                  <p className="text-lg font-bold text-msc-charcoal mb-1">{o.metric}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed">{o.outcome}</p>
+                  <p className="text-base font-bold text-msc-charcoal mb-1">{a.title}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{a.detail}</p>
                 </div>
               </div>
             ))}
@@ -77,19 +74,38 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Community reach */}
+      {/* Our evolution / milestones */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <SectionHeading eyebrow="Our journey" title="How MSC has grown" />
+          <div className="max-w-2xl mx-auto">
+            <ol className="relative border-l-2 border-msc-teal/20 pl-8 space-y-10">
+              {milestones.map((m) => (
+                <li key={m.title} className="relative">
+                  <span className="absolute -left-[41px] w-5 h-5 rounded-full bg-msc-teal border-4 border-white" aria-hidden="true" />
+                  <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-1">{m.phase}</p>
+                  <h3 className="text-lg font-bold text-msc-charcoal mb-1.5">{m.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Where our work shows up */}
       <section className="py-20 bg-msc-teal">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-msc-amber mb-3">Community reach</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Where our work shows up</h2>
+            <p className="text-xs font-bold uppercase tracking-widest text-msc-amber mb-3">Where we work</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">In the community, and online</h2>
             <p className="text-msc-teal-light/90">
-              Local first, online everywhere. Our printed resources live in community spaces; our
-              digital tools reach families anywhere.
+              Local first in Dallas–Fort Worth, and open to anyone online. Our partner network is
+              growing.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {reachLocations.map((loc) => (
+            {reachTypes.map((loc) => (
               <div key={loc.name} className="bg-white/10 rounded-2xl p-6 text-center">
                 <span className="w-10 h-10 rounded-xl bg-msc-amber text-msc-charcoal flex items-center justify-center mx-auto mb-4">
                   <Icon name="map-pin" className="w-5 h-5" />
@@ -102,55 +118,19 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Voices — real community stories (invitation state until quotes exist) */}
       <section className="py-20 bg-white">
         <div className="container">
-          <SectionHeading
-            eyebrow="Voices"
-            title="What people tell us"
-            description="Placeholder quotes — replace with real testimonials (with permission) in src/data/impact.ts."
-          />
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <figure key={t.quote.slice(0, 30)} className="bg-msc-cream rounded-2xl p-7">
-                <p className="text-msc-amber text-3xl font-serif leading-none mb-3" aria-hidden="true">"</p>
-                <blockquote className="text-sm text-gray-700 leading-relaxed mb-5">{t.quote}</blockquote>
-                <figcaption>
-                  <p className="text-sm font-bold text-msc-charcoal">{t.name}</p>
-                  <p className="text-xs text-gray-500">{t.role}</p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Annual report placeholder */}
-      <section className="py-16 bg-msc-cream">
-        <div className="container">
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <span className="w-14 h-14 rounded-2xl bg-msc-teal-light text-msc-teal flex items-center justify-center flex-shrink-0">
-              <Icon name="document-text" className="w-7 h-7" />
-            </span>
-            <div className="flex-1">
-              <h2 className="text-xl font-bold text-msc-charcoal mb-1.5">Annual report</h2>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Our first annual report — programs, finances, and outcomes — is in preparation.
-                {/* TODO: when the report PDF is ready, drop it in /public/downloads/ and link it here */}
-              </p>
-            </div>
-            <Link href="/contact" className="btn-secondary text-sm whitespace-nowrap">
-              Request a Copy
-            </Link>
-          </div>
+          <SectionHeading eyebrow="Voices" title="From our community" />
+          <Voices />
         </div>
       </section>
 
       <CtaBand
         title="Impact needs people behind it"
-        description="These numbers grow one volunteer, one partner, and one supporter at a time."
+        description="Our work grows one volunteer, one partner, and one supporter at a time."
         primary={{ label: 'Volunteer', href: '/volunteer' }}
-        secondary={{ label: 'Support MSC', href: '/donate' }}
+        secondary={{ label: 'Partner With Us', href: '/partners' }}
       />
     </>
   )

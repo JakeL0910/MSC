@@ -4,21 +4,22 @@ import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import Icon from '@/components/shared/Icons'
 import PartnerForm from '@/components/forms/PartnerForm'
-import { partnerTypes, exampleCollaborations, partnerLogoPlaceholders } from '@/data/partners'
+import { partnerTypes, exampleCollaborations } from '@/data/partners'
 
 export const metadata: Metadata = {
   title: 'Partner With Us',
   description:
-    'MSC partners with schools, clinics, libraries, community centers, and nonprofits to bring free language access resources, tutoring, and translation support to their communities.',
+    'Make Spanish Casual partners with schools, libraries, and community organizations to bring free, accessible language resources, events, and volunteer support to their communities.',
 }
 
 export default function PartnersPage() {
   return (
     <>
       <PageHero
+        illustration="community"
         eyebrow="Partners"
-        title="Bring language access to the people you serve"
-        description="Schools, clinics, libraries, community centers, and nonprofits: MSC provides free multilingual resources, volunteer programs, and communication support — you provide the community that needs them."
+        title="Bring accessible language to the people you serve"
+        description="MSC provides free resources, events, and volunteer support. You provide the community that benefits."
         actions={[
           { label: 'Start a Partnership', href: '#inquire' },
           { label: 'See What We Provide', href: '#types', variant: 'secondary' },
@@ -31,7 +32,7 @@ export default function PartnersPage() {
           <SectionHeading
             eyebrow="Partnership types"
             title="What MSC brings to each partner"
-            description="Every partnership is free. We ask only for a point of contact and honest feedback on what's working."
+            description="Every partnership is free."
           />
           <div className="grid md:grid-cols-2 gap-6">
             {partnerTypes.map((type) => (
@@ -57,13 +58,13 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* Example collaborations */}
+      {/* Ways to work together (illustrative, not claimed past partnerships) */}
       <section className="py-20 bg-msc-cream">
         <div className="container">
           <SectionHeading
-            eyebrow="In practice"
-            title="What a collaboration looks like"
-            description="Example collaborations below — replace them with real ones in src/data/partners.ts as partnerships launch."
+            eyebrow="Ways to work together"
+            title="What a collaboration could look like"
+            description="We’ll shape a partnership around what you need."
           />
           <div className="grid md:grid-cols-3 gap-6">
             {exampleCollaborations.map((collab) => (
@@ -71,26 +72,6 @@ export default function PartnersPage() {
                 <h3 className="text-lg font-bold text-msc-charcoal mb-1">{collab.title}</h3>
                 <p className="text-sm font-medium text-msc-teal mb-3">{collab.partner}</p>
                 <p className="text-sm text-gray-600 leading-relaxed">{collab.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partner logos placeholder */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <p className="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">
-            Our growing partner network
-          </p>
-          {/* TODO: replace placeholder names with real partner logos (see src/data/partners.ts) */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {partnerLogoPlaceholders.map((name) => (
-              <div
-                key={name}
-                className="h-20 rounded-xl border-2 border-dashed border-gray-200 flex items-center justify-center px-3 text-center"
-              >
-                <span className="text-xs font-semibold text-gray-400">{name}</span>
               </div>
             ))}
           </div>
@@ -106,7 +87,7 @@ export default function PartnersPage() {
                 align="left"
                 eyebrow="Start the conversation"
                 title="Partnership inquiry"
-                description="Tell us about your community and where language barriers show up. We'll suggest a starting point — usually something small we can launch within a month."
+                description="Tell us about your community. We'll suggest a small first step."
               />
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-msc-teal mb-4">Good first projects</h3>
@@ -115,7 +96,7 @@ export default function PartnersPage() {
                     'A resource display of free bilingual guides in your lobby',
                     'One translated flyer or plain-language rewrite',
                     'A single workshop or conversation-practice event',
-                    'A Communication Access Scorecard review of your materials',
+                    'A Language Access Scorecard review of your materials',
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600 leading-relaxed">
                       <span className="text-msc-amber mt-0.5 flex-shrink-0">

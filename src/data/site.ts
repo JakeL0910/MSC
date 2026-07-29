@@ -1,31 +1,38 @@
 // ----------------------------------------------------------------------------
 // CENTRAL SITE CONFIGURATION
-// Edit this file to update branding, contact info, social links, and headline
-// stats across the entire site. Every page pulls from here.
+// Edit this file to update branding, contact info, social links, and the
+// verified accomplishment highlights shown across the site. Every page pulls
+// from here.
 // ----------------------------------------------------------------------------
 
 export const site = {
   acronym: 'MSC',
-  name: 'Multilingual Support Collective',
-  shortName: 'MSC — Multilingual Support Collective',
-  tagline: 'Bridging language gaps in healthcare, education, and community life.',
+  name: 'Make Spanish Casual',
+  shortName: 'Make Spanish Casual (MSC)',
+  tagline: 'Making language more accessible.',
   subtagline:
-    'MSC is a youth-led initiative creating multilingual resources, tutoring programs, and tools that make communication more accessible for families, students, and underserved communities.',
+    'Approachable resources and programs for neurodivergent and multilingual people, families, and educators.',
+  // Secondary message used in a few hero/intro contexts.
+  secondaryMessage:
+    'Language looks different for everyone. We help make it more accessible.',
   mission:
-    'MSC empowers communities through language access.',
+    'MSC helps neurodivergent and multilingual individuals use language, learn, and be understood through accessible education and language advocacy.',
   vision:
-    'A world where language is never a barrier to health, education, or belonging.',
+    'A community where language, in all its forms, is understood, respected, and within reach.',
 
-  // TODO: update this email when the new domain goes live
+  // TODO: confirm the public contact address before launch.
   email: 'hello@makespanishcasual.org',
   legalLine: '501(c)(3) Nonprofit Organization',
   // TODO: add your EIN here for donor pages, e.g. 'EIN 88-1234567'
   ein: '',
 
-  // TODO: update when the new domain is live (used for SEO/Open Graph URLs)
+  // Primary service area (verified): Dallas–Fort Worth (DFW), Texas.
+  serviceArea: 'Dallas–Fort Worth, Texas',
+
+  // Used for SEO/Open Graph URLs.
   url: 'https://makespanishcasual.org',
 
-  // TODO: replace with your real social handles (omit or leave empty to hide a link)
+  // TODO: confirm/990 these are the current, active handles before launch.
   social: {
     instagram: 'https://instagram.com/makespanishcasual_',
     youtube: 'https://youtube.com/@makespanishcasual',
@@ -35,34 +42,31 @@ export const site = {
 }
 
 // ----------------------------------------------------------------------------
-// HEADLINE STATS — placeholder numbers. Update these as your programs grow;
-// they appear on the homepage and the Impact page.
+// VERIFIED ACCOMPLISHMENT HIGHLIGHTS
+// These describe real, verified work — NOT fabricated metrics. They appear on
+// the homepage and Impact page. Do not add participant counts, donation totals,
+// or reach numbers here unless they are confirmed and documented.
 // ----------------------------------------------------------------------------
-export interface Stat {
-  value: string
-  label: string
-  detail?: string
+export interface Highlight {
+  label: string // short headline (kept non-numeric until real figures are verified)
+  detail: string
 }
 
-export const stats: Stat[] = [
+export const highlights: Highlight[] = [
   {
-    value: '1,200+',
-    label: 'Learners & families reached',
-    detail: 'Through tutoring, resources, and community events',
+    label: 'Free educational language resources',
+    detail: 'Practical materials you can read and print, free.',
   },
   {
-    value: '45+',
-    label: 'Multilingual resources published',
-    detail: 'Free guides, toolkits, and phrase libraries',
+    label: 'Events across Dallas–Fort Worth',
+    detail: 'Virtual and in-person events for students, families, and community.',
   },
   {
-    value: '30+',
-    label: 'Student volunteers',
-    detail: 'Tutors, translators, designers, and organizers',
+    label: 'Advocacy before the Plano ISD Board',
+    detail: 'Advocating for accessible language education in schools.',
   },
   {
-    value: '8',
-    label: 'Community partners',
-    detail: 'Schools, libraries, and local organizations',
+    label: 'A dedicated volunteer community',
+    detail: 'Volunteers building resources and running events.',
   },
 ]

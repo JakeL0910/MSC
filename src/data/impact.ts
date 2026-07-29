@@ -1,38 +1,95 @@
 // ----------------------------------------------------------------------------
-// IMPACT PAGE DATA — timeline, testimonials, and program outcomes.
-// Headline stats live in src/data/site.ts (shared with the homepage).
+// IMPACT / OUR STORY DATA
+// Verified, qualitative content only. This file intentionally contains NO
+// fabricated metrics (participant counts, donation totals, reach numbers) and
+// NO invented testimonials. Add real, documented figures and quotes (with
+// permission) only when they are confirmed. Headline highlights live in
+// src/data/site.ts.
 // ----------------------------------------------------------------------------
 
-export interface TimelineEvent {
-  year: string
+export interface Milestone {
+  phase: string // short label instead of an unverified exact date
   title: string
   description: string
 }
 
-export const timeline: TimelineEvent[] = [
+// MSC's evolution, told as ordered phases. Exact founding/expansion years can
+// be added here once confirmed (see completion report — dates need verifying).
+export const milestones: Milestone[] = [
   {
-    year: '2023',
-    title: 'The spark',
+    phase: 'How we started',
+    title: 'Make Spanish Casual',
     description:
-      'MSC begins as Make Spanish Casual — a student project sharing free, real-world Spanish learning materials and building its first community of learners.',
+      'We started with free, practical materials for the Spanish people really speak.',
   },
   {
-    year: '2024',
-    title: 'First community programs',
+    phase: 'Growing',
+    title: 'Resources, events, and volunteers',
     description:
-      'Volunteer tutoring begins and the first bilingual resource sets are published.',
+      'Free resources grew alongside events across Dallas–Fort Worth, powered by volunteers.',
   },
   {
-    year: '2025',
-    title: 'The mission grows',
+    phase: 'Advocating',
+    title: 'Speaking up for language access',
     description:
-      'Work expands beyond Spanish learning into health communication, family resources, and inclusive language support — the questions our community was actually asking.',
+      'We advocated before the Plano ISD Board for accessible language education.',
   },
   {
-    year: '2026',
-    title: 'Multilingual Support Collective',
+    phase: 'Expanding',
+    title: 'From casual Spanish to language access',
     description:
-      'MSC rebrands to reflect its full mission: language access, health communication, and inclusive tutoring, with a growing volunteer and partner network.',
+      'The same idea grew into a broader mission: accessible language for neurodivergent and multilingual people.',
+  },
+]
+
+export interface ImpactStat {
+  value: string
+  label: string
+  note?: string
+}
+
+// Real, documented numbers ONLY. The Impact page shows this band when it's
+// non-empty. After each event/program, add confirmed figures here, e.g.:
+//   { value: 'NN', label: 'Sprint registrations' }
+//   { value: 'NN', label: 'Access Plans completed' }
+//   { value: 'NN', label: 'Volunteers' }   { value: 'NN', label: 'Attendees' }
+// Do NOT add a number you can't document.
+export const impactStats: ImpactStat[] = [
+  { value: '4', label: 'Free resources published', note: 'Read and print at no cost' },
+  { value: '2', label: 'ACTFL conference presentations', note: '2024 Philadelphia, 2025 New Orleans' },
+  { value: '1', label: 'Testimony to the Plano ISD Board', note: 'For accessible language education' },
+]
+
+export interface Accomplishment {
+  title: string
+  detail: string
+}
+
+// Verified areas of work (qualitative — no fabricated counts).
+export const accomplishments: Accomplishment[] = [
+  {
+    title: 'Developed free educational language resources',
+    detail: 'Practical, plain-language materials for learning and everyday language.',
+  },
+  {
+    title: 'Organized educational events across DFW',
+    detail: 'Virtual and in-person events for students, families, and community members.',
+  },
+  {
+    title: 'Recruited and coordinated volunteers',
+    detail: 'A dedicated team creating resources, running events, and reaching families.',
+  },
+  {
+    title: 'Built strategic partnerships',
+    detail: 'Working with schools and community organizations to extend access.',
+  },
+  {
+    title: 'Advocated before the Plano ISD Board',
+    detail: 'Bringing a student voice to decisions about accessible language education.',
+  },
+  {
+    title: 'Promoted practical Spanish and cultural understanding',
+    detail: 'Keeping real-world language approachable, relevant, and free.',
   },
 ]
 
@@ -42,68 +99,20 @@ export interface Testimonial {
   role: string
 }
 
-// TODO: replace with real quotes (with permission). Aim for voices outside
-// the core team — learners, parents, and partners are most credible.
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      'Before my appointment I practiced with the phrase cards. For the first time I asked the doctor my own questions, in my own words.',
-    name: 'Community member',
-    role: 'Healthcare Phrase Library user (placeholder)',
-  },
-  {
-    quote:
-      'My tutor never makes me feel behind. We practice the English I actually need — for work, for my kids’ school, for real life.',
-    name: 'Adult learner',
-    role: 'ESL Tutoring participant (placeholder)',
-  },
-  {
-    quote:
-      'MSC translated our program flyers and suddenly families who had never signed up before started showing up. That’s what access looks like.',
-    name: 'Program coordinator',
-    role: 'Community partner organization (placeholder)',
-  },
-]
+// Intentionally empty. Add real quotes here ONLY with the person's permission.
+// The Impact page hides this section while the list is empty — do not add
+// placeholder or invented testimonials.
+export const testimonials: Testimonial[] = []
 
-export interface ProgramOutcome {
-  program: string
-  outcome: string
-  metric: string
-}
-
-// TODO: update metrics as real program data comes in.
-export const programOutcomes: ProgramOutcome[] = [
-  {
-    program: 'ESL & Language Tutoring',
-    outcome: 'Learners matched with a consistent weekly volunteer tutor',
-    metric: '60+ sessions delivered',
-  },
-  {
-    program: 'Health Communication Resources',
-    outcome: 'Bilingual guides downloaded and distributed through partners',
-    metric: '45+ resources published',
-  },
-  {
-    program: 'Community Translation',
-    outcome: 'Local organization materials translated or simplified',
-    metric: '25+ documents completed',
-  },
-  {
-    program: 'Creative Language Projects',
-    outcome: 'Awareness campaigns and visual resources shared with schools and clinics',
-    metric: '12+ projects completed',
-  },
-]
-
-export interface ReachLocation {
+export interface ReachType {
   name: string
   detail: string
 }
 
-// Community reach — shown as a simple list until a real map is warranted.
-export const reachLocations: ReachLocation[] = [
-  { name: 'Local schools', detail: 'Tutoring, workshops, and family guides' },
-  { name: 'Public libraries', detail: 'Conversation hours and resource displays' },
-  { name: 'Community clinics', detail: 'Waiting-room resources and phrasebooks' },
-  { name: 'Online community', detail: 'Free downloads and remote tutoring nationwide' },
+// The kinds of settings MSC works in (qualitative — partner network is growing).
+export const reachTypes: ReachType[] = [
+  { name: 'Schools & school communities', detail: 'Events, advocacy, and resources for students and families' },
+  { name: 'Public libraries', detail: 'Community learning and resource sharing' },
+  { name: 'Community organizations', detail: 'Partnerships that help resources reach more families' },
+  { name: 'Online', detail: 'Free resources and webinars, open to anyone' },
 ]

@@ -10,16 +10,17 @@ import { volunteerRoles, timeCommitments, volunteerFaq } from '@/data/volunteer'
 export const metadata: Metadata = {
   title: 'Volunteer',
   description:
-    'Volunteer with MSC: tutor English learners, create healthcare vocabulary resources, translate materials, design, and lead workshops. Service hours verified.',
+    'Volunteer with Make Spanish Casual: create language and Spanish resources, translate materials, design, help run events, and advocate for accessible language education. Volunteer-driven, mentor-guided.',
 }
 
 export default function VolunteerPage() {
   return (
     <>
       <PageHero
+        illustration="advocacy"
         eyebrow="Volunteer"
-        title="Do work that opens doors for someone else"
-        description="MSC volunteers tutor, translate, design, and organize. No experience required for most roles — we train you. Service hours verified for school requirements."
+        title="Do work that helps someone be understood"
+        description="Create resources, translate, design, help run events, and advocate. No experience needed for most roles; we train you, and service hours can be verified."
         actions={[
           { label: 'Apply Now', href: '#apply' },
           { label: 'See the Roles', href: '#roles', variant: 'secondary' },
@@ -32,7 +33,7 @@ export default function VolunteerPage() {
           <SectionHeading
             eyebrow="Volunteer roles"
             title="Eight ways to contribute"
-            description="Pick the role that fits your skills and schedule — or try a few. Every role comes with onboarding and a real responsibility."
+            description="Pick the role that fits, or try a few."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {volunteerRoles.map((role) => (
@@ -130,11 +131,11 @@ export default function VolunteerPage() {
                 align="left"
                 eyebrow="Volunteer Resource Builder"
                 title="Have an idea? Build it with us."
-                description="Volunteers don't just execute our ideas — they propose their own. Guides, flashcard sets, translations, posters: if it helps someone communicate, we want to see it."
+                description="Volunteers propose their own ideas. Guides, flashcards, translations, posters: if it helps someone use language, we want to see it."
               />
               <ul className="space-y-3.5">
                 {[
-                  'Propose a draft, an outline, or just an idea — any stage is welcome',
+                  'Propose a draft, an outline, or just an idea; any stage is welcome',
                   'Our resource team reviews it and pairs you with a reviewer',
                   'Accepted resources are published in the Resource Hub, credited to you',
                   'Great for portfolios, college applications, and real-world impact',
@@ -180,7 +181,7 @@ export default function VolunteerPage() {
 
       <CtaBand
         title="Someone is waiting to be understood"
-        description="Your hour a week becomes a family's confidence at the doctor's office, a student's grade in English class, a community that reads the flyer."
+        description="Your hour a week becomes a student's confidence, a family's understanding, a community that can take part."
         primary={{ label: 'Apply to Volunteer', href: '#apply' }}
         secondary={{ label: 'Questions? Contact Us', href: '/contact' }}
       />
