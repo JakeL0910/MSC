@@ -9,9 +9,9 @@ import Icon from '@/components/shared/Icons'
 import { site } from '@/data/site'
 
 const PRESETS = [
-  { amount: 25, impact: 'Prints 50 bilingual phrase cards for a clinic waiting room' },
-  { amount: 100, impact: 'Supplies a semester of materials for one tutoring match' },
-  { amount: 500, impact: 'Funds a full community workshop, printed toolkits included' },
+  { amount: 25, impact: 'Prints and shares a batch of free bilingual resources' },
+  { amount: 100, impact: 'Supplies materials for a community event or webinar' },
+  { amount: 500, impact: 'Funds a full month of free resources and events' },
 ]
 
 export default function DonateWidget() {

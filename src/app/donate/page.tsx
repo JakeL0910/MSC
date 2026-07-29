@@ -18,15 +18,15 @@ export const metadata: Metadata = {
 const givingLevels = [
   {
     amount: '$25',
-    impact: 'Prints 50 bilingual phrase cards for a clinic waiting room',
+    impact: 'Prints and shares a batch of free bilingual resources',
   },
   {
     amount: '$100',
-    impact: 'Supplies a semester of materials for one tutoring match',
+    impact: 'Supplies materials for a community event or webinar',
   },
   {
     amount: '$500',
-    impact: 'Funds a full community workshop, printed toolkits included',
+    impact: 'Funds a full month of free resources and events',
   },
 ]
 
@@ -111,7 +111,7 @@ export default function DonatePage() {
               {
                 icon: 'megaphone',
                 title: 'Give reach',
-                text: 'Share our free tools with a family, teacher, or clinic that could use them today.',
+                text: 'Share our free tools with a family, teacher, or community group that could use them today.',
                 href: '/resources',
                 cta: 'Share resources',
               },

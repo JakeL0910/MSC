@@ -9,9 +9,7 @@
     "tzLabel": "ET",
     "host": "MSC Training Team",
     "language": "Bilingual",
-    "level": "All Levels",
-    "joinUrl": "https://meet.google.com/xxx-xxxx-xxx",
-    "registerUrl": "https://meet.google.com/xxx-xxxx-xxx"
+    "level": "All Levels"
   },
   {
     "id": "english-appointments-aug12",
@@ -24,8 +22,6 @@
     "host": "MSC Volunteer Team",
     "language": "English",
     "level": "All Levels",
-    "joinUrl": "https://us02web.zoom.us/j/000000001",
-    "registerUrl": "https://us02web.zoom.us/j/000000001",
     "capacity": 40
   },
   {
@@ -38,9 +34,7 @@
     "tzLabel": "ET",
     "host": "MSC Community Programs",
     "language": "Bilingual",
-    "level": "All Levels",
-    "joinUrl": "https://www.youtube.com/@msc/live",
-    "registerUrl": "https://www.youtube.com/@msc/live"
+    "level": "All Levels"
   },
   {
     "id": "healthcare-spanish-101-jul29",
@@ -53,8 +47,6 @@
     "host": "MSC Volunteer Team",
     "language": "Spanish",
     "level": "Beginner",
-    "joinUrl": "https://us02web.zoom.us/j/000000000",
-    "registerUrl": "https://us02web.zoom.us/j/000000000",
     "capacity": 40
   },
   {
@@ -67,8 +59,7 @@
     "tzLabel": "ET",
     "host": "MSC Resource Team",
     "language": "English",
-    "level": "All Levels",
-    "recordingUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "level": "All Levels"
   },
   {
     "id": "bilingual-parenting-jun24",
@@ -80,8 +71,7 @@
     "tzLabel": "ET",
     "host": "MSC Family Programs",
     "language": "Bilingual",
-    "level": "All Levels",
-    "recordingUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "level": "All Levels"
   },
   {
     "id": "language-access-101-jun10",
@@ -93,8 +83,7 @@
     "tzLabel": "ET",
     "host": "MSC Leadership",
     "language": "English",
-    "level": "All Levels",
-    "recordingUrl": "https://vimeo.com/76979871"
+    "level": "All Levels"
   },
   {
     "id": "nd-supporting-learner-aug26",
@@ -106,9 +95,7 @@
     "tzLabel": "ET",
     "host": "MSC Family Programs",
     "language": "Bilingual",
-    "level": "All Levels",
-    "joinUrl": "https://us02web.zoom.us/j/000000010",
-    "registerUrl": "https://us02web.zoom.us/j/000000010"
+    "level": "All Levels"
   },
   {
     "id": "nd-language-differences-sep2",
@@ -120,9 +107,7 @@
     "tzLabel": "ET",
     "host": "MSC + guest educator",
     "language": "Bilingual",
-    "level": "All Levels",
-    "joinUrl": "https://www.youtube.com/@makespanishcasual/live",
-    "registerUrl": "https://www.youtube.com/@makespanishcasual/live"
+    "level": "All Levels"
   },
   {
     "id": "nd-self-advocacy-sep9",
@@ -135,8 +120,6 @@
     "host": "MSC Family Programs",
     "language": "English",
     "level": "All Levels",
-    "joinUrl": "https://us02web.zoom.us/j/000000011",
-    "registerUrl": "https://us02web.zoom.us/j/000000011",
     "capacity": 40
   },
   {
@@ -149,9 +132,7 @@
     "tzLabel": "ET",
     "host": "MSC + guest educator",
     "language": "Bilingual",
-    "level": "All Levels",
-    "joinUrl": "https://meet.google.com/xxx-xxxx-xxx",
-    "registerUrl": "https://meet.google.com/xxx-xxxx-xxx"
+    "level": "All Levels"
   },
   {
     "id": "nd-comunicacion-flexible-sep23",
@@ -164,8 +145,6 @@
     "host": "MSC Family Programs",
     "language": "Spanish",
     "level": "All Levels",
-    "joinUrl": "https://us02web.zoom.us/j/000000012",
-    "registerUrl": "https://us02web.zoom.us/j/000000012",
     "capacity": 40
   }
 ]

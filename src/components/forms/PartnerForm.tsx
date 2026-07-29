@@ -14,7 +14,7 @@ import {
 
 const orgTypes = [
   'School or district',
-  'Clinic or health organization',
+  'Community organization',
   'Library',
   'Community center',
   'Nonprofit',
