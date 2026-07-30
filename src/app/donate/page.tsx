@@ -10,7 +10,7 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support MSC: your donation funds free multilingual resources and volunteer tutoring for language access.',
+    'Support Make Spanish Casual. Your donation funds free resources, community events, and programs for accessible language education. Tax-deductible.',
 }
 
 // Giving levels — edit amounts and impact lines freely.
@@ -31,8 +31,9 @@ const givingLevels = [
 ]
 
 export default function DonatePage() {
-  // Stripe goes live the moment STRIPE_SECRET_KEY is set (locally in .env.local,
-  // in production via Vercel env vars). Until then we show the email fallback.
+  // Donation path priority: Zeffy (free for nonprofits) → Stripe → email fallback.
+  // Set site.zeffyUrl to your Zeffy form URL, or STRIPE_SECRET_KEY for Stripe.
+  const zeffyUrl = site.zeffyUrl
   const stripeConfigured = Boolean(process.env.STRIPE_SECRET_KEY)
 
   return (
@@ -56,7 +57,33 @@ export default function DonatePage() {
             ))}
           </div>
 
-          {stripeConfigured ? (
+          {zeffyUrl ? (
+            <Reveal>
+              <div className="max-w-2xl mx-auto">
+                <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-md bg-white">
+                  <iframe
+                    title="Donate to Make Spanish Casual"
+                    src={zeffyUrl}
+                    className="w-full"
+                    style={{ height: 820, border: 0 }}
+                    allow="payment"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="mt-4 text-center text-sm text-gray-500">
+                  Form not loading?{' '}
+                  <a href={zeffyUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-msc-teal hover:underline">
+                    Open the donation form in a new tab
+                  </a>
+                  .
+                </p>
+                <p className="mt-2 text-center text-xs text-gray-400">
+                  {site.legalLine}. 100% of your gift reaches MSC; Zeffy is free for nonprofits.
+                  Tax-deductible to the extent allowed by law.{site.ein && ` ${site.ein}.`}
+                </p>
+              </div>
+            </Reveal>
+          ) : stripeConfigured ? (
             <Reveal>
               <DonateWidget />
             </Reveal>
@@ -97,7 +124,7 @@ export default function DonatePage() {
               {
                 icon: 'hand-raised',
                 title: 'Give time',
-                text: 'An hour a week as a tutor, translator, or designer moves the mission as much as any check.',
+                text: 'An hour a week as a volunteer, translator, or designer moves the mission as much as any check.',
                 href: '/volunteer',
                 cta: 'Volunteer',
               },

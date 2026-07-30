@@ -32,6 +32,12 @@ export const site = {
   // Used for SEO/Open Graph URLs.
   url: 'https://makespanishcasual.org',
 
+  // DONATIONS via Zeffy (free for nonprofits, no Stripe account needed).
+  // Create a donation form at zeffy.com, then paste its URL here — the Donate
+  // page embeds it automatically. Leave empty to show the "email us" fallback.
+  // Example: 'https://www.zeffy.com/en-US/donation-form/your-form-id'
+  zeffyUrl: '',
+
   // TODO: confirm/990 these are the current, active handles before launch.
   social: {
     instagram: 'https://instagram.com/makespanishcasual_',
