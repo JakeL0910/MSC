@@ -36,7 +36,7 @@ export const site = {
   // Create a donation form at zeffy.com, then paste its URL here — the Donate
   // page embeds it automatically. Leave empty to show the "email us" fallback.
   // Example: 'https://www.zeffy.com/en-US/donation-form/your-form-id'
-  zeffyUrl: '',
+  zeffyUrl: 'https://www.zeffy.com/en-US/donation-form/donate-to-support-the-movement-3',
 
   // TODO: confirm/990 these are the current, active handles before launch.
   social: {
