@@ -16,7 +16,7 @@ export const site = {
   secondaryMessage:
     'Language looks different for everyone. We help make it more accessible.',
   mission:
-    'MSC helps neurodivergent and multilingual individuals use language, learn, and be understood through accessible education and language advocacy.',
+    'MSC helps multilingual individuals use language, learn, and be understood through accessible language learning.',
   vision:
     'A community where language, in all its forms, is understood, respected, and within reach.',
 

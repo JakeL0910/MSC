@@ -180,7 +180,7 @@ export default function Header() {
                 {site.name}
               </span>
               <span className="text-[11px] text-gray-500 font-medium">
-                Youth-led · {site.legalLine}
+                A Youth-Led Movement
               </span>
             </span>
           </Link>

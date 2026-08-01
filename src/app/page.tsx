@@ -44,21 +44,9 @@ const heroPhrases = [
 
 // The language-access need, framed without deficit or clinical language.
 const principles = [
-  {
-    icon: 'chat',
-    title: 'Language takes many forms',
-    text: 'Speaking, writing, signing, gestures, and more are all valid. Access means meeting people where they are.',
-  },
-  {
-    icon: 'globe',
-    title: 'Multilingualism is a strength',
-    text: 'Moving between languages is an asset, not a deficit. We build on it.',
-  },
-  {
-    icon: 'hand-raised',
-    title: 'Meet people where they are',
-    text: 'Language education should be flexible and welcoming, never one-size-fits-all.',
-  },
+  { icon: 'chat', title: 'Language takes many forms' },
+  { icon: 'globe', title: 'Multilingualism is a strength' },
+  { icon: 'hand-raised', title: 'Meet people where they are' },
 ]
 
 export default function HomePage() {
@@ -75,7 +63,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <p className="animate-enter inline-block text-xs font-bold uppercase tracking-widest text-msc-teal bg-white/80 rounded-full px-3.5 py-1.5 mb-6">
-                Youth-led · {site.legalLine}
+                A Youth-Led Movement
               </p>
               <h1 className="animate-enter enter-delay-1 text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-msc-charcoal mb-6">
                 Making language{' '}
@@ -88,10 +76,9 @@ export default function HomePage() {
                 <Link href="/resources" className="btn-primary">Explore Resources</Link>
                 <Link href="/volunteer" className="btn-secondary">Get Involved</Link>
               </div>
-              <p className="animate-enter enter-delay-4 text-sm text-gray-500 mt-6">
-                Are you a school or community organization?{' '}
+              <p className="animate-enter enter-delay-4 text-sm mt-6">
                 <Link href="/partners" className="text-msc-teal font-semibold hover:underline">
-                  Partner with us
+                  Partner with us →
                 </Link>
               </p>
             </div>
@@ -149,12 +136,11 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {principles.map((item, i) => (
               <Reveal key={item.title} delay={i * 0.1}>
-                <div className="h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                  <span className="w-12 h-12 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-5">
+                <div className="h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-7 flex items-center gap-4">
+                  <span className="w-12 h-12 shrink-0 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center">
                     <Icon name={item.icon} className="w-6 h-6" />
                   </span>
-                  <h3 className="text-lg font-bold text-msc-charcoal mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.text}</p>
+                  <h3 className="text-lg font-bold text-msc-charcoal">{item.title}</h3>
                 </div>
               </Reveal>
             ))}
@@ -176,17 +162,11 @@ export default function HomePage() {
                   href={`/programs/${program.slug}`}
                   className="group flex h-full flex-col overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-msc-teal/20 hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="relative">
-                    <CoverArt icon={program.icon} palette={colorToPalette[program.color]} seed={program.slug} className="h-32" />
-                    <div className="absolute top-3 right-3">
-                      <StatusBadge status={program.status} />
-                    </div>
-                  </div>
+                  <CoverArt icon={program.icon} palette={colorToPalette[program.color]} seed={program.slug} className="h-32" />
                   <div className="flex flex-1 flex-col p-7">
-                    <h3 className="text-lg font-bold text-msc-charcoal mb-2 group-hover:text-msc-teal transition-colors">
+                    <h3 className="text-lg font-bold text-msc-charcoal mb-4 flex-1 group-hover:text-msc-teal transition-colors">
                       {program.name}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">{program.summary}</p>
                     <span className="text-sm font-semibold text-msc-teal">
                       Learn more <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </span>
@@ -337,20 +317,5 @@ export default function HomePage() {
         secondary={{ label: 'Partner With Us', href: '/partners' }}
       />
     </>
-  )
-}
-
-// Small active / in-development badge used on focus-area cards.
-function StatusBadge({ status }: { status: 'Active' | 'In Development' }) {
-  const active = status === 'Active'
-  return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide ${
-        active ? 'bg-msc-teal-light text-msc-teal' : 'bg-msc-amber-light text-msc-amber'
-      }`}
-    >
-      <span className={`h-1.5 w-1.5 rounded-full ${active ? 'bg-msc-teal' : 'bg-msc-amber'}`} aria-hidden="true" />
-      {status}
-    </span>
   )
 }
