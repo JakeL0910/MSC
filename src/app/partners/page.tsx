@@ -3,6 +3,7 @@ import PageHero from '@/components/shared/PageHero'
 import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import Icon from '@/components/shared/Icons'
+import Reveal from '@/components/ui/Reveal'
 import PartnerForm from '@/components/forms/PartnerForm'
 import { partnerTypes, exampleCollaborations } from '@/data/partners'
 
@@ -18,8 +19,9 @@ export default function PartnersPage() {
       <PageHero
         illustration="community"
         eyebrow="Partners"
-        title="Bring accessible language to the people you serve"
-        description="MSC provides free resources, events, and volunteer support. You provide the community that benefits."
+        title="Bring accessible language to"
+        titleAccent="the people you serve"
+        description="We bring free resources, events, and volunteers. You bring the community."
         actions={[
           { label: 'Start a Partnership', href: '#inquire' },
           { label: 'See What We Provide', href: '#types', variant: 'secondary' },
@@ -35,9 +37,10 @@ export default function PartnersPage() {
             description="Every partnership is free."
           />
           <div className="grid md:grid-cols-2 gap-6">
-            {partnerTypes.map((type) => (
-              <div key={type.audience} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-                <span className="w-12 h-12 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-5">
+            {partnerTypes.map((type, i) => (
+              <Reveal key={type.audience} delay={i * 0.08}>
+              <div className="group h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <span className="w-12 h-12 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110">
                   <Icon name={type.icon} className="w-6 h-6" />
                 </span>
                 <h3 className="text-xl font-bold text-msc-charcoal mb-1">{type.audience}</h3>
@@ -53,6 +56,7 @@ export default function PartnersPage() {
                   ))}
                 </ul>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -67,12 +71,14 @@ export default function PartnersPage() {
             description="We’ll shape a partnership around what you need."
           />
           <div className="grid md:grid-cols-3 gap-6">
-            {exampleCollaborations.map((collab) => (
-              <div key={collab.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                <h3 className="text-lg font-bold text-msc-charcoal mb-1">{collab.title}</h3>
-                <p className="text-sm font-medium text-msc-teal mb-3">{collab.partner}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{collab.description}</p>
-              </div>
+            {exampleCollaborations.map((collab, i) => (
+              <Reveal key={collab.title} delay={i * 0.08}>
+                <div className="h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-7 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <h3 className="text-lg font-bold text-msc-charcoal mb-1">{collab.title}</h3>
+                  <p className="text-sm font-medium text-msc-teal mb-3">{collab.partner}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{collab.description}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

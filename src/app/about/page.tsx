@@ -5,6 +5,7 @@ import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import Icon from '@/components/shared/Icons'
 import Illustration from '@/components/shared/Illustration'
+import Reveal from '@/components/ui/Reveal'
 import { site } from '@/data/site'
 import { founder, advisors } from '@/data/team'
 import { milestones } from '@/data/impact'
@@ -49,8 +50,9 @@ export default function AboutPage() {
       <PageHero
         illustration="story"
         eyebrow="About MSC"
-        title="A youth-led collective for language access"
-        description="We make language education and everyday language more flexible, inclusive, and accessible for neurodivergent and multilingual people, families, and educators."
+        title="A youth-led movement for"
+        titleAccent="language access"
+        description="Flexible, inclusive, human. Language that works for neurodivergent and multilingual people, families, and educators."
       />
 
       {/* ===================== MISSION ===================== */}
@@ -90,33 +92,35 @@ export default function AboutPage() {
             description="The same idea, reaching further."
           />
 
-          <div className="max-w-3xl mx-auto mb-14 space-y-4 text-gray-600 leading-relaxed">
-            <p>
-              Make Spanish Casual began by closing the gap between classroom Spanish and everyday
-              language.
-            </p>
-            <p>
-              That revealed a bigger question: how do we make language itself more accessible
-              for people who learn, process language, or use language differently? So we expanded,
-              while keeping our conversational Spanish roots.
+          <div className="max-w-3xl mx-auto mb-14 text-center">
+            <p className="serif-lead text-lg text-gray-600 leading-relaxed">
+              We started with everyday Spanish. It grew into a bigger question: how do we make
+              language itself more accessible for everyone who learns and communicates differently?
             </p>
           </div>
 
           {/* Milestone timeline */}
           <ol className="relative max-w-3xl mx-auto border-l-2 border-msc-teal/20 pl-8 space-y-10">
-            {milestones.map((m) => (
-              <li key={m.title} className="relative">
-                <span
-                  className="absolute -left-[2.6rem] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-msc-teal text-white"
-                  aria-hidden="true"
-                >
-                  <span className="h-2 w-2 rounded-full bg-white" />
-                </span>
-                <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-1">{m.phase}</p>
-                <h3 className="text-lg font-bold text-msc-charcoal mb-1.5">{m.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
-              </li>
-            ))}
+            {milestones.map((m, i) => {
+              const isLatest = i === milestones.length - 1
+              return (
+                <li key={m.title} className="relative">
+                  <span
+                    className={`absolute -left-[2.6rem] top-1 flex h-6 w-6 items-center justify-center rounded-full text-white ${
+                      isLatest ? 'bg-msc-amber animate-pulse-soft' : 'bg-msc-teal'
+                    }`}
+                    aria-hidden="true"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-white" />
+                  </span>
+                  <Reveal delay={i * 0.06}>
+                    <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-1">{m.phase}</p>
+                    <h3 className="text-lg font-bold text-msc-charcoal mb-1.5">{m.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
+                  </Reveal>
+                </li>
+              )
+            })}
           </ol>
         </div>
       </section>
@@ -153,14 +157,16 @@ export default function AboutPage() {
             title="Our values"
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {values.map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
-                <span className="w-11 h-11 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mx-auto mb-4">
-                  <Icon name={v.icon} className="w-6 h-6" />
-                </span>
-                <h3 className="text-base font-bold text-msc-charcoal mb-2">{v.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{v.text}</p>
-              </div>
+            {values.map((v, i) => (
+              <Reveal key={v.title} delay={i * 0.08}>
+                <div className="group h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <span className="w-11 h-11 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <Icon name={v.icon} className="w-6 h-6" />
+                  </span>
+                  <h3 className="text-base font-bold text-msc-charcoal mb-2">{v.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{v.text}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
 

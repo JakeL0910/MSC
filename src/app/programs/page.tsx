@@ -3,6 +3,7 @@ import Link from 'next/link'
 import PageHero from '@/components/shared/PageHero'
 import CtaBand from '@/components/shared/CtaBand'
 import CoverArt, { type CoverPalette } from '@/components/shared/CoverArt'
+import Reveal from '@/components/ui/Reveal'
 import { programs } from '@/data/programs'
 
 const colorToPalette: Record<'teal' | 'amber' | 'coral', CoverPalette> = {
@@ -37,8 +38,9 @@ export default function ProgramsPage() {
       <PageHero
         illustration="conversation"
         eyebrow="What We Do"
-        title="Our areas of work"
-        description="Where neurodiversity, multilingualism, language processing, and practical language education meet."
+        title="Our areas of"
+        titleAccent="work"
+        description="Education, resources, and advocacy for the way people really use language."
         actions={[
           { label: 'Get Involved', href: '/volunteer' },
           { label: 'Browse Free Resources', href: '/resources', variant: 'secondary' },
@@ -64,14 +66,14 @@ export default function ProgramsPage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-6">
-            {programs.map((program) => (
+            {programs.map((program, i) => (
+              <Reveal key={program.slug} delay={i * 0.07}>
               <Link
-                key={program.slug}
                 href={`/programs/${program.slug}`}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col"
+                className="group h-full bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden hover:shadow-xl hover:-translate-y-1.5 hover:border-msc-teal/20 transition-all duration-300 flex flex-col"
               >
-                <div className="relative">
-                  <CoverArt icon={program.icon} palette={colorToPalette[program.color]} seed={program.slug} className="h-40" />
+                <div className="relative overflow-hidden">
+                  <CoverArt icon={program.icon} palette={colorToPalette[program.color]} seed={program.slug} className="h-40 transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute top-3 right-3">
                     <StatusBadge status={program.status} />
                   </div>
@@ -85,6 +87,7 @@ export default function ProgramsPage() {
                   <span className="text-sm font-semibold text-msc-teal">Explore this area →</span>
                 </div>
               </Link>
+              </Reveal>
             ))}
           </div>
         </div>

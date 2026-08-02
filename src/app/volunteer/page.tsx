@@ -3,6 +3,7 @@ import PageHero from '@/components/shared/PageHero'
 import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import Icon from '@/components/shared/Icons'
+import Reveal from '@/components/ui/Reveal'
 import VolunteerForm from '@/components/forms/VolunteerForm'
 import ContributeForm from '@/components/forms/ContributeForm'
 import { volunteerRoles, timeCommitments, volunteerFaq } from '@/data/volunteer'
@@ -19,8 +20,9 @@ export default function VolunteerPage() {
       <PageHero
         illustration="advocacy"
         eyebrow="Volunteer"
-        title="Do work that helps someone be understood"
-        description="Create resources, translate, design, help run events, and advocate. No experience needed for most roles; we train you, and service hours can be verified."
+        title="Do work that helps"
+        titleAccent="someone be understood"
+        description="Create, translate, design, run events, advocate. We train you, and hours can be verified."
         actions={[
           { label: 'Apply Now', href: '#apply' },
           { label: 'See the Roles', href: '#roles', variant: 'secondary' },
@@ -36,9 +38,10 @@ export default function VolunteerPage() {
             description="Pick the role that fits, or try a few."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {volunteerRoles.map((role) => (
-              <div key={role.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col">
-                <span className="w-11 h-11 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-4">
+            {volunteerRoles.map((role, i) => (
+              <Reveal key={role.id} delay={i * 0.05}>
+              <div className="group h-full bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <span className="w-11 h-11 rounded-xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
                   <Icon name={role.icon} className="w-6 h-6" />
                 </span>
                 <h3 className="text-base font-bold text-msc-charcoal mb-2">{role.title}</h3>
@@ -60,6 +63,7 @@ export default function VolunteerPage() {
                   <p className="text-xs font-semibold text-msc-teal">{role.commitment}</p>
                 </div>
               </div>
+              </Reveal>
             ))}
           </div>
         </div>

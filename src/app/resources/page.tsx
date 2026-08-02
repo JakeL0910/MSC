@@ -3,6 +3,7 @@ import Link from 'next/link'
 import PageHero from '@/components/shared/PageHero'
 import CtaBand from '@/components/shared/CtaBand'
 import CoverArt from '@/components/shared/CoverArt'
+import Reveal from '@/components/ui/Reveal'
 import { resources, resourceCategories, type Resource } from '@/data/resources'
 
 export const metadata: Metadata = {
@@ -36,9 +37,9 @@ function StatusBadge({ status }: { status: Resource['status'] }) {
 
 function ResourceCard({ resource }: { resource: Resource }) {
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-      <div className="relative">
-        <CoverArt icon={formatIcons[resource.format]} seed={resource.slug} className="h-32" />
+    <div className="group h-full bg-white rounded-2xl border border-gray-100 shadow-sm flex flex-col overflow-hidden hover:shadow-xl hover:-translate-y-1.5 hover:border-msc-teal/20 transition-all duration-300">
+      <div className="relative overflow-hidden">
+        <CoverArt icon={formatIcons[resource.format]} seed={resource.slug} className="h-32 transition-transform duration-500 group-hover:scale-105" />
         <div className="absolute top-3 right-3">
           <StatusBadge status={resource.status} />
         </div>
@@ -71,8 +72,9 @@ export default function ResourcesPage() {
       <PageHero
         illustration="resources"
         eyebrow="Resources"
-        title="Free resources, built for real life"
-        description="Practical, free materials for students, families, and educators, clearly labeled available now or in development."
+        title="Free resources,"
+        titleAccent="built for real life"
+        description="Practical materials for students, families, and educators. Free to read, use, and print."
       />
 
       {/* Available now: the real, usable things (events + webinars) */}
@@ -111,8 +113,10 @@ export default function ResourcesPage() {
                 <p className="text-gray-600 leading-relaxed">{cat.description}</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {items.map((r) => (
-                  <ResourceCard key={r.slug} resource={r} />
+                {items.map((r, i) => (
+                  <Reveal key={r.slug} delay={i * 0.06}>
+                    <ResourceCard resource={r} />
+                  </Reveal>
                 ))}
               </div>
             </div>

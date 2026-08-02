@@ -4,6 +4,8 @@ import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import StatGrid from '@/components/shared/StatGrid'
 import Icon from '@/components/shared/Icons'
+import Reveal from '@/components/ui/Reveal'
+import CountUp from '@/components/ui/CountUp'
 import Voices from '@/components/features/Voices'
 import { highlights } from '@/data/site'
 import { milestones, accomplishments, reachTypes, impactStats } from '@/data/impact'
@@ -20,8 +22,9 @@ export default function ImpactPage() {
       <PageHero
         illustration="community"
         eyebrow="Impact"
-        title="Our work, honestly told"
-        description="Our verified work to date, described plainly. More figures coming as programs run."
+        title="Our work,"
+        titleAccent="honestly told"
+        description="Real work, real numbers. More to come as programs run."
       />
 
       {/* By the numbers — real, documented figures only */}
@@ -29,12 +32,12 @@ export default function ImpactPage() {
         <section className="py-14 bg-white border-b border-gray-100">
           <div className="container">
             <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 text-center sm:grid-cols-3">
-              {impactStats.map((s) => (
-                <div key={s.label}>
-                  <p className="text-4xl md:text-5xl font-bold text-msc-teal">{s.value}</p>
-                  <p className="mt-1.5 text-sm font-semibold text-msc-charcoal">{s.label}</p>
+              {impactStats.map((s, i) => (
+                <Reveal key={s.label} delay={i * 0.12}>
+                  <CountUp value={s.value} className="block text-5xl md:text-6xl font-bold text-msc-teal" />
+                  <p className="mt-2 text-sm font-semibold text-msc-charcoal">{s.label}</p>
                   {s.note && <p className="mt-0.5 text-xs text-gray-500">{s.note}</p>}
-                </div>
+                </Reveal>
               ))}
             </div>
             <p className="mt-8 text-center text-xs text-gray-400">
@@ -80,14 +83,24 @@ export default function ImpactPage() {
           <SectionHeading eyebrow="Our journey" title="How MSC has grown" />
           <div className="max-w-2xl mx-auto">
             <ol className="relative border-l-2 border-msc-teal/20 pl-8 space-y-10">
-              {milestones.map((m) => (
-                <li key={m.title} className="relative">
-                  <span className="absolute -left-[41px] w-5 h-5 rounded-full bg-msc-teal border-4 border-white" aria-hidden="true" />
-                  <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-1">{m.phase}</p>
-                  <h3 className="text-lg font-bold text-msc-charcoal mb-1.5">{m.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
-                </li>
-              ))}
+              {milestones.map((m, i) => {
+                const isLatest = i === milestones.length - 1
+                return (
+                  <li key={m.title} className="relative">
+                    <span
+                      className={`absolute -left-[41px] w-5 h-5 rounded-full border-4 border-white ${
+                        isLatest ? 'bg-msc-amber animate-pulse-soft' : 'bg-msc-teal'
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <Reveal delay={i * 0.06}>
+                      <p className="text-xs font-bold uppercase tracking-widest text-msc-teal mb-1">{m.phase}</p>
+                      <h3 className="text-lg font-bold text-msc-charcoal mb-1.5">{m.title}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{m.description}</p>
+                    </Reveal>
+                  </li>
+                )
+              })}
             </ol>
           </div>
         </div>
