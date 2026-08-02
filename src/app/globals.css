@@ -196,13 +196,68 @@ article p {
   transform-origin: top center;
 }
 
+/* Animated gradient text — for the emotional headline accent */
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+.gradient-text {
+  background-image: linear-gradient(100deg, #1A6B72, #E05C4B, #E8A020, #1A6B72);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-pan 7s ease-in-out infinite;
+}
+
+/* Seamless auto-scrolling strip (community photos). Track holds two copies of
+   the content; translating -50% loops without a visible seam. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+/* Soft scale-in for pills/badges */
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-pop { animation: pop-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Slow, calm pulse for "live" status dots */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(0.82); }
+}
+.animate-pulse-soft { animation: soft-pulse 2s ease-in-out infinite; }
+
+/* Bouncing typing dots */
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40%           { transform: translateY(-5px); opacity: 1; }
+}
+.typing-dot { animation: typing-bounce 1.3s ease-in-out infinite; }
+
 /* Respect users who opt out of motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-enter,
   .animate-blob,
   .animate-blob-slow,
   .animate-float,
-  .animate-dropdown {
+  .animate-dropdown,
+  .gradient-text,
+  .animate-marquee,
+  .animate-pop,
+  .animate-pulse-soft,
+  .typing-dot {
     animation: none;
   }
   html {

@@ -8,6 +8,7 @@ import StatGrid from '@/components/shared/StatGrid'
 import CtaBand from '@/components/shared/CtaBand'
 import CoverArt, { type CoverPalette } from '@/components/shared/CoverArt'
 import Reveal from '@/components/ui/Reveal'
+import RotatingWord from '@/components/ui/RotatingWord'
 import { site, highlights } from '@/data/site'
 import { programs } from '@/data/programs'
 
@@ -58,19 +59,26 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-msc-teal-light/70 via-white to-msc-amber-light/40">
         <div className="animate-blob pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-msc-teal/10 blur-3xl" aria-hidden="true" />
         <div className="animate-blob-slow pointer-events-none absolute -bottom-40 -left-24 w-96 h-96 rounded-full bg-msc-amber/10 blur-3xl" aria-hidden="true" />
+        <div className="animate-blob pointer-events-none absolute top-1/3 left-1/2 w-72 h-72 rounded-full bg-msc-coral/10 blur-3xl" aria-hidden="true" />
 
         <div className="container relative py-20 md:py-28">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
-              <p className="animate-enter inline-block text-xs font-bold uppercase tracking-widest text-msc-teal bg-white/80 rounded-full px-3.5 py-1.5 mb-6">
+              <p className="animate-enter inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-msc-teal bg-white/80 rounded-full px-3.5 py-1.5 mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-msc-amber animate-pulse-soft" aria-hidden="true" />
                 A Youth-Led Movement
               </p>
-              <h1 className="animate-enter enter-delay-1 text-4xl md:text-5xl lg:text-[3.4rem] font-bold text-msc-charcoal mb-6">
-                Making language{' '}
-                <span className="text-msc-teal">more accessible</span>.
+              <h1 className="animate-enter enter-delay-1 text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-msc-charcoal mb-6 leading-[1.05]">
+                Making language
+                <br />
+                more{' '}
+                <RotatingWord
+                  words={['accessible.', 'welcoming.', 'human.', 'joyful.']}
+                  className="gradient-text"
+                />
               </h1>
-              <p className="animate-enter enter-delay-2 serif-lead text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
-                {site.subtagline}
+              <p className="animate-enter enter-delay-2 serif-lead text-xl text-gray-600 leading-relaxed mb-8 max-w-md">
+                Everyone deserves to be understood.
               </p>
               <div className="animate-enter enter-delay-3 flex flex-wrap gap-3">
                 <Link href="/resources" className="btn-primary">Explore Resources</Link>
@@ -89,7 +97,8 @@ export default function HomePage() {
                 <div className="absolute -top-6 -left-6 w-full h-full rounded-3xl bg-msc-teal/10 rotate-3" />
                 <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100 p-7">
                   <div className="flex items-center justify-between mb-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-msc-teal">
+                    <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-msc-teal">
+                      <span className="w-1.5 h-1.5 rounded-full bg-msc-coral animate-pulse-soft" />
                       Conversational Spanish
                     </p>
                     <span className="w-8 h-8 rounded-lg bg-msc-teal-light text-msc-teal flex items-center justify-center">
@@ -104,9 +113,11 @@ export default function HomePage() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-gray-400 mt-5 text-center">
-                    Free · Practical · Made for everyday life
-                  </p>
+                  <div className="mt-5 flex items-center justify-center gap-1.5" aria-hidden="true">
+                    <span className="w-2 h-2 rounded-full bg-msc-teal/50 typing-dot" />
+                    <span className="w-2 h-2 rounded-full bg-msc-teal/50 typing-dot" style={{ animationDelay: '0.16s' }} />
+                    <span className="w-2 h-2 rounded-full bg-msc-teal/50 typing-dot" style={{ animationDelay: '0.32s' }} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -196,7 +207,7 @@ export default function HomePage() {
                 </span>
                 <h3 className="text-lg font-bold text-white mb-2">Events &amp; Webinars</h3>
                 <p className="text-sm text-msc-teal-light/90 leading-relaxed mb-4">
-                  Virtual and in-person events across DFW and online. See upcoming sessions and recordings.
+                  Live sessions, online and around DFW.
                 </p>
                 <span className="text-sm font-semibold text-white">
                   See the schedule <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -210,7 +221,7 @@ export default function HomePage() {
                 </span>
                 <h3 className="text-lg font-bold text-white mb-2">Free Resources</h3>
                 <p className="text-sm text-msc-teal-light/90 leading-relaxed mb-4">
-                  Practical materials for students, families, and educators, labeled available or in development.
+                  Practical materials you can use today.
                 </p>
                 <span className="text-sm font-semibold text-white">
                   Browse resources <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -230,13 +241,9 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-bold text-msc-charcoal mb-5">
                 From conversational Spanish to language access
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                We began by making conversational Spanish approachable. That grew into a broader
-                commitment: accessible language education for people with
-                different linguistic, cultural, and neurodevelopmental experiences.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                The same idea, now reaching a wider community.
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                We started making Spanish approachable. It grew into something bigger:
+                language that works for everyone.
               </p>
               <Link href="/about#evolution" className="btn-secondary">Read our story</Link>
             </Reveal>
@@ -278,22 +285,25 @@ export default function HomePage() {
       </section>
 
       {/* ================= IN THE COMMUNITY (real photos) ================= */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white overflow-hidden">
         <div className="container">
           <SectionHeading eyebrow="In the community" title="Out in the world" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {communityPhotos.map((p, i) => (
+        </div>
+        <div className="marquee-mask overflow-hidden">
+          <div className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]">
+            {[...communityPhotos, ...communityPhotos].map((p, i) => (
               <div
-                key={p.src}
-                className={`relative aspect-square overflow-hidden rounded-xl bg-msc-cream ${i >= 6 ? 'hidden md:block' : ''}`}
+                key={i}
+                className="group relative h-52 w-72 md:h-60 md:w-80 shrink-0 overflow-hidden rounded-2xl bg-msc-cream"
               >
                 <Image
                   src={p.src}
-                  alt={p.alt}
+                  alt={i < communityPhotos.length ? p.alt : ''}
+                  aria-hidden={i >= communityPhotos.length}
                   fill
                   loading="lazy"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="320px"
                 />
               </div>
             ))}
