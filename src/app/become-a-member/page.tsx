@@ -6,6 +6,7 @@ import Icon from '@/components/shared/Icons'
 import Reveal from '@/components/ui/Reveal'
 import MembershipForm from '@/components/features/MembershipForm'
 import LiveCollective from '@/components/features/LiveCollective'
+import LiveTicker from '@/components/features/LiveTicker'
 import { getCollectiveStats } from '@/lib/members'
 
 export const metadata: Metadata = {
@@ -59,6 +60,9 @@ export default async function BecomeAMemberPage() {
       {/* Live collective numbers */}
       <section className="border-b border-gray-100 bg-msc-cream py-14">
         <div className="container">
+          <div className="mb-10">
+            <LiveTicker />
+          </div>
           <LiveCollective initialStats={stats} variant="full" />
         </div>
       </section>

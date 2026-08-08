@@ -9,6 +9,7 @@ import Reveal from '@/components/ui/Reveal'
 import CountUp from '@/components/ui/CountUp'
 import Voices from '@/components/features/Voices'
 import LiveCollective from '@/components/features/LiveCollective'
+import LiveTicker from '@/components/features/LiveTicker'
 import VerifiedImpact from '@/components/features/VerifiedImpact'
 import BreakdownBars from '@/components/features/BreakdownBars'
 import { highlights } from '@/data/site'
@@ -71,7 +72,8 @@ export default async function ImpactPage() {
 
       {/* The living collective — renders only once real members exist */}
       <section className="bg-white py-8">
-        <div className="container">
+        <div className="container space-y-8">
+          <LiveTicker />
           <LiveCollective initialStats={collective} variant="band" />
         </div>
       </section>
