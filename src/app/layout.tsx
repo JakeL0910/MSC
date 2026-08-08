@@ -4,6 +4,8 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/ui/ScrollProgress'
+import PreferencesProvider from '@/components/providers/Preferences'
+import PreferencesPanel from '@/components/features/PreferencesPanel'
 import { site } from '@/data/site'
 
 // Single site-wide typeface — Open Sauce One (self-hosted, OFL licensed). Used
@@ -65,12 +67,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={openSauce.variable}>
       <body className={`${openSauce.className} antialiased`}>
-        <ScrollProgress />
-        <Header />
-        <main className="min-h-screen pt-16">
-          {children}
-        </main>
-        <Footer />
+        <PreferencesProvider>
+          <ScrollProgress />
+          <Header />
+          <main className="min-h-screen pt-16">
+            {children}
+          </main>
+          <Footer />
+          <PreferencesPanel />
+        </PreferencesProvider>
       </body>
     </html>
   )

@@ -8,6 +8,7 @@ import StatGrid from '@/components/shared/StatGrid'
 import CtaBand from '@/components/shared/CtaBand'
 import CoverArt, { type CoverPalette } from '@/components/shared/CoverArt'
 import CinematicHero from '@/components/shared/CinematicHero'
+import UnderstandingSlider from '@/components/features/UnderstandingSlider'
 import Reveal from '@/components/ui/Reveal'
 import RotatingWord from '@/components/ui/RotatingWord'
 import { site, highlights } from '@/data/site'
@@ -87,6 +88,18 @@ export default function HomePage() {
               {site.mission}
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ================= INTERACTIVE: understanding slider ================= */}
+      <section className="bg-msc-cream py-20">
+        <div className="container">
+          <SectionHeading
+            eyebrow="What access feels like"
+            title="Drag noise into meaning"
+            description="Language access is the difference between sound and understanding. Move the handle."
+          />
+          <UnderstandingSlider />
         </div>
       </section>
 

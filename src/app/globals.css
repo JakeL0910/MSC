@@ -286,6 +286,41 @@ article p {
   }
 }
 
+/* ---------------------------------------------------------------------------
+   USER PREFERENCES (set on <html> by the accessibility panel).
+   Motion for framer-motion components is handled separately via MotionConfig;
+   these rules cover the CSS-only animations plus contrast and text size.
+---------------------------------------------------------------------------- */
+:root[data-motion='off'] .animate-enter,
+:root[data-motion='off'] .animate-blob,
+:root[data-motion='off'] .animate-blob-slow,
+:root[data-motion='off'] .animate-float,
+:root[data-motion='off'] .animate-dropdown,
+:root[data-motion='off'] .gradient-text,
+:root[data-motion='off'] .gradient-text-bright,
+:root[data-motion='off'] .animate-marquee,
+:root[data-motion='off'] .animate-pop,
+:root[data-motion='off'] .animate-pulse-soft,
+:root[data-motion='off'] .typing-dot,
+:root[data-motion='off'] .animate-scroll-cue {
+  animation: none !important;
+}
+:root[data-motion='off'] {
+  scroll-behavior: auto;
+}
+
+/* Larger base type scales the rem-based layout up a notch. */
+:root[data-text-size='large'] {
+  font-size: 112.5%;
+}
+
+/* Stronger text + border contrast on demand. */
+:root[data-contrast='high'] .text-gray-400 { color: #4b5563 !important; }
+:root[data-contrast='high'] .text-gray-500 { color: #374151 !important; }
+:root[data-contrast='high'] .text-gray-600 { color: #1f2937 !important; }
+:root[data-contrast='high'] .border-gray-100 { border-color: #cbd5e1 !important; }
+:root[data-contrast='high'] .border-gray-200 { border-color: #94a3b8 !important; }
+
 /* Content shown only when printing (e.g. a resource title on the saved PDF). */
 .print-only {
   display: none;
