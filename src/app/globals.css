@@ -211,6 +211,18 @@ article p {
   animation: gradient-pan 7s ease-in-out infinite;
 }
 
+/* Brighter gradient for use on DARK surfaces (the cinematic heroes), where the
+   default teal stop is too low-contrast. Lighter, more luminous stops. */
+.gradient-text-bright {
+  background-image: linear-gradient(100deg, #5FD0D8, #F0836F, #F2B84E, #5FD0D8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-pan 7s ease-in-out infinite;
+}
+
 /* Seamless auto-scrolling strip (community photos). Track holds two copies of
    the content; translating -50% loops without a visible seam. */
 @keyframes marquee {
@@ -246,6 +258,13 @@ article p {
 }
 .typing-dot { animation: typing-bounce 1.3s ease-in-out infinite; }
 
+/* Downward travelling tick for the hero "scroll" cue */
+@keyframes scroll-cue {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+.animate-scroll-cue { animation: scroll-cue 1.8s ease-in-out infinite; }
+
 /* Respect users who opt out of motion */
 @media (prefers-reduced-motion: reduce) {
   .animate-enter,
@@ -257,7 +276,9 @@ article p {
   .animate-marquee,
   .animate-pop,
   .animate-pulse-soft,
-  .typing-dot {
+  .typing-dot,
+  .animate-scroll-cue,
+  .gradient-text-bright {
     animation: none;
   }
   html {

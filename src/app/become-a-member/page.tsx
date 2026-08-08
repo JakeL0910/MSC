@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import PageHero from '@/components/shared/PageHero'
+import CinematicHero from '@/components/shared/CinematicHero'
 import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import Icon from '@/components/shared/Icons'
@@ -40,12 +40,20 @@ export default async function BecomeAMemberPage() {
 
   return (
     <>
-      <PageHero
-        illustration="multilingual"
+      <CinematicHero
         eyebrow="Become a member"
-        title="Join the"
-        titleAccent="collective"
+        meta="Multilingual Support Collective"
+        title="Join the collective"
+        accent={['collective']}
         description="Membership is how a language-access movement grows. Add your languages, choose how you want to help, and watch the collective grow with you."
+        actions={[
+          { label: 'Join now', href: '#join', variant: 'light' },
+          { label: 'See the impact', href: '/impact', variant: 'outline-light' },
+        ]}
+        ghost="JOIN"
+        edgeLabel="Members · 2026"
+        footerLeft="Become a member"
+        footerRight="Free to join"
       />
 
       {/* Live collective numbers */}

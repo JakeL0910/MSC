@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import PageHero from '@/components/shared/PageHero'
+import CinematicHero from '@/components/shared/CinematicHero'
+import { SectionMarker } from '@/components/shared/Editorial'
 import SectionHeading from '@/components/shared/SectionHeading'
 import CtaBand from '@/components/shared/CtaBand'
 import StatGrid from '@/components/shared/StatGrid'
@@ -29,12 +30,20 @@ export default async function ImpactPage() {
   const hasBreakdown = breakdown.byLanguage.length > 0 || breakdown.byCity.length > 0
   return (
     <>
-      <PageHero
-        illustration="community"
+      <CinematicHero
         eyebrow="Impact"
-        title="Our work,"
-        titleAccent="honestly told"
-        description="Real work, real numbers. More to come as programs run."
+        meta="Documented figures only"
+        title="Our work, honestly told"
+        accent={['honestly', 'told']}
+        description="Real work, real numbers. Membership and verified activity build the picture below, and it grows as programs run."
+        actions={[
+          { label: 'Become a member', href: '/become-a-member', variant: 'light' },
+          { label: 'Log activity', href: '/members/login', variant: 'outline-light' },
+        ]}
+        ghost="IMPACT"
+        edgeLabel="Impact · 2026"
+        footerLeft="Our work, honestly told"
+        footerRight="Real numbers"
       />
 
       {/* By the numbers — real, documented figures only */}
@@ -71,6 +80,7 @@ export default async function ImpactPage() {
       {hasBreakdown && (
         <section className="bg-white pb-16 pt-6">
           <div className="container">
+            <SectionMarker index={1} label="The reach" className="mx-auto mb-8 max-w-3xl" />
             <SectionHeading eyebrow="Where the work happens" title="By language and city" />
             <BreakdownBars initial={breakdown} />
           </div>

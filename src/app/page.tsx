@@ -7,6 +7,7 @@ import SectionHeading from '@/components/shared/SectionHeading'
 import StatGrid from '@/components/shared/StatGrid'
 import CtaBand from '@/components/shared/CtaBand'
 import CoverArt, { type CoverPalette } from '@/components/shared/CoverArt'
+import CinematicHero from '@/components/shared/CinematicHero'
 import Reveal from '@/components/ui/Reveal'
 import RotatingWord from '@/components/ui/RotatingWord'
 import { site, highlights } from '@/data/site'
@@ -35,14 +36,6 @@ export const metadata: Metadata = {
   description: site.subtagline,
 }
 
-// Everyday bilingual phrases for the hero card — MSC's casual, conversational
-// Spanish roots (decorative; edit freely).
-const heroPhrases = [
-  { en: 'How’s it going?', es: '¿Qué tal?' },
-  { en: 'Nice to meet you.', es: 'Mucho gusto.' },
-  { en: 'Let’s grab a coffee.', es: 'Vamos por un café.' },
-]
-
 // The language-access need, framed without deficit or clinical language.
 const principles = [
   { icon: 'chat', title: 'Language takes many forms' },
@@ -55,75 +48,35 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ================= 1–3. HERO: statement, who we serve, two CTAs ========= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-msc-teal-light/70 via-white to-msc-amber-light/40">
-        <div className="animate-blob pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-msc-teal/10 blur-3xl" aria-hidden="true" />
-        <div className="animate-blob-slow pointer-events-none absolute -bottom-40 -left-24 w-96 h-96 rounded-full bg-msc-amber/10 blur-3xl" aria-hidden="true" />
-        <div className="animate-blob pointer-events-none absolute top-1/3 left-1/2 w-72 h-72 rounded-full bg-msc-coral/10 blur-3xl" aria-hidden="true" />
-
-        <div className="container relative py-20 md:py-28">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="animate-enter inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-msc-teal bg-white/80 rounded-full px-3.5 py-1.5 mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-msc-amber animate-pulse-soft" aria-hidden="true" />
-                A Youth-Led Movement
-              </p>
-              <h1 className="animate-enter enter-delay-1 text-4xl md:text-5xl lg:text-[3.6rem] font-bold text-msc-charcoal mb-6 leading-[1.05]">
-                Making language
-                <br />
-                more{' '}
-                <RotatingWord
-                  words={['accessible.', 'welcoming.', 'human.', 'joyful.']}
-                  className="gradient-text"
-                />
-              </h1>
-              <p className="animate-enter enter-delay-2 serif-lead text-xl text-gray-600 leading-relaxed mb-8 max-w-md">
-                Everyone deserves to be understood.
-              </p>
-              <div className="animate-enter enter-delay-3 flex flex-wrap gap-3">
-                <Link href="/resources" className="btn-primary">Explore Resources</Link>
-                <Link href="/volunteer" className="btn-secondary">Get Involved</Link>
-              </div>
-              <p className="animate-enter enter-delay-4 text-sm mt-6">
-                <Link href="/partners" className="text-msc-teal font-semibold hover:underline">
-                  Partner with us →
-                </Link>
-              </p>
-            </div>
-
-            {/* Hero visual: casual conversational-Spanish card (MSC's roots) */}
-            <div className="animate-enter enter-delay-2 hidden lg:block" aria-hidden="true">
-              <div className="animate-float relative max-w-md ml-auto">
-                <div className="absolute -top-6 -left-6 w-full h-full rounded-3xl bg-msc-teal/10 rotate-3" />
-                <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100 p-7">
-                  <div className="flex items-center justify-between mb-5">
-                    <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-msc-teal">
-                      <span className="w-1.5 h-1.5 rounded-full bg-msc-coral animate-pulse-soft" />
-                      Conversational Spanish
-                    </p>
-                    <span className="w-8 h-8 rounded-lg bg-msc-teal-light text-msc-teal flex items-center justify-center">
-                      <Icon name="chat" className="w-5 h-5" />
-                    </span>
-                  </div>
-                  <div className="space-y-4">
-                    {heroPhrases.map((p) => (
-                      <div key={p.en} className="rounded-2xl border border-gray-100 bg-msc-cream/60 p-4">
-                        <p className="text-sm font-semibold text-msc-charcoal">{p.en}</p>
-                        <p className="text-sm text-msc-teal font-medium mt-1">{p.es}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-5 flex items-center justify-center gap-1.5" aria-hidden="true">
-                    <span className="w-2 h-2 rounded-full bg-msc-teal/50 typing-dot" />
-                    <span className="w-2 h-2 rounded-full bg-msc-teal/50 typing-dot" style={{ animationDelay: '0.16s' }} />
-                    <span className="w-2 h-2 rounded-full bg-msc-teal/50 typing-dot" style={{ animationDelay: '0.32s' }} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ================= 1–3. HERO: cinematic statement + two CTAs ========= */}
+      <CinematicHero
+        eyebrow="A Youth-Led Movement"
+        meta="Dallas–Fort Worth"
+        title={
+          <>
+            Making language more{' '}
+            <RotatingWord words={['accessible.', 'welcoming.', 'human.', 'joyful.']} className="gradient-text-bright" />
+          </>
+        }
+        description={
+          <>
+            Everyone deserves to be{' '}
+            <RotatingWord
+              words={['understood', 'comprendido', 'compris', 'được hiểu', 'verstanden', '理解', 'مفهوم']}
+              className="gradient-text-bright font-semibold"
+              interval={2600}
+            />
+          </>
+        }
+        actions={[
+          { label: 'Explore Resources', href: '/resources', variant: 'light' },
+          { label: 'Get Involved', href: '/volunteer', variant: 'outline-light' },
+        ]}
+        ghost="MSC"
+        edgeLabel="Language access"
+        footerLeft="A youth-led movement"
+        footerRight="Everyone deserves to be understood"
+      />
 
       {/* ================= MISSION ================= */}
       <section className="py-16 bg-white">
