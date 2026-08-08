@@ -7,8 +7,14 @@ import Icon from '@/components/shared/Icons'
 import Reveal from '@/components/ui/Reveal'
 import CountUp from '@/components/ui/CountUp'
 import Voices from '@/components/features/Voices'
+import LiveCollective from '@/components/features/LiveCollective'
+import VerifiedImpact from '@/components/features/VerifiedImpact'
+import BreakdownBars from '@/components/features/BreakdownBars'
 import { highlights } from '@/data/site'
 import { milestones, accomplishments, reachTypes, impactStats } from '@/data/impact'
+import { getCollectiveStats } from '@/lib/members'
+import { getImpactTotals } from '@/lib/contributions'
+import { getBreakdown } from '@/lib/breakdown'
 
 export const metadata: Metadata = {
   title: 'Impact',
@@ -16,7 +22,11 @@ export const metadata: Metadata = {
     'The verified work of Make Spanish Casual: free educational resources, events across Dallas–Fort Worth, volunteering, partnerships, and advocacy for accessible language education.',
 }
 
-export default function ImpactPage() {
+export const dynamic = 'force-dynamic'
+
+export default async function ImpactPage() {
+  const [collective, impactTotals, breakdown] = await Promise.all([getCollectiveStats(), getImpactTotals(), getBreakdown()])
+  const hasBreakdown = breakdown.byLanguage.length > 0 || breakdown.byCity.length > 0
   return (
     <>
       <PageHero
@@ -43,6 +53,26 @@ export default function ImpactPage() {
             <p className="mt-8 text-center text-xs text-gray-400">
               More numbers coming as programs run, including the August Access Sprint.
             </p>
+          </div>
+        </section>
+      )}
+
+      {/* Verified member impact — renders only once entries are verified */}
+      <VerifiedImpact initial={impactTotals} />
+
+      {/* The living collective — renders only once real members exist */}
+      <section className="bg-white py-8">
+        <div className="container">
+          <LiveCollective initialStats={collective} variant="band" />
+        </div>
+      </section>
+
+      {/* Breakdown by language and city — renders only once there's data */}
+      {hasBreakdown && (
+        <section className="bg-white pb-16 pt-6">
+          <div className="container">
+            <SectionHeading eyebrow="Where the work happens" title="By language and city" />
+            <BreakdownBars initial={breakdown} />
           </div>
         </section>
       )}

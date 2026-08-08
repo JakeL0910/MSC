@@ -55,6 +55,8 @@ const orgLinks = [
   { label: 'About', href: '/about' },
   { label: 'Impact', href: '/impact' },
   { label: 'News & Stories', href: '/blog' },
+  { label: 'Become a Member', href: '/become-a-member' },
+  { label: 'Member Login', href: '/members/login' },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Start a Chapter', href: '/chapters' },
   { label: 'Partner With Us', href: '/partners' },

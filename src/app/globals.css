@@ -283,11 +283,14 @@ article p {
   #access-plan-print,
   #access-plan-print *,
   #resource-print,
-  #resource-print * {
+  #resource-print *,
+  #report-print,
+  #report-print * {
     visibility: visible !important;
   }
   #access-plan-print,
-  #resource-print {
+  #resource-print,
+  #report-print {
     position: absolute;
     left: 0;
     top: 0;

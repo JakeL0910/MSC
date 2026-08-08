@@ -31,6 +31,7 @@ const resourcesMenu = [
 ]
 
 const involvedMenu = [
+  { label: 'Become a Member', href: '/become-a-member' },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Start a Chapter', href: '/chapters' },
   { label: 'Partner With Us', href: '/partners' },
