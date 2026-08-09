@@ -27,7 +27,7 @@ function PostCover({ post, className }: { post: BlogPost; className: string }) {
 export const metadata: Metadata = {
   title: 'News & Stories',
   description:
-    'News and community stories from Make Spanish Casual: events across DFW, conference updates, and moments from our work.',
+    'News and community stories from The MLC Project: events across DFW, conference updates, and moments from our work.',
 }
 
 export default function BlogPage() {

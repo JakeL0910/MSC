@@ -15,7 +15,7 @@ const colorToPalette: Record<'teal' | 'amber' | 'coral', CoverPalette> = {
 export const metadata: Metadata = {
   title: 'What We Do',
   description:
-    'MSC’s areas of work: language education, resources for neurodivergent individuals and students, conversational Spanish, bilingual family and educator resources, community events and webinars, and advocacy and volunteer engagement.',
+    'MLC’s areas of work: language education, resources for neurodivergent individuals and students, conversational Spanish, bilingual family and educator resources, community events and webinars, and advocacy and volunteer engagement.',
 }
 
 function StatusBadge({ status }: { status: 'Active' | 'In Development' }) {

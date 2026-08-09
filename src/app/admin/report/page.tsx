@@ -218,8 +218,8 @@ export default function AdminReportPage() {
 
         <footer className="mt-8 border-t border-gray-200 pt-4">
           <p className="text-xs leading-relaxed text-gray-400">
-            Methodology: member counts and languages come from the MSC membership roster. Hours, people helped, and documents
-            reflect member-logged contributions that MSC staff have verified. Figures are current as of the generation date above.
+            Methodology: member counts and languages come from the MLC membership roster. Hours, people helped, and documents
+            reflect member-logged contributions that MLC staff have verified. Figures are current as of the generation date above.
           </p>
         </footer>
       </article>

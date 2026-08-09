@@ -1,7 +1,7 @@
 // Stripe Checkout session creator for the donate page.
 //
 // Setup (see docs/STRIPE_SETUP.md for the full walkthrough):
-//   1. Create a Stripe account for MSC (needs the org's EIN + bank account).
+//   1. Create a Stripe account for MLC (needs the org's EIN + bank account).
 //   2. Add STRIPE_SECRET_KEY to .env.local (sk_test_… while testing) and to
 //      Vercel → Settings → Environment Variables (sk_live_… for production).
 // Until the key is set, /donate automatically shows the email-us fallback.
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
             unit_amount: amountCents,
             ...(monthly ? { recurring: { interval: 'month' as const } } : {}),
             product_data: {
-              name: monthly ? 'MSC Monthly Donation' : 'MSC Donation',
+              name: monthly ? 'MLC Monthly Donation' : 'MLC Donation',
               description: `Tax-deductible gift to ${site.name}, a ${site.legalLine.toLowerCase()}.`,
             },
           },

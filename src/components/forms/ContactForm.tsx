@@ -39,7 +39,7 @@ export default function ContactForm() {
 
     // Opens the visitor's email client with a pre-filled message.
     // See fields.tsx for how to switch this to a real form backend.
-    const subject = `[MSC Website] ${topic || 'Message'} from ${name}`
+    const subject = `[MLC Website] ${topic || 'Message'} from ${name}`
     window.location.href = buildMailto(site.email, subject, [
       ['Name', name],
       ['Email', email],
@@ -78,7 +78,7 @@ export default function ContactForm() {
         value={message}
         onChange={setMessage}
         required
-        placeholder="Tell us what you're working on and how MSC can help…"
+        placeholder="Tell us what you're working on and how MLC can help…"
       />
 
       <label className="flex items-start gap-2.5 text-sm text-gray-600 cursor-pointer">
@@ -88,7 +88,7 @@ export default function ContactForm() {
           onChange={(e) => setNewsletter(e.target.checked)}
           className="mt-0.5 w-4 h-4 rounded border-gray-300 text-msc-teal focus:ring-msc-teal/30"
         />
-        Also sign me up for the MSC newsletter (about once a month).
+        Also sign me up for the MLC newsletter (about once a month).
       </label>
 
       <button

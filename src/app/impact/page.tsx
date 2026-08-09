@@ -21,7 +21,7 @@ import { getBreakdown } from '@/lib/breakdown'
 export const metadata: Metadata = {
   title: 'Impact',
   description:
-    'The verified work of Make Spanish Casual: free educational resources, events across Dallas–Fort Worth, volunteering, partnerships, and advocacy for accessible language education.',
+    'The verified work of The MLC Project: free educational resources, events across Dallas–Fort Worth, volunteering, partnerships, and advocacy for accessible language education.',
 }
 
 export const dynamic = 'force-dynamic'
@@ -122,7 +122,7 @@ export default async function ImpactPage() {
       {/* Our evolution / milestones */}
       <section className="py-20 bg-white">
         <div className="container">
-          <SectionHeading eyebrow="Our journey" title="How MSC has grown" />
+          <SectionHeading eyebrow="Our journey" title="How MLC has grown" />
           <div className="max-w-2xl mx-auto">
             <ol className="relative border-l-2 border-msc-teal/20 pl-8 space-y-10">
               {milestones.map((m, i) => {

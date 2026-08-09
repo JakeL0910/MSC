@@ -5,7 +5,7 @@ import CtaBand from '@/components/shared/CtaBand'
 import FlashcardStudy from '@/components/features/FlashcardStudy'
 
 export const metadata: Metadata = {
-  title: 'MSC Learn',
+  title: 'MLC Learn',
   description:
     'Free flashcard mini-lessons for healthcare vocabulary and everyday communication — clinic basics, pharmacy terms, insurance vocabulary, and practical phrases.',
 }
@@ -14,7 +14,7 @@ export default function LearnPage() {
   return (
     <>
       <PageHero
-        eyebrow="Free tool · MSC Learn"
+        eyebrow="Free tool · MLC Learn"
         title="Mini-lessons that fit in a bus ride"
         description="Pick a deck, flip through the cards, and build vocabulary for real situations — no account, no streaks, no pressure. Each deck takes about five minutes."
       />

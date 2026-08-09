@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- MSC favicon — keep in sync with src/components/shared/BrandMark.tsx -->
+  <!-- MLC favicon — keep in sync with src/components/shared/BrandMark.tsx -->
   <rect x="5" y="9" width="32" height="32" rx="10" fill="#1A6B72"/>
   <path d="M37 19 H49 A10 10 0 0 1 59 29 V37 A10 10 0 0 1 49 47 H44 L50 55 L38 47 H37 A10 10 0 0 1 27 37 V29 A10 10 0 0 1 37 19 Z" fill="#E05C4B"/>
   <path d="M13 15 L24 26 M24 26 H17 M24 26 V19" stroke="#FFFFFF" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>

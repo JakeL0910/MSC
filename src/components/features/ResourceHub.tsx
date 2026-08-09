@@ -1,6 +1,6 @@
 'use client'
 
-// RESOURCE HUB — filterable grid of all MSC resources.
+// RESOURCE HUB — filterable grid of all MLC resources.
 // Resource content lives in src/data/resources.ts.
 
 import { useMemo, useState, Suspense } from 'react'

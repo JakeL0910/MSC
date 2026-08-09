@@ -11,7 +11,7 @@ import { readClasses, partitionClasses } from '@/data/classes'
 export const metadata: Metadata = {
   title: 'Events & Webinars',
   description:
-    'Free educational events and webinars from Make Spanish Casual: conversational Spanish, language access, and inclusive learning, across Dallas–Fort Worth and online. Watch recordings any time.',
+    'Free educational events and webinars from The MLC Project: conversational Spanish, language access, and inclusive learning, across Dallas–Fort Worth and online. Watch recordings any time.',
 }
 
 // Sessions are read from a file that the admin UI writes to, so always render

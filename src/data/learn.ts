@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------
-// MSC LEARN — flashcard mini-lessons for /learn.
+// MLC LEARN — flashcard mini-lessons for /learn.
 // Each deck is a short, focused vocabulary set. Add decks or cards here;
 // the flashcard UI renders them automatically.
 // ----------------------------------------------------------------------------

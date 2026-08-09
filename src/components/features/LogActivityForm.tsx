@@ -73,7 +73,7 @@ export default function LogActivityForm({
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
       <h3 className="text-lg font-bold text-msc-charcoal">Log an activity</h3>
-      <p className="mt-1 text-sm text-gray-500">Record what you did. An MSC admin verifies entries before they count publicly.</p>
+      <p className="mt-1 text-sm text-gray-500">Record what you did. An MLC admin verifies entries before they count publicly.</p>
 
       {/* Type pills */}
       <div className="mt-4 flex flex-wrap gap-2">

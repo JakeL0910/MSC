@@ -11,7 +11,7 @@ import { sprint } from '@/data/sprint'
 export const metadata: Metadata = {
   title: 'August Access Sprint: 31 Days of Everyday Language',
   description:
-    'A free daily live-class series from Make Spanish Casual. One 30-minute session a day in August, building toward a personal Language Access Plan. For students, families, and educators.',
+    'A free daily live-class series from The MLC Project. One 30-minute session a day in August, building toward a personal Language Access Plan. For students, families, and educators.',
 }
 
 const planCoverage = [

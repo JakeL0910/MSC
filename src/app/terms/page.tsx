@@ -4,7 +4,7 @@ import { site } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Terms for using the MSC website and resources.',
+  description: 'Terms for using the MLC website and resources.',
 }
 
 // TODO: have this reviewed before launch — it's a reasonable starting template,
@@ -19,7 +19,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-bold text-msc-charcoal mb-3">Use of resources</h2>
               <p>
-                MSC resources are free for personal, educational, and community use. You may
+                MLC resources are free for personal, educational, and community use. You may
                 print, share, and distribute them non-commercially with attribution to{' '}
                 {site.name}. Please don't sell them or present them as your own work.
               </p>
@@ -27,7 +27,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-bold text-msc-charcoal mb-3">Educational purpose only</h2>
               <p>
-                MSC is not a medical provider, law firm, or licensed interpretation service. Our
+                MLC is not a medical provider, law firm, or licensed interpretation service. Our
                 materials are educational language support. They are not medical, legal, or
                 professional advice, and they are not a substitute for professional interpretation,
                 evaluation, or care. Always consult qualified professionals for decisions about
@@ -46,7 +46,7 @@ export default function TermsPage() {
               <h2 className="text-xl font-bold text-msc-charcoal mb-3">Volunteer contributions</h2>
               <p>
                 By submitting a resource contribution, you confirm the work is yours to share and
-                grant MSC permission to review, edit, and publish it with credit to you.
+                grant MLC permission to review, edit, and publish it with credit to you.
               </p>
             </div>
             <div>

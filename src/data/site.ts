@@ -6,9 +6,11 @@
 // ----------------------------------------------------------------------------
 
 export const site = {
-  acronym: 'MSC',
-  name: 'Make Spanish Casual',
-  shortName: 'Make Spanish Casual (MSC)',
+  acronym: 'MLC',
+  name: 'The MLC Project',
+  shortName: 'The MLC Project',
+  // What MLC stands for — used in about/intro copy.
+  meaning: 'Make Language Casual',
   tagline: 'Making language more accessible.',
   subtagline:
     'Approachable resources and programs for neurodivergent and multilingual people, families, and educators.',
@@ -16,12 +18,12 @@ export const site = {
   secondaryMessage:
     'Language looks different for everyone. We help make it more accessible.',
   mission:
-    'MSC helps multilingual individuals use language, learn, and be understood through accessible language learning.',
+    'The MLC Project helps multilingual individuals use language, learn, and be understood through accessible language learning.',
   vision:
     'A community where language, in all its forms, is understood, respected, and within reach.',
 
   // TODO: confirm the public contact address before launch.
-  email: 'hello@makespanishcasual.org',
+  email: 'hello@makelanguagecasual.org',
   legalLine: '501(c)(3) Nonprofit Organization',
   // TODO: add your EIN here for donor pages, e.g. 'EIN 88-1234567'
   ein: '',
@@ -30,7 +32,7 @@ export const site = {
   serviceArea: 'Dallas–Fort Worth, Texas',
 
   // Used for SEO/Open Graph URLs.
-  url: 'https://makespanishcasual.org',
+  url: 'https://makelanguagecasual.org',
 
   // DONATIONS via Zeffy (free for nonprofits, no Stripe account needed).
   // Create a donation form at zeffy.com, then paste its URL here — the Donate
@@ -40,8 +42,8 @@ export const site = {
 
   // TODO: confirm/990 these are the current, active handles before launch.
   social: {
-    instagram: 'https://instagram.com/makespanishcasual_',
-    youtube: 'https://youtube.com/@makespanishcasual',
+    instagram: 'https://instagram.com/makelanguagecasual_',
+    youtube: 'https://youtube.com/@makelanguagecasual',
     twitter: '',
     linkedin: '',
   },

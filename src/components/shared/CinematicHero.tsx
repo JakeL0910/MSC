@@ -42,8 +42,8 @@ export default function CinematicHero({
 }) {
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#0A1E20] text-white"
-      style={{ backgroundImage: 'radial-gradient(120% 90% at 50% -10%, #103A3E 0%, #0A1E20 55%, #071619 100%)' }}
+      className="relative isolate overflow-hidden bg-[#07171A] text-white"
+      style={{ backgroundImage: 'radial-gradient(120% 90% at 50% -10%, #0E3236 0%, #08191C 55%, #050F11 100%)' }}
     >
       <SignalField />
       <Grain opacity={0.07} />

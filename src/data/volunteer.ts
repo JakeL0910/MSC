@@ -35,7 +35,7 @@ export const volunteerRoles: VolunteerRole[] = [
     title: 'Translator / Reviewer',
     icon: 'globe',
     description:
-      'Translate MSC materials or review translations for accuracy and tone. Every document gets two bilingual sets of eyes before publication.',
+      'Translate MLC materials or review translations for accuracy and tone. Every document gets two bilingual sets of eyes before publication.',
     skills: ['Strong bilingual proficiency', 'Careful reading', 'Cultural awareness'],
     commitment: 'Per-project, ~2 hours each',
   },
@@ -62,7 +62,7 @@ export const volunteerRoles: VolunteerRole[] = [
     title: 'Outreach Coordinator',
     icon: 'users',
     description:
-      'Connect MSC with schools, libraries, and community organizations: scheduling events, managing contacts, and following up with partners.',
+      'Connect MLC with schools, libraries, and community organizations: scheduling events, managing contacts, and following up with partners.',
     skills: ['Organized language', 'Comfort emailing adults/organizations', 'Follow-through'],
     commitment: '1–3 hours/week',
   },

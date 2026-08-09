@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // MEMBERSHIP DATA MODEL & CONSTANTS
-// The "Become a Member" system turns joining into MSC's impact numbers. Every
+// The "Become a Member" system turns joining into MLC's impact numbers. Every
 // field a member submits is also a metric: role → segment counts, languages →
 // the collective's headline "X languages", city → geographic reach.
 //

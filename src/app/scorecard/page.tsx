@@ -37,8 +37,8 @@ export default function ScorecardPage() {
 
       <CtaBand
         title="Scored lower than you hoped?"
-        description="That's the normal result — and the fixable one. MSC partners with organizations on plain-language rewrites, translations, and quick wins."
-        primary={{ label: 'Partner With MSC', href: '/partners' }}
+        description="That's the normal result — and the fixable one. MLC partners with organizations on plain-language rewrites, translations, and quick wins."
+        primary={{ label: 'Partner With MLC', href: '/partners' }}
         secondary={{ label: 'Get the Plain-Language Guide', href: '/resources/plain-language-writing-guide' }}
       />
     </>

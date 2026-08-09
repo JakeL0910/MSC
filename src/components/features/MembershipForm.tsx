@@ -1,6 +1,6 @@
 'use client'
 
-// BECOME A MEMBER — the join flow that generates MSC's impact numbers.
+// BECOME A MEMBER — the join flow that generates MLC's impact numbers.
 // Submits to /api/members (real storage in local/preview/prod). Every field is
 // also a metric: roles → segments, languages → the collective's headline
 // count, city → reach. A live preview shows the member how their join moves
@@ -267,7 +267,7 @@ export default function MembershipForm({ stats }: { stats: CollectiveStats | nul
       <label className="mt-3 flex items-start gap-3">
         <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#1A6B72]" required />
         <span className="text-xs leading-relaxed text-gray-600">
-          I agree that MSC may use my name and email to contact me about membership and ways to take part. MSC won’t sell or share my
+          I agree that MLC may use my name and email to contact me about membership and ways to take part. MLC won’t sell or share my
           information, and I can ask to be removed at any time. If joining on behalf of someone under 18, I confirm I’m their parent or guardian.
         </span>
       </label>

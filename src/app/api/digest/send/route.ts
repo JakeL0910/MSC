@@ -53,7 +53,7 @@ export async function GET(req: Request) {
   let failed = 0
   for (const m of members) {
     const html = renderDigestHTML({ name: m.name, email: m.email }, digest, siteUrl)
-    const { delivered } = await sendEmail(m.email, `MSC impact digest · ${digest.monthLabel}`, html)
+    const { delivered } = await sendEmail(m.email, `MLC impact digest · ${digest.monthLabel}`, html)
     delivered ? sent++ : failed++
   }
 

@@ -1,7 +1,7 @@
 'use client'
 
 // PREFERENCES PANEL — a floating control to tune motion, contrast, and text
-// size. Presented plainly and proudly, because for MSC's audience "make this
+// size. Presented plainly and proudly, because for MLC's audience "make this
 // yours" is the brand. Closes on Escape or outside click; fully keyboard usable.
 import { useEffect, useRef, useState } from 'react'
 import { usePreferences } from '@/components/providers/Preferences'

@@ -9,7 +9,7 @@ import { resources, resourceCategories, type Resource } from '@/data/resources'
 export const metadata: Metadata = {
   title: 'Resources',
   description:
-    'Free, plain-language resources from Make Spanish Casual for students, families, and educators. Language access, self-advocacy, conversational Spanish, and inclusive learning. Clearly labeled available or coming soon.',
+    'Free, plain-language resources from The MLC Project for students, families, and educators. Language access, self-advocacy, conversational Spanish, and inclusive learning. Clearly labeled available or coming soon.',
 }
 
 const formatIcons: Record<Resource['format'], string> = {
@@ -128,7 +128,7 @@ export default function ResourcesPage() {
       <section className="pb-16 bg-msc-cream/60">
         <div className="container">
           <p className="text-xs text-gray-500 leading-relaxed max-w-3xl mx-auto text-center">
-            MSC resources are free educational materials. They are not clinical, medical, or legal
+            MLC resources are free educational materials. They are not clinical, medical, or legal
             advice, individualized professional guidance, accommodations, or a substitute for
             evaluation or care from a qualified professional. Bilingual materials are
             volunteer-produced and reviewed for clarity.

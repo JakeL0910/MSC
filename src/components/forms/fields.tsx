@@ -1,6 +1,6 @@
 'use client'
 
-// Shared form building blocks used by every MSC form.
+// Shared form building blocks used by every MLC form.
 //
 // HOW FORM SUBMISSION WORKS (no backend required):
 // Forms validate on the frontend, then open the visitor's email client with

@@ -2,7 +2,7 @@
 // PARTNERS DATA — partnership types and illustrative ways to collaborate for
 // the /partners page.
 //
-// The collaborations below are ILLUSTRATIONS of what MSC offers — not claims of
+// The collaborations below are ILLUSTRATIONS of what MLC offers — not claims of
 // specific past partnerships. Add real, named collaborations here only once
 // they exist and the partner has agreed to be named.
 // ----------------------------------------------------------------------------
@@ -62,7 +62,7 @@ export const exampleCollaborations: ExampleCollaboration[] = [
     title: 'Bilingual Family Night',
     partner: 'For example, with a local school',
     description:
-      'MSC volunteers could run a bilingual station at a school family night, walking families through free resources in English and Spanish.',
+      'MLC volunteers could run a bilingual station at a school family night, walking families through free resources in English and Spanish.',
   },
   {
     title: 'Conversational Spanish Meetup',

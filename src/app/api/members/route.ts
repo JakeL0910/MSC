@@ -1,10 +1,10 @@
 // ----------------------------------------------------------------------------
-// MEMBERSHIP API — the front door to MSC's impact numbers.
+// MEMBERSHIP API — the front door to MLC's impact numbers.
 //   POST /api/members   → public: join the collective
 //   GET  /api/members   → admin only (x-admin-key): full member list
 //
 // Members are stored via lib/store (Redis in prod, data/members.json in dev),
-// matching every other MSC collection. Joining is idempotent by email: if you
+// matching every other MLC collection. Joining is idempotent by email: if you
 // join again we update your record instead of creating a duplicate, so the
 // member count stays honest.
 //

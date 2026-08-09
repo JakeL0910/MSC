@@ -11,7 +11,7 @@ import { volunteerRoles, timeCommitments, volunteerFaq } from '@/data/volunteer'
 export const metadata: Metadata = {
   title: 'Volunteer',
   description:
-    'Volunteer with Make Spanish Casual: create language and Spanish resources, translate materials, design, help run events, and advocate for accessible language education. Volunteer-driven, mentor-guided.',
+    'Volunteer with The MLC Project: create language and Spanish resources, translate materials, design, help run events, and advocate for accessible language education. Volunteer-driven, mentor-guided.',
 }
 
 export default function VolunteerPage() {

@@ -13,14 +13,14 @@ export interface Milestone {
   description: string
 }
 
-// MSC's evolution, told as ordered phases. Exact founding/expansion years can
+// MLC's evolution, told as ordered phases. Exact founding/expansion years can
 // be added here once confirmed (see completion report — dates need verifying).
 export const milestones: Milestone[] = [
   {
     phase: 'How we started',
     title: 'Make Spanish Casual',
     description:
-      'We started with free, practical materials for the Spanish people really speak.',
+      'We started as Make Spanish Casual (MSC), with free, practical materials for the Spanish people really speak.',
   },
   {
     phase: 'Growing',
@@ -35,10 +35,10 @@ export const milestones: Milestone[] = [
       'We advocated before the Plano ISD Board for accessible language education.',
   },
   {
-    phase: 'Expanding',
-    title: 'From casual Spanish to language access',
+    phase: 'Becoming The MLC Project',
+    title: 'From casual Spanish to casual language',
     description:
-      'The same idea grew into a broader mission: accessible language for neurodivergent and multilingual people.',
+      'The same idea grew into a broader mission — Make Language Casual — accessible language for neurodivergent and multilingual people, whatever language they speak.',
   },
 ]
 
@@ -109,7 +109,7 @@ export interface ReachType {
   detail: string
 }
 
-// The kinds of settings MSC works in (qualitative — partner network is growing).
+// The kinds of settings MLC works in (qualitative — partner network is growing).
 export const reachTypes: ReachType[] = [
   { name: 'Schools & school communities', detail: 'Events, advocacy, and resources for students and families' },
   { name: 'Public libraries', detail: 'Community learning and resource sharing' },

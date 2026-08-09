@@ -99,7 +99,7 @@ export default function VolunteerForm() {
 
       <TextAreaField
         id="vol-why"
-        label="Why do you want to volunteer with MSC?"
+        label="Why do you want to volunteer with MLC?"
         value={why}
         onChange={setWhy}
         required

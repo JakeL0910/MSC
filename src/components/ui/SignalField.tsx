@@ -1,6 +1,6 @@
 'use client'
 
-// SIGNAL FIELD — a generative backdrop of glowing horizontal streaks, in MSC's
+// SIGNAL FIELD — a generative backdrop of glowing horizontal streaks, in MLC's
 // teal/amber/coral, concentrated in a central band like a spectrum. Purely
 // decorative (aria-hidden, pointer-events-none). Animates a soft shimmer + slow
 // drift; for reduced-motion users it paints a single static frame and stops.

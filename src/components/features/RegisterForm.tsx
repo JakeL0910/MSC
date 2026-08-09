@@ -207,8 +207,8 @@ export default function RegisterForm() {
       <label className="mt-5 flex items-start gap-3">
         <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#1A6B72]" required />
         <span className="text-xs text-gray-600 leading-relaxed">
-          I agree that MSC may use my name and email to send information about the August Access Sprint
-          (session links and reminders). MSC won’t sell or share this information, and I can ask to be
+          I agree that MLC may use my name and email to send information about the August Access Sprint
+          (session links and reminders). MLC won’t sell or share this information, and I can ask to be
           removed at any time. If registering someone under 18, I confirm I’m their parent or guardian.
         </span>
       </label>

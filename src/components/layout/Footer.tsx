@@ -167,7 +167,7 @@ export default function Footer() {
 
         {/* Educational disclaimer */}
         <p className="text-xs text-gray-500 leading-relaxed mb-6 max-w-3xl">
-          MSC provides free educational resources and community programs. Our materials are
+          MLC provides free educational resources and community programs. Our materials are
           educational and are not clinical, medical, psychological, or legal advice, individualized
           professional guidance, or a substitute for evaluation, therapy, accommodations, or care
           from a qualified professional. When individualized support is needed, we encourage

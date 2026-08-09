@@ -63,7 +63,7 @@ export async function POST(req: Request) {
     start: body.start,
     durationMin: Number(body.durationMin) || 60,
     tzLabel: body.tzLabel || 'ET',
-    host: body.host || 'MSC',
+    host: body.host || 'MLC',
     language: body.language || 'Bilingual',
     level: body.level,
     joinUrl: body.joinUrl || undefined,

@@ -1,4 +1,4 @@
-// MSC logo mark — two overlapping speech bubbles (teal + coral) with a forward
+// MLC logo mark — two overlapping speech bubbles (teal + coral) with a forward
 // arrow. The bubbles read as conversation and exchange; the arrow as moving
 // language forward and making it accessible. Brand teal + coral, no background
 // tile, so it sits cleanly on any surface. Pure SVG: crisp at any size.
@@ -15,7 +15,7 @@ export default function BrandMark({ className = 'w-9 h-9' }: { className?: strin
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Make Spanish Casual logo"
+      aria-label="The MLC Project logo"
     >
       {/* teal bubble (back) — carries the forward arrow */}
       <rect x="5" y="9" width="32" height="32" rx="10" fill="#1A6B72" />

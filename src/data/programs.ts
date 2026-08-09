@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------
-// WHAT WE DO — MSC's central areas of work.
+// WHAT WE DO — MLC's central areas of work.
 // Each entry generates a card on /programs ("What We Do") and a full page at
 // /programs/[slug]. To add or change an area, edit an object here.
 //
@@ -38,7 +38,7 @@ export const programs: Program[] = [
     summary:
       'Practical, approachable language education, including conversational Spanish and free community events and webinars.',
     description: [
-      'Language education is at the heart of MSC. We keep learning approachable and practical, from everyday conversational Spanish (our roots) to plain-language education about how people use language differently. We share it through free resources and community events, virtual and in person across Dallas–Fort Worth and online.',
+      'Language education is at the heart of MLC. We keep learning approachable and practical, from everyday conversational Spanish (our roots) to plain-language education about how people use language differently. We share it through free resources and community events, virtual and in person across Dallas–Fort Worth and online.',
     ],
     whatWeDo: [
       'Free, practical conversational Spanish materials and everyday phrases',

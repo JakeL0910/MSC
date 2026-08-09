@@ -5,7 +5,7 @@ import { site } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Thank You',
-  description: 'Your donation to MSC was received.',
+  description: 'Your donation to MLC was received.',
   robots: { index: false },
 }
 

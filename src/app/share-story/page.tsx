@@ -6,7 +6,7 @@ import StoryForm from '@/components/features/StoryForm'
 export const metadata: Metadata = {
   title: 'Share Your Story',
   description:
-    'Learned some Spanish with Make Spanish Casual, used a resource, or volunteered? Tell us how it went. With your permission, we may share it to help others.',
+    'Learned some Spanish with The MLC Project, used a resource, or volunteered? Tell us how it went. With your permission, we may share it to help others.',
 }
 
 export default function ShareStoryPage() {

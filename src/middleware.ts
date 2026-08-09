@@ -41,7 +41,7 @@ export function middleware(req: NextRequest) {
   return new NextResponse('Authentication required.', {
     status: 401,
     headers: {
-      'WWW-Authenticate': 'Basic realm="MSC private preview", charset="UTF-8"',
+      'WWW-Authenticate': 'Basic realm="MLC private preview", charset="UTF-8"',
     },
   })
 }

@@ -19,7 +19,7 @@ import {
 const contributionTypes = [
   'Plain-language guide',
   'Flashcard set / vocabulary list',
-  'Translation of an existing MSC resource',
+  'Translation of an existing MLC resource',
   'Phrase cards for a new situation',
   'Poster or visual design',
   'Other idea',

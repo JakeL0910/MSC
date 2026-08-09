@@ -56,7 +56,7 @@ const EMPTY: FormState = {
   localDateTime: '',
   tzIndex: 0,
   durationMin: '60',
-  host: 'MSC',
+  host: 'MLC',
   language: 'Bilingual',
   level: 'All Levels',
   joinUrl: '',
@@ -99,7 +99,7 @@ function formToPayload(f: FormState): Partial<LiveClass> {
     start: `${f.localDateTime}:00${tz.offset}`,
     durationMin: Number(f.durationMin) || 60,
     tzLabel: tz.label,
-    host: f.host.trim() || 'MSC',
+    host: f.host.trim() || 'MLC',
     language: f.language.trim() || 'Bilingual',
     level: f.level || undefined,
     joinUrl: f.joinUrl.trim() || undefined,
@@ -329,7 +329,7 @@ export default function AdminClassesPage() {
 
             <div>
               <label className={labelCls}>Host</label>
-              <input className={inputCls} value={form.host} onChange={(e) => set('host', e.target.value)} placeholder="MSC Volunteer Tutors" />
+              <input className={inputCls} value={form.host} onChange={(e) => set('host', e.target.value)} placeholder="MLC Volunteer Tutors" />
             </div>
 
             <div className="rounded-xl bg-msc-teal-light/40 p-4">

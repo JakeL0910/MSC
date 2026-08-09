@@ -10,7 +10,7 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support Make Spanish Casual. Your donation funds free resources, community events, and programs for accessible language education. Tax-deductible.',
+    'Support The MLC Project. Your donation funds free resources, community events, and programs for accessible language education. Tax-deductible.',
 }
 
 // Giving levels — edit amounts and impact lines freely.
@@ -39,9 +39,9 @@ export default function DonatePage() {
   return (
     <>
       <PageHero
-        eyebrow="Support MSC"
+        eyebrow="Support MLC"
         title="Fund the next conversation"
-        description="Everything MSC makes is free for families and communities. Donations cover printing, program supplies, volunteer training, and the tools behind our resources."
+        description="Everything MLC makes is free for families and communities. Donations cover printing, program supplies, volunteer training, and the tools behind our resources."
       />
 
       <section className="py-16 bg-white">
@@ -62,7 +62,7 @@ export default function DonatePage() {
               <div className="max-w-2xl mx-auto">
                 <div className="overflow-hidden rounded-2xl border border-gray-100 shadow-md bg-white">
                   <iframe
-                    title="Donate to Make Spanish Casual"
+                    title="Donate to The MLC Project"
                     src={zeffyUrl}
                     className="w-full"
                     style={{ height: 820, border: 0 }}
@@ -78,7 +78,7 @@ export default function DonatePage() {
                   .
                 </p>
                 <p className="mt-2 text-center text-xs text-gray-400">
-                  {site.legalLine}. 100% of your gift reaches MSC; Zeffy is free for nonprofits.
+                  {site.legalLine}. 100% of your gift reaches MLC; Zeffy is free for nonprofits.
                   Tax-deductible to the extent allowed by law.{site.ein && ` ${site.ein}.`}
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function DonatePage() {
                 your gift directly, or ask about sponsoring a specific program.
               </p>
               <a
-                href={`mailto:${site.email}?subject=${encodeURIComponent('[Donation] I would like to support MSC')}`}
+                href={`mailto:${site.email}?subject=${encodeURIComponent('[Donation] I would like to support MLC')}`}
                 className="btn-primary w-full"
               >
                 Email Us About Giving

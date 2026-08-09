@@ -1,6 +1,6 @@
 'use client'
 
-// MSC LEARN — interactive flashcard study component. Pick a deck, flip
+// MLC LEARN — interactive flashcard study component. Pick a deck, flip
 // cards, and track progress. Deck content lives in src/data/learn.ts.
 
 import { useState } from 'react'

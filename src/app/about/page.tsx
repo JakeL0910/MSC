@@ -11,9 +11,9 @@ import { founder, advisors } from '@/data/team'
 import { milestones } from '@/data/impact'
 
 export const metadata: Metadata = {
-  title: 'About MSC',
+  title: 'About MLC',
   description:
-    'Make Spanish Casual is a nonprofit making language education more accessible for neurodivergent and multilingual individuals, families, and educators. Read our mission, evolution, and founder story.',
+    'The MLC Project is a nonprofit making language education more accessible for neurodivergent and multilingual individuals, families, and educators. Read our mission, evolution, and founder story.',
 }
 
 const values = [
@@ -49,7 +49,7 @@ export default function AboutPage() {
     <>
       <PageHero
         illustration="story"
-        eyebrow="About MSC"
+        eyebrow="About MLC"
         title="A youth-led movement for"
         titleAccent="language access"
         description="Flexible, inclusive, human. Language that works for neurodivergent and multilingual people, families, and educators."
@@ -66,6 +66,11 @@ export default function AboutPage() {
                 We prioritize students and young people, and also serve families, educators, and
                 communities. Language needs differ from person to person; there’s no single
                 “right” way to use language.
+              </p>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                <strong className="text-msc-charcoal">MLC stands for Make Language Casual.</strong>{' '}
+                We began as Make Spanish Casual (MSC), focused on conversational Spanish, and grew into
+                something broader: language of every kind, made human and within reach, not clinical.
               </p>
               <Illustration name="community" className="mt-10 hidden lg:block w-full max-w-sm" />
             </div>
@@ -130,7 +135,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-start">
             <div>
-              <SectionHeading align="left" eyebrow="Founder story" title="Where MSC started" />
+              <SectionHeading align="left" eyebrow="Founder story" title="Where MLC started" />
               <div className="bg-msc-cream rounded-2xl p-6 border border-gray-100">
                 <div className="w-16 h-16 rounded-2xl bg-msc-teal-light text-msc-teal flex items-center justify-center mb-4">
                   <Icon name="users" className="w-8 h-8" />
@@ -174,7 +179,7 @@ export default function AboutPage() {
           {advisors.length === 0 && (
             <div className="max-w-3xl mx-auto mt-14 text-center">
               <p className="text-gray-600 leading-relaxed">
-                MSC is <strong>volunteer-driven and mentor-guided</strong>. Our volunteers lead the
+                MLC is <strong>volunteer-driven and mentor-guided</strong>. Our volunteers lead the
                 day-to-day work, with guidance from experienced mentors. Want to help guide our work
                 or join the team?{' '}
                 <Link href="/contact" className="text-msc-teal font-semibold hover:underline">

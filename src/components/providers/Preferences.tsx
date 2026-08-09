@@ -1,6 +1,6 @@
 'use client'
 
-// PREFERENCES — MSC serves neurodivergent and multilingual people, so tuning
+// PREFERENCES — MLC serves neurodivergent and multilingual people, so tuning
 // the experience is a feature, not a footnote. This provider holds three
 // preferences, persists them, applies them to <html> as data attributes (CSS
 // reads those), and — crucially — routes "reduce motion" through framer-motion's

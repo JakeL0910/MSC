@@ -137,7 +137,7 @@ export function googleCalendarUrl(c: LiveClass): string {
     d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '')
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: `MSC ${c.type}: ${c.title}`,
+    text: `MLC ${c.type}: ${c.title}`,
     dates: `${fmt(start)}/${fmt(end)}`,
     details: `${c.description}${c.joinUrl ? `\n\nJoin: ${c.joinUrl}` : ''}`,
     location: c.joinUrl || 'Online',

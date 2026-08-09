@@ -86,7 +86,7 @@ export default async function ResourceDetailPage({
               {/* Print-only header so the saved PDF has a clear title */}
               <div className="print-only mb-6">
                 <h1 className="text-2xl font-bold text-msc-charcoal">{resource.title}</h1>
-                <p className="text-sm text-gray-500">Make Spanish Casual · makespanishcasual.org</p>
+                <p className="text-sm text-gray-500">The MLC Project · makelanguagecasual.org</p>
               </div>
 
               <div className="space-y-4">
@@ -136,7 +136,7 @@ export default async function ResourceDetailPage({
               )}
 
               <p className="text-xs text-gray-400 mt-10 leading-relaxed">
-                MSC resources are educational materials, not medical, legal, or professional advice.
+                MLC resources are educational materials, not medical, legal, or professional advice.
                 Translations are volunteer-produced and reviewed for accuracy.
               </p>
             </div>

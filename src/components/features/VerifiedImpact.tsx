@@ -62,7 +62,7 @@ export default function VerifiedImpact({ initial }: { initial: ImpactTotals }) {
             <Tile key={t.label} value={t.v} label={t.label} />
           ))}
         </div>
-        <p className="mt-8 text-center text-xs text-gray-400">Logged by members and confirmed by MSC staff.</p>
+        <p className="mt-8 text-center text-xs text-gray-400">Logged by members and confirmed by MLC staff.</p>
       </div>
     </section>
   )

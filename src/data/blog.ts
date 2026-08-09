@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // BLOG / NEWS & STORIES
-// Real posts migrated from makespanishcasual.org (the org's WordPress site).
+// Real posts migrated from makelanguagecasual.org (the org's WordPress site).
 // Each entry generates a card on /blog and a full article at /blog/[slug].
 // To publish a new post, add an object to the TOP of the array (newest first).
 //
@@ -33,7 +33,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'jake-at-actfl-2025-new-orleans',
-    title: 'MSC at ACTFL 2025 in New Orleans',
+    title: 'MLC at ACTFL 2025 in New Orleans',
     date: '2025-12-17',
     category: 'News',
     readMinutes: 2,
@@ -55,7 +55,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         paragraphs: [
-          'Showing up in spaces like this keeps MSC’s work grounded: the more we learn from career educators, the better the free, approachable resources we build for students, families, and our own community. And yes, there was time for beignets at Café du Monde. Go Jake!',
+          'Showing up in spaces like this keeps MLC’s work grounded: the more we learn from career educators, the better the free, approachable resources we build for students, families, and our own community. And yes, there was time for beignets at Café du Monde. Go Jake!',
         ],
       },
     ],
@@ -69,23 +69,23 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       'A community Día de los Muertos celebration with the Williams High School Spanish Club in Allen, Texas.',
     images: [
-      { src: '/blog/dia-de-los-muertos-community-celebration/img-1.jpg', alt: 'Community members at MSC’s Día de los Muertos celebration at Celebration Park in Allen, Texas' },
+      { src: '/blog/dia-de-los-muertos-community-celebration/img-1.jpg', alt: 'Community members at MLC’s Día de los Muertos celebration at Celebration Park in Allen, Texas' },
       { src: '/blog/dia-de-los-muertos-community-celebration/img-2.jpg', alt: 'Families taking part in Día de los Muertos activities' },
       { src: '/blog/dia-de-los-muertos-community-celebration/img-3.jpg', alt: 'A coloring and games station at the Día de los Muertos celebration' },
       { src: '/blog/dia-de-los-muertos-community-celebration/img-4.jpg', alt: 'Attendees enjoying the Día de los Muertos community event' },
       { src: '/blog/dia-de-los-muertos-community-celebration/img-5.jpg', alt: 'Spanish-language games at the Día de los Muertos celebration' },
-      { src: '/blog/dia-de-los-muertos-community-celebration/img-6.jpg', alt: 'MSC volunteers and the Williams High School Spanish Club at the event' },
+      { src: '/blog/dia-de-los-muertos-community-celebration/img-6.jpg', alt: 'MLC volunteers and the Williams High School Spanish Club at the event' },
     ],
     body: [
       {
         paragraphs: [
-          'Make Spanish Casual, in partnership with the Williams High School Spanish Club, organized a community celebration of Día de los Muertos on November 2nd at Celebration Park in Allen, Texas.',
+          'The MLC Project, in partnership with the Williams High School Spanish Club, organized a community celebration of Día de los Muertos on November 2nd at Celebration Park in Allen, Texas.',
           'The event was built around interactive activities that invited everyone to connect with Hispanic culture in a relaxed, welcoming way. Attendees colored decorative sheets, played Spanish-language games, and won candy prizes along the way.',
         ],
       },
       {
         paragraphs: [
-          'Events like this are MSC at its most casual and its most joyful: culture and language shared out loud, in the community, with no pressure and plenty of fun. Thank you to everyone who came out, and to the Williams High School Spanish Club for making it happen with us.',
+          'Events like this are MLC at its most casual and its most joyful: culture and language shared out loud, in the community, with no pressure and plenty of fun. Thank you to everyone who came out, and to the Williams High School Spanish Club for making it happen with us.',
         ],
       },
     ],
@@ -110,7 +110,7 @@ export const blogPosts: BlogPost[] = [
       {
         paragraphs: [
           'Jake delivered a presentation at ACTFL 2024, the Annual Convention and World Languages Expo, held at the Pennsylvania Convention Center in Philadelphia from November 22–24.',
-          'His 45-minute session reached more than 100 language educators from across the globe. The focus was the idea at the heart of Make Spanish Casual: the everyday, informal Spanish people really speak (the slang and expressions textbooks tend to skip), and practical ways, including technology, to make it easier to teach and learn.',
+          'His 45-minute session reached more than 100 language educators from across the globe. The focus was the idea at the heart of The MLC Project: the everyday, informal Spanish people really speak (the slang and expressions textbooks tend to skip), and practical ways, including technology, to make it easier to teach and learn.',
         ],
       },
       {

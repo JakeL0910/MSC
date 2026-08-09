@@ -46,7 +46,7 @@ export default function OgImage() {
               fontWeight: 700,
             }}
           >
-            MSC
+            MLC
           </div>
           <div style={{ fontSize: '36px', fontWeight: 700 }}>{site.name}</div>
         </div>

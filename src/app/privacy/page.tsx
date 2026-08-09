@@ -4,7 +4,7 @@ import { site } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'How MSC handles information on this website.',
+  description: 'How MLC handles information on this website.',
 }
 
 // TODO: have this reviewed before launch — it's a reasonable starting template,
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-bold text-msc-charcoal mb-3">Young volunteers</h2>
               <p>
                 Volunteers under 18 require a parent or guardian permission form before
-                participating in MSC programs. We collect only the information needed to
+                participating in MLC programs. We collect only the information needed to
                 coordinate volunteering.
               </p>
             </div>

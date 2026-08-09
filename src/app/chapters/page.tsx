@@ -7,14 +7,14 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Start a Chapter',
   description:
-    'Bring Make Spanish Casual to your school. Start a student chapter to run conversational Spanish sessions, share resources, and host community events, with a starter kit and mentorship from MSC.',
+    'Bring The MLC Project to your school. Start a student chapter to run conversational Spanish sessions, share resources, and host community events, with a starter kit and mentorship from MLC.',
 }
 
-const applyHref = `mailto:${site.email}?subject=${encodeURIComponent('Start an MSC chapter')}`
+const applyHref = `mailto:${site.email}?subject=${encodeURIComponent('Start an MLC chapter')}`
 
 const steps = [
   { icon: 'mail', title: 'Apply', text: 'Tell us about you and your school.' },
-  { icon: 'download', title: 'Get the starter kit', text: 'Playbook, templates, and MSC branding.' },
+  { icon: 'download', title: 'Get the starter kit', text: 'Playbook, templates, and MLC branding.' },
   { icon: 'presentation', title: 'Launch', text: 'Run your first session or event.' },
   { icon: 'hand-raised', title: 'We support you', text: 'Mentorship and a network of chapters.' },
 ]
@@ -29,7 +29,7 @@ const doList = [
 const getList = [
   'A step-by-step chapter playbook',
   'Event and lesson templates',
-  'MSC branding and materials',
+  'MLC branding and materials',
   'A mentor and a network of chapters',
   'Verified service hours for members',
 ]
@@ -40,7 +40,7 @@ export default function ChaptersPage() {
       <PageHero
         illustration="community"
         eyebrow="Chapters · Now launching"
-        title="Bring MSC to your school"
+        title="Bring MLC to your school"
         description="Start a student chapter and make language more accessible in your own community."
         actions={[
           { label: 'Apply to start a chapter', href: '#apply' },

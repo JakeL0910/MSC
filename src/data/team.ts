@@ -17,10 +17,10 @@ export interface TeamMember {
 export const founder: TeamMember = {
   name: 'Jake Li',
   role: 'Founder',
-  bio: 'Jake started Make Spanish Casual as a student and helps lead its work in accessible language.',
+  bio: 'Jake started The MLC Project as a student and helps lead its work in accessible language.',
   story: [
     'It started with a simple observation: the Spanish people speak is different from the Spanish textbooks teach. Jake shared free, practical materials to close that gap, and a community grew around it.',
-    'Later, work in language advocacy and language sample analysis (SALT annotation of Spanish–English caregiver–child speech) deepened his interest in how people use language across bilingual and neurodevelopmental contexts, motivating MSC’s expansion toward accessible language. This is personal background, not a service MSC provides.',
+    'Later, work in language advocacy and language sample analysis (SALT annotation of Spanish–English caregiver–child speech) deepened his interest in how people use language across bilingual and neurodevelopmental contexts, motivating MLC’s expansion toward accessible language. This is personal background, not a service MLC provides.',
   ],
 }
 

@@ -102,7 +102,7 @@ export default async function BlogPostPage({
 
               <div className="mt-12 bg-msc-cream rounded-2xl p-7 text-center">
                 <p className="text-base font-semibold text-msc-charcoal mb-2">
-                  Written by the MSC team
+                  Written by the MLC team
                 </p>
                 <p className="text-sm text-gray-600 mb-4">
                   Questions, corrections, or a story to share? We read everything.
@@ -166,7 +166,7 @@ export default async function BlogPostPage({
       <CtaBand
         title="Turn reading into doing"
         description="Behind every story is real work, and volunteers make it happen."
-        primary={{ label: 'Volunteer With MSC', href: '/volunteer' }}
+        primary={{ label: 'Volunteer With MLC', href: '/volunteer' }}
         secondary={{ label: 'Browse Free Resources', href: '/resources' }}
       />
     </>

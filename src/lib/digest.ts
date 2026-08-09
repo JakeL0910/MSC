@@ -88,7 +88,7 @@ export function renderDigestHTML(member: { name: string; email: string }, data: 
 
   return `
   <div style="font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:0 auto;color:#1C1C1E;background:#F8F6F1;padding:24px;border-radius:16px">
-    <p style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1A6B72;margin:0 0 4px">MSC impact digest · ${data.monthLabel}</p>
+    <p style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1A6B72;margin:0 0 4px">MLC impact digest · ${data.monthLabel}</p>
     <h1 style="font-size:22px;margin:0 0 12px">Hi ${firstName(member.name)},</h1>
     <p style="font-size:15px;line-height:1.6;margin:0 0 20px">Here’s how the Multilingual Support Collective is growing, and where you fit in.</p>
 
@@ -118,7 +118,7 @@ export function renderDigestHTML(member: { name: string; email: string }, data: 
       <a href="${impactUrl}" style="color:#1A6B72;padding:12px 12px;text-decoration:none;font-weight:600;font-size:14px">See full impact →</a>
     </p>
 
-    <p style="font-size:12px;color:#9ca3af;margin:0">You’re receiving this as an MSC member. Reply to this email to update your preferences.</p>
+    <p style="font-size:12px;color:#9ca3af;margin:0">You’re receiving this as an MLC member. Reply to this email to update your preferences.</p>
   </div>`
 }
 

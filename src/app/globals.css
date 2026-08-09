@@ -202,7 +202,7 @@ article p {
   50%      { background-position: 100% 50%; }
 }
 .gradient-text {
-  background-image: linear-gradient(100deg, #1A6B72, #E05C4B, #E8A020, #1A6B72);
+  background-image: linear-gradient(100deg, #1A6B72, #E8A020, #1A6B72);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -214,7 +214,7 @@ article p {
 /* Brighter gradient for use on DARK surfaces (the cinematic heroes), where the
    default teal stop is too low-contrast. Lighter, more luminous stops. */
 .gradient-text-bright {
-  background-image: linear-gradient(100deg, #5FD0D8, #F0836F, #F2B84E, #5FD0D8);
+  background-image: linear-gradient(100deg, #5FD0D8, #F2B84E, #5FD0D8);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;

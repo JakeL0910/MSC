@@ -8,7 +8,7 @@ import { site } from '@/data/site'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact MSC: questions, partnership inquiries, volunteer questions, press, and newsletter signup.',
+    'Contact MLC: questions, partnership inquiries, volunteer questions, press, and newsletter signup.',
 }
 
 export default function ContactPage() {

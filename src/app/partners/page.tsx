@@ -10,7 +10,7 @@ import { partnerTypes, exampleCollaborations } from '@/data/partners'
 export const metadata: Metadata = {
   title: 'Partner With Us',
   description:
-    'Make Spanish Casual partners with schools, libraries, and community organizations to bring free, accessible language resources, events, and volunteer support to their communities.',
+    'The MLC Project partners with schools, libraries, and community organizations to bring free, accessible language resources, events, and volunteer support to their communities.',
 }
 
 export default function PartnersPage() {
@@ -33,7 +33,7 @@ export default function PartnersPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Partnership types"
-            title="What MSC brings to each partner"
+            title="What MLC brings to each partner"
             description="Every partnership is free."
           />
           <div className="grid md:grid-cols-2 gap-6">

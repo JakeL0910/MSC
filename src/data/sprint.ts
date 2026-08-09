@@ -140,7 +140,7 @@ export const sprintSessions: SprintSession[] = [
   { ...base, day: 15, date: d(15), stageId: 's3', title: 'Multilingualism as a Strength', audience: ['All Audiences'], language: 'English', format: 'Live Class', description: 'More than one language is an asset. We celebrate multilingual language and clear up common myths.' },
   { ...base, day: 16, date: d(16), stageId: 's3', title: 'Code-Switching Without Shame', audience: ['Students', 'Families'], language: 'English', format: 'Live Class', description: 'Moving between languages is skillful, not sloppy. Why code-switching is a valid, useful part of how many people use language.' },
   { ...base, day: 17, date: d(17), stageId: 's3', title: 'Supporting Home Languages', audience: ['Families', 'Educators'], language: 'English', format: 'Live Class', description: 'Practical ways families can keep home languages strong alongside English.' },
-  { ...base, day: 18, date: d(18), stageId: 's3', title: 'Making Spanish Practice More Approachable', audience: ['Students', 'Families'], language: 'English', format: 'Live Class', description: 'Casual, real-world Spanish practice that feels welcoming. MSC’s roots, taught in English; great for learners and heritage speakers alike.' },
+  { ...base, day: 18, date: d(18), stageId: 's3', title: 'Making Spanish Practice More Approachable', audience: ['Students', 'Families'], language: 'English', format: 'Live Class', description: 'Casual, real-world Spanish practice that feels welcoming. MLC’s roots, taught in English; great for learners and heritage speakers alike.' },
   { ...base, day: 19, date: d(19), stageId: 's3', title: 'Using language Across Language Differences', audience: ['All Audiences'], language: 'English', format: 'Live Class', description: 'Friendly strategies for understanding and being understood when people share different languages.' },
   { ...base, day: 20, date: d(20), stageId: 's3', title: 'Inclusive Bilingual Family Routines', audience: ['Families'], language: 'English', format: 'Live Class', description: 'Everyday bilingual routines that make language at home flexible and inclusive.' },
   { ...base, day: 21, date: d(21), stageId: 's3', title: 'Build a Multilingual Access Plan', audience: ['All Audiences'], language: 'English', format: 'Practice Session', description: 'Add your languages and multilingual supports to your growing Language Access Plan.' },
@@ -216,7 +216,7 @@ export function sprintGoogleCalendarUrl(s: SprintSession): string | null {
     action: 'TEMPLATE',
     text: `August Access Sprint, Day ${s.day}: ${s.title}`,
     dates: `${fmt(start)}/${fmt(end)}`,
-    details: `${s.description}${s.host ? `\n\nHost: ${s.host}` : ''}\n\nPart of MSC’s August Access Sprint. All sessions are in English.`,
+    details: `${s.description}${s.host ? `\n\nHost: ${s.host}` : ''}\n\nPart of MLC’s August Access Sprint. All sessions are in English.`,
     location: 'Online',
   })
   return `https://calendar.google.com/calendar/render?${params.toString()}`

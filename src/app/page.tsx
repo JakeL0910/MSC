@@ -22,14 +22,14 @@ const colorToPalette: Record<'teal' | 'amber' | 'coral', CoverPalette> = {
 
 // Real event photos (from /public/blog) for the community strip.
 const communityPhotos = [
-  { src: '/blog/dia-de-los-muertos-community-celebration/img-1.jpg', alt: 'Community members at MSC’s Día de los Muertos celebration in Allen, Texas' },
+  { src: '/blog/dia-de-los-muertos-community-celebration/img-1.jpg', alt: 'Community members at MLC’s Día de los Muertos celebration in Allen, Texas' },
   { src: '/blog/dia-de-los-muertos-community-celebration/img-3.jpg', alt: 'A games and coloring station at the Día de los Muertos celebration' },
   { src: '/blog/dia-de-los-muertos-community-celebration/img-4.jpg', alt: 'Families enjoying the Día de los Muertos community event' },
-  { src: '/blog/jake-at-actfl-2025-new-orleans/img-1.jpg', alt: 'MSC at the ACTFL 2025 convention in New Orleans' },
+  { src: '/blog/jake-at-actfl-2025-new-orleans/img-1.jpg', alt: 'MLC at the ACTFL 2025 convention in New Orleans' },
   { src: '/blog/dia-de-los-muertos-community-celebration/img-2.jpg', alt: 'Families taking part in Día de los Muertos activities' },
-  { src: '/blog/dia-de-los-muertos-community-celebration/img-6.jpg', alt: 'MSC volunteers and the Williams High School Spanish Club at the event' },
+  { src: '/blog/dia-de-los-muertos-community-celebration/img-6.jpg', alt: 'MLC volunteers and the Williams High School Spanish Club at the event' },
   { src: '/blog/jake-presents-at-actfl-2024-philadelphia/img-1.jpg', alt: 'Jake presenting to educators at ACTFL 2024 in Philadelphia' },
-  { src: '/blog/jake-at-actfl-2025-new-orleans/img-3.jpg', alt: 'MSC volunteering with NNELL at ACTFL 2025' },
+  { src: '/blog/jake-at-actfl-2025-new-orleans/img-3.jpg', alt: 'MLC volunteering with NNELL at ACTFL 2025' },
 ]
 
 export const metadata: Metadata = {
@@ -73,7 +73,7 @@ export default function HomePage() {
           { label: 'Explore Resources', href: '/resources', variant: 'light' },
           { label: 'Get Involved', href: '/volunteer', variant: 'outline-light' },
         ]}
-        ghost="MSC"
+        ghost="MLC"
         edgeLabel="Language access"
         footerLeft="A youth-led movement"
         footerRight="Everyone deserves to be understood"

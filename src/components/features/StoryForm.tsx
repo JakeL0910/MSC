@@ -101,7 +101,7 @@ export default function StoryForm() {
       <label className="mt-5 flex items-start gap-3">
         <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#1A6B72]" required />
         <span className="text-xs text-gray-600 leading-relaxed">
-          I give Make Spanish Casual permission to share this story, using my first name and role, on
+          I give The MLC Project permission to share this story, using my first name and role, on
           its website and materials. If this is about someone under 18, I confirm I’m their parent or
           guardian. I can ask to remove it at any time.
         </span>

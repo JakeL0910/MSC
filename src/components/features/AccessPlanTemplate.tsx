@@ -2,7 +2,7 @@
 
 // Printable one-page Language Access Plan template.
 // PRIVACY: fields are uncontrolled and never stored or transmitted — nothing is
-// saved to a server, to MSC, or to the browser. "Print / Save as PDF" uses the
+// saved to a server, to MLC, or to the browser. "Print / Save as PDF" uses the
 // browser's own print dialog (scoped by print CSS in globals.css to
 // #access-plan-print). This is a personal educational + self-advocacy resource,
 // not a clinical assessment or an official accommodation document.
@@ -29,7 +29,7 @@ export default function AccessPlanTemplate() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <p className="text-sm text-gray-600 leading-relaxed max-w-2xl">
             <strong className="font-semibold text-msc-charcoal">Private by design.</strong> Anything
-            you type stays in your browser. It is <strong>not saved and not sent</strong> to MSC or
+            you type stays in your browser. It is <strong>not saved and not sent</strong> to MLC or
             anyone else. Use the button to print it or save it as a PDF for yourself.
           </p>
           <button

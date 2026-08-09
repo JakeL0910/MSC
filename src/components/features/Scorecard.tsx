@@ -84,7 +84,7 @@ function scoreBand(score: number) {
     label: 'Big opportunity',
     color: 'text-msc-coral',
     message:
-      'There’s meaningful room to grow — and that’s good news, because small changes (plain-language rewrites, translating your top documents) have outsized impact. MSC can help.',
+      'There’s meaningful room to grow — and that’s good news, because small changes (plain-language rewrites, translating your top documents) have outsized impact. MLC can help.',
   }
 }
 
@@ -152,7 +152,7 @@ export default function Scorecard() {
           <p className="text-sm text-gray-600 leading-relaxed max-w-xl mx-auto mb-6">{band.message}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/partners" className="btn-secondary">
-              Get Help From MSC
+              Get Help From MLC
             </Link>
             <Link
               href="/resources/plain-language-writing-guide"
