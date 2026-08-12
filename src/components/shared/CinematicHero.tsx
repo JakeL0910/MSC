@@ -26,6 +26,7 @@ export default function CinematicHero({
   edgeLabel,
   footerLeft,
   footerRight,
+  fadeTo = '#F8F6F1',
 }: {
   eyebrow: string
   meta?: string
@@ -39,12 +40,15 @@ export default function CinematicHero({
   edgeLabel?: string
   footerLeft?: string
   footerRight?: string
+  /** Light color the hero melts into at the bottom — match the next section. */
+  fadeTo?: string
 }) {
   return (
     <section
       className="relative isolate overflow-hidden bg-[#07171A] text-white"
       style={{ backgroundImage: 'radial-gradient(120% 90% at 50% -10%, #0E3236 0%, #08191C 55%, #050F11 100%)' }}
     >
+      <div aria-hidden="true" className="tech-grid pointer-events-none absolute inset-0 opacity-[0.05]" />
       <SignalField />
       <Grain opacity={0.07} />
 
@@ -58,9 +62,14 @@ export default function CinematicHero({
         </span>
       )}
 
-      {/* subtle top + bottom fades for depth */}
+      {/* subtle top fade for depth */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/30 to-transparent" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+      {/* the dark hero MELTS into the light content below — matches the next section */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5"
+        style={{ backgroundImage: `linear-gradient(to bottom, transparent, ${fadeTo})` }}
+      />
 
       {edgeLabel && <EdgeLabel tone="light">{edgeLabel}</EdgeLabel>}
 
@@ -94,12 +103,12 @@ export default function CinematicHero({
           )}
         </div>
 
-        {/* Bottom hairline + metadata + scroll cue */}
-        <div className="flex items-center justify-between gap-4 border-t border-white/10 py-5 font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-white/40">
+        {/* Bottom hairline + metadata + scroll cue — dark ink on the light fade */}
+        <div className="flex items-center justify-between gap-4 border-t border-msc-charcoal/10 py-5 font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-msc-charcoal/45">
           <span>{footerLeft ?? eyebrow}</span>
           <span className="hidden items-center gap-2 sm:inline-flex" aria-hidden="true">
             Scroll
-            <span className="relative block h-6 w-px overflow-hidden bg-white/20">
+            <span className="relative block h-6 w-px overflow-hidden bg-msc-charcoal/20">
               <span className="animate-scroll-cue absolute inset-x-0 top-0 h-2 bg-msc-amber" />
             </span>
           </span>

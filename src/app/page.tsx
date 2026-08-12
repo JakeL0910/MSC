@@ -77,6 +77,7 @@ export default function HomePage() {
         edgeLabel="Language access"
         footerLeft="A youth-led movement"
         footerRight="Everyone deserves to be understood"
+        fadeTo="#ffffff"
       />
 
       {/* ================= MISSION ================= */}

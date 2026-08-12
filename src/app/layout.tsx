@@ -6,6 +6,8 @@ import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import PreferencesProvider from '@/components/providers/Preferences'
 import PreferencesPanel from '@/components/features/PreferencesPanel'
+import Grain from '@/components/ui/Grain'
+import CursorGlow from '@/components/ui/CursorGlow'
 import { site } from '@/data/site'
 
 // Single site-wide typeface — Open Sauce One (self-hosted, OFL licensed). Used
@@ -59,6 +61,22 @@ export const metadata: Metadata = {
   },
 }
 
+// Organization structured data (schema.org) — helps search engines and rich
+// results understand who MLC is. Built from the central site config.
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NGO',
+  name: site.name,
+  alternateName: site.acronym,
+  url: site.url,
+  email: site.email,
+  description: site.subtagline,
+  slogan: site.tagline,
+  areaServed: site.serviceArea,
+  logo: `${site.url}/icon.svg`,
+  sameAs: [site.social.instagram, site.social.youtube, site.social.twitter, site.social.linkedin].filter(Boolean),
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -67,7 +85,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={openSauce.variable}>
       <body className={`${openSauce.className} antialiased`}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         <PreferencesProvider>
+          {/* Site-wide living layers (all respect reduced-motion): a drifting
+              aurora color field, a cursor glow, and animated film grain. */}
+          <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-[1] overflow-hidden opacity-40 mix-blend-soft-light">
+            <div className="aurora absolute inset-[-25%]" />
+          </div>
+          <CursorGlow />
+          <Grain fixed animated blend="multiply" opacity={0.04} />
           <ScrollProgress />
           <Header />
           <main className="min-h-screen pt-16">

@@ -45,6 +45,7 @@ export default async function ImpactPage() {
         edgeLabel="Impact · 2026"
         footerLeft="Our work, honestly told"
         footerRight="Real numbers"
+        fadeTo="#ffffff"
       />
 
       {/* By the numbers — real, documented figures only */}

@@ -1,6 +1,11 @@
-// Full-width teal call-to-action band used at the bottom of most pages.
-import Link from 'next/link'
+// Full-width closing call-to-action — a dark, generative "cinematic" moment that
+// bookends every page, so the futuristic feel recurs instead of fizzling into
+// plain content. Reuses the hero's signal field + grain + magnetic buttons.
+import SignalField from '@/components/ui/SignalField'
+import Grain from '@/components/ui/Grain'
+import MagneticButton from '@/components/ui/MagneticButton'
 import Reveal from '@/components/ui/Reveal'
+import Icon from '@/components/shared/Icons'
 
 export default function CtaBand({
   title,
@@ -14,27 +19,45 @@ export default function CtaBand({
   secondary?: { label: string; href: string }
 }) {
   return (
-    <section className="relative overflow-hidden bg-msc-teal">
-      <div className="animate-blob pointer-events-none absolute -top-20 right-10 w-72 h-72 rounded-full bg-white/5 blur-2xl" aria-hidden="true" />
-      <div className="animate-blob-slow pointer-events-none absolute -bottom-24 -left-10 w-80 h-80 rounded-full bg-msc-amber/10 blur-3xl" aria-hidden="true" />
+    <section
+      className="relative isolate overflow-hidden bg-[#07171A] text-white"
+      style={{ backgroundImage: 'radial-gradient(120% 120% at 50% 120%, #0E3236 0%, #08191C 55%, #050F11 100%)' }}
+    >
+      <div aria-hidden="true" className="tech-grid pointer-events-none absolute inset-0 opacity-[0.05]" />
+      <SignalField />
+      <Grain opacity={0.07} />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/30 to-transparent" />
 
-      <div className="container relative py-16 md:py-20 text-center">
+      {/* Scrolling marquee band */}
+      <div aria-hidden="true" className="marquee-mask relative overflow-hidden border-b border-white/10 py-3">
+        <div className="animate-marquee flex w-max whitespace-nowrap font-mono text-[11px] font-semibold uppercase tracking-[0.3em] text-white/25">
+          {[0, 1].map((k) => (
+            <span key={k} className="flex">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <span key={i} className="mx-4">
+                  Make Language Casual <span className="text-msc-amber/50">·</span> Many languages{' '}
+                  <span className="text-msc-amber/50">·</span> One understanding{' '}
+                  <span className="text-msc-amber/50">·</span>
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="container relative py-20 text-center md:py-24">
         <Reveal>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h2>
-          <p className="text-msc-teal-light/90 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-            {description}
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href={primary.href} className="btn-primary">
+          <h2 className="mx-auto max-w-3xl text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">{title}</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/60">{description}</p>
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <MagneticButton href={primary.href} variant="light">
               {primary.label}
-            </Link>
+              <Icon name="arrow-right" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </MagneticButton>
             {secondary && (
-              <Link
-                href={secondary.href}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white border-2 border-white/40 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200"
-              >
+              <MagneticButton href={secondary.href} variant="outline-light">
                 {secondary.label}
-              </Link>
+              </MagneticButton>
             )}
           </div>
         </Reveal>

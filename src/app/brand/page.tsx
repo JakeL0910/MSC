@@ -164,35 +164,36 @@ export default function BrandPage() {
         <div className="container">
           <SectionHeading
             eyebrow="Typography"
-            title="Fraunces speaks. Inter works."
-            description="Both are free Google Fonts. In Docs or Slides where they're unavailable, substitute Georgia for Fraunces and Arial for Inter."
+            title="One voice: Open Sauce One."
+            description="A single, friendly geometric sans carries everything — headings, body, and UI. Where it's unavailable (Docs, Slides), substitute Arial."
           />
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Reveal>
               <div className="h-full rounded-2xl border border-gray-100 shadow-sm p-8">
                 <p className="text-xs font-bold uppercase tracking-widest text-msc-amber mb-4">
-                  Headings & editorial — Fraunces
+                  Display & headings — Open Sauce One
                 </p>
                 <p className="text-3xl font-bold text-msc-charcoal leading-snug mb-4">
                   Language is the front door to everything
                 </p>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Warm, characterful serif for every heading, pull quote, and long-form paragraph.
-                  Weights 600–700 for headings. Never below 13px.
+                  Bold weights (600–700) for headlines, pull quotes, and section titles. Set tight and
+                  large for the confident, editorial feel. Never below 13px.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="h-full rounded-2xl border border-gray-100 shadow-sm p-8">
                 <p className="text-xs font-bold uppercase tracking-widest text-msc-amber mb-4">
-                  Body & UI — Inter
+                  Body & UI — Open Sauce One
                 </p>
-                <p className="font-sans text-base text-msc-charcoal leading-relaxed mb-4" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>
-                  Body copy, buttons, forms, navigation, and captions are set in Inter — clear at
-                  small sizes, neutral enough to let Fraunces carry the personality.
+                <p className="text-base text-msc-charcoal leading-relaxed mb-4">
+                  Body copy, buttons, forms, navigation, and captions use the same family at 400–600 —
+                  one typeface keeps the voice consistent and the loading light.
                 </p>
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  Weights 400–700. Eyebrow labels: bold, all caps, wide tracking, teal.
+                  Eyebrow labels: bold, all caps, wide tracking, teal. Editorial micro-labels use a
+                  monospace stack for a technical accent.
                 </p>
               </div>
             </Reveal>

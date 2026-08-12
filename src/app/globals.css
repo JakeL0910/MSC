@@ -258,6 +258,47 @@ article p {
 }
 .typing-dot { animation: typing-bounce 1.3s ease-in-out infinite; }
 
+/* Subtle film-grain flicker — the texture comes alive (kept tiny + steppy) */
+@keyframes grain-flicker {
+  0% { background-position: 0 0; }
+  25% { background-position: -28px 12px; }
+  50% { background-position: 18px -22px; }
+  75% { background-position: -12px 24px; }
+  100% { background-position: 0 0; }
+}
+.grain-flicker { animation: grain-flicker 0.7s steps(3) infinite; }
+
+/* Aurora — a slow drifting field of brand-color light behind everything */
+@keyframes aurora-drift {
+  0%   { transform: translate3d(-3%, -2%, 0) rotate(0deg) scale(1.1); }
+  50%  { transform: translate3d(3%, 2%, 0) rotate(8deg) scale(1.2); }
+  100% { transform: translate3d(-3%, -2%, 0) rotate(0deg) scale(1.1); }
+}
+.aurora {
+  background:
+    radial-gradient(35% 45% at 15% 20%, rgba(26, 107, 114, 0.55), transparent 60%),
+    radial-gradient(30% 40% at 85% 25%, rgba(232, 160, 32, 0.45), transparent 60%),
+    radial-gradient(42% 45% at 70% 82%, rgba(224, 92, 75, 0.32), transparent 60%),
+    radial-gradient(35% 40% at 28% 78%, rgba(26, 107, 114, 0.4), transparent 60%);
+  filter: blur(40px);
+  animation: aurora-drift 28s ease-in-out infinite;
+}
+
+/* Tech grid — thin drifting lines for the dark cinematic sections */
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 60px 60px; }
+}
+.tech-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: grid-drift 12s linear infinite;
+  -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(120% 100% at 50% 0%, #000 20%, transparent 75%);
+}
+
 /* Downward travelling tick for the hero "scroll" cue */
 @keyframes scroll-cue {
   0%   { transform: translateY(-100%); }
@@ -278,7 +319,10 @@ article p {
   .animate-pulse-soft,
   .typing-dot,
   .animate-scroll-cue,
-  .gradient-text-bright {
+  .gradient-text-bright,
+  .grain-flicker,
+  .aurora,
+  .tech-grid {
     animation: none;
   }
   html {
@@ -302,7 +346,10 @@ article p {
 :root[data-motion='off'] .animate-pop,
 :root[data-motion='off'] .animate-pulse-soft,
 :root[data-motion='off'] .typing-dot,
-:root[data-motion='off'] .animate-scroll-cue {
+:root[data-motion='off'] .animate-scroll-cue,
+:root[data-motion='off'] .grain-flicker,
+:root[data-motion='off'] .aurora,
+:root[data-motion='off'] .tech-grid {
   animation: none !important;
 }
 :root[data-motion='off'] {
